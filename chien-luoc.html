@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex">
+<meta name="description" content="Đa bộ môn có hiệu quả không, và xen kẽ nội dung mì ăn liền theo trào lưu thì được gì mất gì — 17 trang trình bày dựa trên số liệu 160 video.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AD%3C/text%3E%3C/svg%3E">
+<title>Một định dạng, nhiều môn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#F4F7F4;
+  --surface:#FFFFFF;
+  --surface-2:#EDF2EE;
+  --ink:#121A16;
+  --ink-2:#3A4741;
+  --muted:#5C6A63;
+  --line:#DEE6E0;
+  --line-strong:#C6D2CB;
+  --accent:#0E7259;
+  --accent-wash:#DFEDE7;
+  --good:#2C7A50;
+  --warn:#A8620A;
+  --crit:#AD382C;
+  --shadow:0 1px 2px rgba(18,26,22,.05), 0 8px 24px -16px rgba(18,26,22,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1311;
+    --surface:#141C19;
+    --surface-2:#1A2420;
+    --ink:#E9F0EB;
+    --ink-2:#C2CFC7;
+    --muted:#8FA098;
+    --line:#25302B;
+    --line-strong:#33413A;
+    --accent:#54D3AB;
+    --accent-wash:#123026;
+    --good:#5FC98D;
+    --warn:#E0A245;
+    --crit:#E58174;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1311;
+  --surface:#141C19;
+  --surface-2:#1A2420;
+  --ink:#E9F0EB;
+  --ink-2:#C2CFC7;
+  --muted:#8FA098;
+  --line:#25302B;
+  --line-strong:#33413A;
+  --accent:#54D3AB;
+  --accent-wash:#123026;
+  --good:#5FC98D;
+  --warn:#E0A245;
+  --crit:#E58174;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;
+  font-weight:300;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+
+/* ---------- deck shell ---------- */
+.slide{display:none;height:100vh;height:100dvh;overflow-y:auto;outline:none}
+.slide.on{display:block}
+.s-in{max-width:960px;margin:0 auto;padding:64px 28px 128px;min-height:100%;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.s-in.top{justify-content:flex-start;padding-top:76px}
+
+h1,h2,h3,h4{font-family:Archivo,"Arial Narrow",sans-serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;letter-spacing:-.032em;line-height:1.02}
+h2{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;letter-spacing:-.026em;line-height:1.08}
+h3{font-size:1.02rem;font-weight:700;letter-spacing:-.008em}
+p{margin:0}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:italic}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.lede{font-size:clamp(1.02rem,2.1vw,1.2rem);color:var(--ink-2);max-width:62ch}
+.body{font-size:1rem;color:var(--ink-2);max-width:64ch}
+.tiny{font-size:.86rem;color:var(--muted);max-width:66ch}
+
+/* ---------- pieces ---------- */
+.qa{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.qa-row{background:var(--surface);padding:16px 20px;display:grid;grid-template-columns:minmax(180px,.9fr) 1.4fr;gap:6px 22px;align-items:baseline}
+.qa-row .q{font-size:.95rem;color:var(--muted)}
+.qa-row .a{font-family:Archivo,sans-serif;font-weight:700;font-size:1.06rem;letter-spacing:-.014em;line-height:1.3}
+@media (max-width:640px){.qa-row{grid-template-columns:1fr}}
+
+.note{
+  background:var(--accent-wash);border-left:3px solid var(--accent);border-radius:3px;
+  padding:13px 16px;font-size:.9rem;color:var(--ink-2);max-width:70ch;
+}
+.warnbox{
+  background:var(--surface-2);border-left:3px solid var(--warn);border-radius:3px;
+  padding:13px 16px;font-size:.87rem;color:var(--muted);max-width:70ch;
+}
+
+.tbl{border:1px solid var(--line);border-radius:4px;background:var(--surface);overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:460px;font-size:.94rem}
+th{
+  text-align:left;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.64rem;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  padding:11px 18px;border-bottom:1px solid var(--line);background:var(--surface-2);white-space:nowrap;
+}
+td{padding:13px 18px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+td.big{font-family:Archivo,sans-serif;font-weight:700;font-size:1.08rem;text-align:right;font-variant-numeric:tabular-nums}
+.up{color:var(--good)} .dn{color:var(--crit)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.st{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:5px}
+.st b{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(1.6rem,3.6vw,2.2rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.st span{font-size:.82rem;color:var(--muted);line-height:1.45}
+
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.ba > div{border:1px solid var(--line);border-radius:4px;padding:18px 20px;display:flex;flex-direction:column;gap:9px;background:var(--surface)}
+.ba .x{border-left:3px solid var(--crit)}
+.ba .o{border-left:3px solid var(--good)}
+.mark{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase}
+.mark.x{color:var(--crit)} .mark.o{color:var(--good)}
+.ba p{font-size:.92rem;color:var(--ink-2)}
+.ba .hd{font-family:Archivo,sans-serif;font-weight:700;font-size:1.04rem;letter-spacing:-.014em;color:var(--ink);line-height:1.25}
+@media (max-width:640px){.ba{grid-template-columns:1fr}}
+
+.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px}
+.path{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px 20px;display:flex;flex-direction:column;gap:9px}
+.path.pick{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.path .tag{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.path.pick .tag{color:var(--accent)}
+.path h3{font-size:1.04rem}
+.path ul{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:5px;font-size:.88rem;color:var(--ink-2)}
+.path li::marker{color:var(--line-strong)}
+.path.pick li::marker{color:var(--accent)}
+
+/* three-tier diagram */
+.tiers{display:flex;flex-direction:column;gap:9px}
+.tier{
+  background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:4px;padding:15px 20px;display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:center;
+}
+.tier .lb{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tier .nm{font-family:Archivo,sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.014em}
+.tier .ds{font-size:.87rem;color:var(--ink-2);max-width:56ch}
+.tier .qty{font-family:Archivo,sans-serif;font-weight:700;font-size:.95rem;color:var(--accent);white-space:nowrap}
+.tier.w1{margin-right:0}
+.tier.w2{margin-right:6%}
+.tier.w3{margin-right:12%}
+@media (max-width:640px){.tier{grid-template-columns:1fr}.tier.w2,.tier.w3{margin-right:0}}
+
+/* week schedule */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.day{background:var(--surface);padding:13px 10px;display:flex;flex-direction:column;gap:6px;min-height:112px}
+.day .d{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.08em;color:var(--muted)}
+.day .k{font-family:Archivo,sans-serif;font-weight:700;font-size:.84rem;line-height:1.25}
+.day .t{font-size:.75rem;color:var(--muted);line-height:1.4}
+.day.core{background:var(--accent-wash)}
+.day.front{background:var(--surface)}
+.day.money{background:var(--surface-2)}
+@media (max-width:760px){.week{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:400px){.week{grid-template-columns:1fr}}
+
+/* loop flow */
+.loop{display:flex;flex-direction:column;gap:0}
+.lp{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start}
+.lp .n{
+  font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--accent);
+  background:var(--accent-wash);border-radius:3px;text-align:center;padding:4px 0;font-weight:500;
+}
+.lp .tx{font-size:.95rem;color:var(--ink-2);padding-bottom:4px}
+.arw{grid-column:1;justify-self:center;color:var(--line-strong);font-size:1rem;line-height:1;padding:3px 0}
+.loop-end{
+  margin-top:8px;border-top:1px dashed var(--line-strong);padding-top:12px;
+  font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--crit);
+}
+
+.rules{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.rl{background:var(--surface);padding:14px 20px;display:flex;gap:14px;align-items:baseline;font-size:.94rem;color:var(--ink-2)}
+.rl b{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--accent);white-space:nowrap}
+
+.big-line{
+  font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.06;
+  font-size:clamp(1.9rem,5.4vw,3.3rem);
+}
+.links{display:flex;flex-wrap:wrap;gap:11px;margin-top:6px}
+.links a{
+  font-family:"IBM Plex Mono",monospace;font-size:.82rem;text-decoration:none;
+  background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:10px 15px;color:var(--accent);
+}
+.links a:hover{border-color:var(--accent)}
+
+/* ---------- hud ---------- */
+.hud{position:fixed;left:0;right:0;bottom:0;z-index:20;pointer-events:none}
+.bar{height:2px;background:var(--line)}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .22s ease}
+.ctl{
+  pointer-events:auto;display:flex;align-items:center;gap:8px;justify-content:flex-end;
+  max-width:960px;margin:0 auto;padding:11px 28px 16px;
+}
+.ctl .cnt{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--muted);font-variant-numeric:tabular-nums;margin-right:4px}
+.ctl button{
+  font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+  background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);
+  border-radius:4px;width:40px;height:34px;display:grid;place-items:center;
+}
+.ctl button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.ctl button:disabled{opacity:.35;cursor:default}
+.ctl button:focus-visible,.links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hint{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--muted);margin-right:auto;padding-left:2px}
+@media (max-width:560px){.hint{display:none}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+
+
+<!-- ============ 01 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Trang 3 · Chiến lược nội dung · 20.08.2026</p>
+    <h1>Một định dạng,<br>nhiều môn.</h1>
+    <p class="lede">Trả lời ba câu hỏi: có nên chia rõ nội dung để truyền tải, hướng đa bộ môn có thật sự hiệu quả, và nếu xen kẽ kịch bản ngắn hài vui theo trào lưu — “mì ăn liền” — thì được gì và mất gì.</p>
+    <p class="tiny">Phần này sẽ chỉnh lại một khuyến nghị trong bản đánh giá. Số liệu buộc phải chỉnh.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Trả lời trước, giải thích sau</p>
+    <h2>Ba câu trả lời</h2>
+    <div class="qa">
+      <div class="qa-row">
+        <p class="q">Có nên chia rõ nội dung?</p>
+        <p class="a">Có — nhưng chia theo tầng chức năng, không chia theo bộ môn.</p>
+      </div>
+      <div class="qa-row">
+        <p class="q">Đa bộ môn có hiệu quả?</p>
+        <p class="a">Có, với từng video. Chưa, với cả kênh.</p>
+      </div>
+      <div class="qa-row">
+        <p class="q">Độc lạ có cuốn thêm người xem?</p>
+        <p class="a">Cuốn được lượt xem. Chưa cuốn được người theo dõi.</p>
+      </div>
+      <div class="qa-row">
+        <p class="q">Xen “mì ăn liền” được không?</p>
+        <p class="a">Được. Tối đa 2 trên 7 video, và trò đùa phải thuộc về bộ môn.</p>
+      </div>
+    </div>
+    <div class="note"><strong>Chỉnh lại bản đánh giá:</strong> ở phần 4 mình đề xuất tỉ lệ 60% chạy bộ / 30% cầu lông / 10% môn khác. Chia theo môn như vậy là chưa đúng trọng tâm. Số liệu chỉ ra trục xuyên suốt phải là <em>định dạng</em>, không phải <em>môn</em>. Ba trang sau là lý do.</div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Bằng chứng 1</p>
+    <h2>Môn được đăng nhiều nhất lại là môn yếu nhất</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Nhóm nội dung</th><th style="text-align:right">Số video</th><th style="text-align:right">Lượt xem TB</th></tr></thead>
+        <tbody>
+          <tr><td>Cầu lông</td><td class="n">61</td><td class="big dn">2.930</td></tr>
+          <tr><td>Chạy bộ</td><td class="n">38</td><td class="big up">8.353</td></tr>
+          <tr><td>Đu dây vách &amp; lặn tự do</td><td class="n">8</td><td class="big up">~9.400</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="body"><strong>Khối lượng đăng trong một môn chưa từng mua được kết quả trong môn đó.</strong> 61 video cầu lông không xây được gì; 8 video môn ngoài trời tạo ra hai video 22.400 và 19.800 lượt xem. Nếu “chuyên sâu một môn” là câu trả lời thì cầu lông đã phải thắng — nó có gấp bảy lần khối lượng.</p>
+    <div class="warnbox"><strong>Đọc thận trọng.</strong> Chạy bộ mạnh có thể vì TikTok Việt đang đẩy mảng chạy, không hẳn vì nó lạ trên kênh. Trung bình nhóm ngoài trời cũng bị một video kéo lên. Đây là dấu hiệu đủ mạnh để đổi hướng, nhưng chưa phải bằng chứng đóng đinh.</div>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Bằng chứng 2</p>
+    <h2>Nhưng cái nền không hề nhúc nhích</h2>
+    <div class="stats">
+      <div class="st"><b>638–1.139</b><span>Lượt xem trung vị, cả 8 nhóm 20 video, suốt 4 tháng</span></div>
+      <div class="st"><b class="dn">3,1</b><span>Người theo dõi trên 1.000 lượt xem — kênh khoẻ ở mức 8–15</span></div>
+      <div class="st"><b>0,07%</b><span>Tỉ lệ chia sẻ của video 251K — 174 lượt trên 251.200</span></div>
+    </div>
+    <p class="body">Hai sự thật cùng đúng một lúc: <strong>từng video lạ thì bật lên, còn cả kênh thì đứng yên.</strong> Video 251.200 lượt xem không kéo nền lên được một chút nào — nhóm 20 video ngay sau nó có trung vị 820.</p>
+    <p class="big-line" style="margin-top:6px">Cái lạ bán được một video.<br>Nó không bán được một kênh.</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Cơ chế</p>
+    <h2>Thuật toán không gom theo môn. Nó gom theo người xem.</h2>
+    <p class="body">TikTok không hỏi “video này thuộc môn gì”. Nó hỏi “ai sẽ xem hết video của người này”. Nếu mỗi video kéo về một nhóm khác nhau thì không nhóm nào kịp dày, và mỗi lần đăng là bắt đầu lại từ đầu.</p>
+    <p class="body">Nhưng — và đây là chỗ mình sửa lại chính mình — <strong>đa môn không tự động phá vỡ điều đó.</strong> Đa môn cộng với đa định dạng mới phá vỡ. Hiện tại kênh đang đa cả hai.</p>
+    <div class="note">Khán giả của một kênh đa môn không phải người thích cầu lông, cũng không phải người thích chạy bộ. Đó là <strong>người thích xem một người dám thử</strong>. Nhóm đó lớn hơn cả hai nhóm kia cộng lại — nhưng nó chỉ tồn tại khi các video có cùng một hình dạng để nhận ra.</div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Kết luận về hướng đi</p>
+    <h2>Trục xuyên suốt là định dạng, không phải bộ môn</h2>
+    <div class="ba">
+      <div class="x">
+        <span class="mark x">Chưa đúng trọng tâm</span>
+        <p class="hd">Trục = bộ môn</p>
+        <p>“60% chạy bộ, 30% cầu lông.” Mỗi môn quay một kiểu, dựng một kiểu, mở một kiểu. Người xem không có gì để nhận ra, thuật toán không có gì để gom.</p>
+      </div>
+      <div class="o">
+        <span class="mark o">Hướng nên đi</span>
+        <p class="hd">Trục = định dạng</p>
+        <p>Một khuôn cố định, môn nào cắm vào cũng chạy. Người xem nhận ra ngay từ giây đầu, và mỗi video lạ lại nuôi cùng một nhóm khán giả.</p>
+      </div>
+    </div>
+    <p class="body" style="margin-top:4px">Ba khuôn dùng được ngay, tất cả đều nhận mọi bộ môn:</p>
+    <div class="rules">
+      <div class="rl"><b>KHUÔN 1</b><span>“Lần đầu thử ___” — nỗi sợ ở đầu, kết quả ở cuối. Đây là khuôn đã tạo ra hai video 22.400 và 19.800.</span></div>
+      <div class="rl"><b>KHUÔN 2</b><span>“___ ngày tập ___, hôm nay là ngày N” — chuỗi đánh số, người xem quay lại vì muốn biết đoạn sau.</span></div>
+      <div class="rl"><b>KHUÔN 3</b><span>“Con gái tập ___ thì gặp gì” — cùng một góc nhìn, đổi môn thoải mái, giữ nguyên khán giả nữ mới bắt đầu.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Ba con đường</p>
+    <h2>Chọn đường trước, rồi mới chọn nội dung</h2>
+    <div class="paths">
+      <div class="path">
+        <span class="tag">Đường A</span>
+        <h3>Kênh nhân vật</h3>
+        <ul>
+          <li>Trục là con người, môn chỉ là đạo cụ</li>
+          <li>Tiếp cận cao, lớn nhanh</li>
+          <li>Tiền từ tài trợ và sự kiện</li>
+          <li>Bán đồ rất kém — khán giả xem để giải trí</li>
+        </ul>
+      </div>
+      <div class="path">
+        <span class="tag">Đường B</span>
+        <h3>Kênh chuyên môn</h3>
+        <ul>
+          <li>Một môn, một nhóm khán giả</li>
+          <li>Tiếp cận thấp, lớn chậm</li>
+          <li>Ý định mua cao, tiếp thị liên kết chạy tốt</li>
+          <li>Rủi ro: hết chuyện nói sau vài tháng</li>
+        </ul>
+      </div>
+      <div class="path pick">
+        <span class="tag">Đường C · đề xuất</span>
+        <h3>Ghép có cấu trúc</h3>
+        <ul>
+          <li>Mặt tiền là nhân vật, phòng trong là chuyên môn</li>
+          <li>Lấy tiếp cận của A, giữ khả năng bán của B</li>
+          <li><strong>Chỉ chạy được nếu hai phần tách vật lý</strong>: danh sách phát riêng, tên chuỗi riêng, kiểu ảnh bìa riêng</li>
+          <li>Không tách thì đúng bằng hiện trạng</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Đường C, dựng ra thành hình</p>
+    <h2>Chia theo tầng chức năng</h2>
+    <div class="tiers">
+      <div class="tier w1">
+        <div>
+          <p class="lb">Tầng mặt tiền · để người lạ nhìn thấy</p>
+          <p class="nm">Tiếp cận</p>
+          <p class="ds">Khuôn “lần đầu thử”, môn nào cũng được, càng lạ càng tốt. Nhạc thịnh hành. 12–25 giây. Mì ăn liền nằm ở đúng tầng này.</p>
+        </div>
+        <p class="qty">2–3 video / tuần</p>
+      </div>
+      <div class="tier w2">
+        <div>
+          <p class="lb">Tầng lõi · để người ta bấm theo dõi</p>
+          <p class="nm">Nhận diện</p>
+          <p class="ds">Một môn chính, chuỗi có tên và đánh số. Đây là nơi khán giả chuyển từ “xem cho vui” sang “muốn biết đoạn sau”.</p>
+        </div>
+        <p class="qty">3 video / tuần</p>
+      </div>
+      <div class="tier w3">
+        <div>
+          <p class="lb">Tầng đáy · để kiếm tiền</p>
+          <p class="nm">Tra cứu</p>
+          <p class="ds">Hướng dẫn, so sánh, mua gì, sai lầm khi mua. Ít lượt xem nhất lúc mới đăng — nhưng là tầng duy nhất còn sinh lượt xem sau ba tháng.</p>
+        </div>
+        <p class="qty">1 video / tuần</p>
+      </div>
+    </div>
+    <p class="tiny">Ba tầng này thay cho tỉ lệ 60/30/10. Môn nào nằm ở tầng nào là chuyện linh hoạt; tầng thì không được trộn.</p>
+  </div>
+</section>
+
+<!-- ============ 09 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Một tuần mẫu</p>
+    <h2>Bảy video, ba tầng</h2>
+    <div class="week">
+      <div class="day core"><p class="d">THỨ 2</p><p class="k">Lõi</p><p class="t">Chuỗi chính, có số thứ tự</p></div>
+      <div class="day front"><p class="d">THỨ 3</p><p class="k">Mặt tiền</p><p class="t">Mì ăn liền — trò đùa gắn với môn</p></div>
+      <div class="day core"><p class="d">THỨ 4</p><p class="k">Lõi</p><p class="t">Chuỗi chính</p></div>
+      <div class="day money"><p class="d">THỨ 5</p><p class="k">Đáy</p><p class="t">Đánh giá đồ, nêu giá và nhược điểm</p></div>
+      <div class="day front"><p class="d">THỨ 6</p><p class="k">Mặt tiền</p><p class="t">Khuôn “lần đầu thử”</p></div>
+      <div class="day core"><p class="d">THỨ 7</p><p class="k">Lõi</p><p class="t">Chuỗi chính</p></div>
+      <div class="day front"><p class="d">CHỦ NHẬT</p><p class="k">Mặt tiền</p><p class="t">Mì ăn liền — trò đùa gắn với môn</p></div>
+    </div>
+    <p class="tiny">Một video mỗi ngày, khung 19:30–21:30, hai video cách nhau tối thiểu sáu giờ. Hiện kênh đang đăng ~1,1 video/ngày rồi — không cần làm nhiều hơn, chỉ cần xếp đúng chỗ.</p>
+  </div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Câu hỏi về “mì ăn liền”</p>
+    <h2>Được. Và nói thẳng ra: nó là thứ duy nhất từng có tác dụng.</h2>
+    <div class="stats">
+      <div class="st"><b class="up">251.200</b><span>Video bám nhạc thịnh hành · 10 giây</span></div>
+      <div class="st"><b class="up">91.000</b><span>Video bám nhạc thịnh hành · 29 giây</span></div>
+      <div class="st"><b class="dn">824</b><span>Lượt xem trung vị của toàn bộ 160 video còn lại</span></div>
+    </div>
+    <p class="body">Không một video “nghiêm túc” nào của kênh chạm được một phần mười hai con số trên. Trong bốn tháng, cửa duy nhất đã chứng minh mở được là cửa trào lưu. Nên mì ăn liền không phải thứ làm loãng chiến lược — nó <em>là</em> động cơ tiếp cận duy nhất kênh đang có.</p>
+  </div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Điều kiện duy nhất</p>
+    <h2>Trò đùa phải thuộc về bộ môn</h2>
+    <div class="ba">
+      <div class="o">
+        <span class="mark o">Mì ăn liền có ích</span>
+        <p class="hd">91.000 lượt xem · 2.878 thích = <span class="up">3,2%</span></p>
+        <p>Trò đùa về cây vợt — chỉ người chơi cầu lông mới thấy buồn cười. Trào lưu mang người lạ tới, bộ môn lọc lại đúng người ở lại.</p>
+      </div>
+      <div class="x">
+        <span class="mark x">Mì ăn liền vay nợ</span>
+        <p class="hd">251.200 lượt xem · 5.781 thích = <span class="dn">2,3%</span></p>
+        <p>Trò đùa ai cũng làm được, không cần biết chạy bộ. 50 bình luận trên 251.200 lượt xem. Tiếp cận gấp gần ba lần mà tương tác lại thấp hơn.</p>
+      </div>
+    </div>
+    <p class="body" style="margin-top:4px"><strong>Video ít tiếp cận hơn ba lần lại có tỉ lệ thích cao hơn.</strong> Đó là toàn bộ khác biệt giữa hai loại mì ăn liền. Một loại xây khán giả, một loại chỉ đi vay lượt xem rồi phải trả lãi ở video sau.</p>
+  </div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Ảnh hưởng tích cực</p>
+    <h2>Bốn thứ mì ăn liền làm được</h2>
+    <div class="rules">
+      <div class="rl"><b>01</b><span><strong>Mở cửa.</strong> Trào lưu là cơ chế duy nhất đã đưa kênh ra khỏi vùng 800 lượt xem — hai lần, không phải một.</span></div>
+      <div class="rl"><b>02</b><span><strong>Rẻ.</strong> 10–29 giây, quay một lần, không cần dựng nặng. Không ăn vào công suất làm nội dung chính.</span></div>
+      <div class="rl"><b>03</b><span><strong>Đẩy lượt chia sẻ.</strong> Hài được chia sẻ, mà chia sẻ là tín hiệu kênh đang yếu nhất — 0,07% ở video mạnh nhất.</span></div>
+      <div class="rl"><b>04</b><span><strong>Thử nhân cách trước camera</strong> mà chưa phải cam kết cả một bộ môn. Tìm ra giọng điệu nào ăn, rồi mang giọng đó vào tầng lõi.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in top">
+    <p class="eyebrow">Ảnh hưởng tiêu cực · cơ chế</p>
+    <h2>Vòng lặp nợ khán giả</h2>
+    <div class="loop">
+      <div class="lp"><span class="n">1</span><p class="tx">Một video hài chung chung đạt 100.000 lượt xem.</p></div>
+      <div class="arw">↓</div>
+      <div class="lp"><span class="n">2</span><p class="tx">Nó kéo về người theo dõi thích giải trí, không quan tâm cầu lông hay chạy bộ.</p></div>
+      <div class="arw">↓</div>
+      <div class="lp"><span class="n">3</span><p class="tx">Video chuyên môn tiếp theo bị đẩy trước tiên cho chính nhóm đó — họ xem ba giây rồi thoát.</p></div>
+      <div class="arw">↓</div>
+      <div class="lp"><span class="n">4</span><p class="tx">Tỉ lệ xem hết tụt. Thuật toán hạ mức đẩy cho <strong>mọi</strong> video sau đó, không riêng video chuyên môn.</p></div>
+      <div class="arw">↓</div>
+      <div class="lp"><span class="n">5</span><p class="tx">Cái nền tụt xuống thấp hơn cả trước khi có video 100.000.</p></div>
+      <p class="loop-end">↺ Quay lại bước 1 — và lần này phải hài hơn nữa mới bù nổi.</p>
+    </div>
+    <div class="warnbox" style="margin-top:14px"><strong>Đây không phải giả thuyết.</strong> Đó chính là cơ chế đã tạo ra con số 3,1 người theo dõi trên 1.000 lượt xem, và là lý do video 251.200 không nhấc được cái nền lên một chút nào.</div>
+  </div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Ảnh hưởng tiêu cực · hai rủi ro dài hạn</p>
+    <h2>Thứ mất đi không hiện trên biểu đồ</h2>
+    <div class="ba">
+      <div class="x">
+        <span class="mark x">Rủi ro 1</span>
+        <p class="hd">Loãng định vị trước thương hiệu</p>
+        <p>Thương hiệu trả tiền cho một nhóm khán giả xác định. “Cô gái thể thao cộng hài ngẫu nhiên” khó bán hơn cả “cô gái thể thao” và “kênh hài” — khó hơn từng thứ riêng lẻ, chứ không phải cộng lại.</p>
+      </div>
+      <div class="x">
+        <span class="mark x">Rủi ro 2</span>
+        <p class="hd">Trôi dạt định dạng</p>
+        <p>Nếu hài luôn thắng gấp hai mươi lần, người làm sẽ nghiêng dần về hài — số liệu thưởng cho điều đó mỗi tuần. Sáu tháng sau kênh thành kênh hài khoác áo thể thao, và mảng bán đồ chết mà không ai kịp nhận ra.</p>
+      </div>
+    </div>
+    <p class="tiny">Cả hai rủi ro đều không xuất hiện trong bảng số liệu tuần. Chúng chỉ hiện ra khi đi gõ cửa thương hiệu đầu tiên và nhận ra không biết mô tả khán giả của mình bằng một câu.</p>
+  </div>
+</section>
+
+<!-- ============ 15 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Câu cần nhớ</p>
+    <p class="big-line">Mì ăn liền nâng đỉnh.<br>Nó không nâng nền.</p>
+    <p class="body" style="margin-top:14px">Video bám trào lưu có hạn sử dụng: hết trào lưu là hết lượt xem, và nó không cộng dồn. Nội dung tra được — hướng dẫn, so sánh, mua gì — vẫn chảy về qua ô tìm kiếm sau nhiều tháng.</p>
+    <p class="body">Vấn đề gốc của kênh là <strong>không có nền</strong>: trung vị 638–1.139 suốt bốn tháng dù đã đăng hơn 160 video. Mì ăn liền, về bản chất, không xây được nền. Nó là máy tăng tốc — và tăng tốc trên nền chưa có thì chỉ trượt bánh.</p>
+  </div>
+</section>
+
+<!-- ============ 16 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Ngưỡng an toàn</p>
+    <h2>Bốn luật và một cái phanh</h2>
+    <div class="rules">
+      <div class="rl"><b>LUẬT 1</b><span>Tối đa <strong>2 trên 7</strong> video mỗi tuần là mì ăn liền.</span></div>
+      <div class="rl"><b>LUẬT 2</b><span>Cả hai video đó phải có trò đùa <strong>gắn với bộ môn</strong> — người ngoài môn không hiểu hết là dấu hiệu tốt.</span></div>
+      <div class="rl"><b>LUẬT 3</b><span>Không bao giờ đăng hai video mì ăn liền liền nhau. Giữa chúng phải có ít nhất một video tầng lõi.</span></div>
+      <div class="rl"><b>LUẬT 4</b><span>Mỗi video mì ăn liền có một câu trong phần mô tả trỏ về chuỗi chính. Vay lượt xem thì phải dẫn nó về nhà.</span></div>
+    </div>
+    <div class="note" style="border-left-color:var(--crit)"><strong>Phanh.</strong> Đo <span class="mono">người theo dõi ÷ 1.000 lượt xem</span> mỗi hai tuần. Nếu con số tụt xuống dưới mức hiện tại là 3,1 sau khi tăng mì ăn liền, nghĩa là đang mua lượt xem rác — cắt ngay xuống 1 trên 7 và không tranh luận với biểu đồ lượt xem.</div>
+  </div>
+</section>
+
+<!-- ============ 17 ============ -->
+<section class="slide" tabindex="-1">
+  <div class="s-in">
+    <p class="eyebrow">Kết</p>
+    <h2>Gói lại trong ba câu</h2>
+    <p class="body" style="font-size:1.06rem"><strong>Một.</strong> Chia nội dung theo tầng chức năng — mặt tiền, lõi, đáy — chứ không chia theo bộ môn.</p>
+    <p class="body" style="font-size:1.06rem"><strong>Hai.</strong> Đa bộ môn là tài sản nếu các video dùng chung một định dạng, và là nhiễu nếu không. Cái lạ bán được một video; cái định dạng bán được cả kênh.</p>
+    <p class="body" style="font-size:1.06rem"><strong>Ba.</strong> Mì ăn liền cứ làm — tối đa 2 trên 7, trò đùa gắn với môn, và luôn nhớ nó là máy tăng tốc chứ không phải móng nhà.</p>
+    <div class="links">
+      <a href="./">← Bản đánh giá kênh</a>
+      <a href="cau-mo-dau.html">Kho câu mở đầu →</a>
+    </div>
+  </div>
+</section>
+
+<div class="hud">
+  <div class="bar"><i id="pbar"></i></div>
+  <div class="ctl">
+    <span class="hint">← → để chuyển trang</span>
+    <span class="cnt" id="cnt">01 / 17</span>
+    <button id="prev" type="button" aria-label="Trang trước">←</button>
+    <button id="next" type="button" aria-label="Trang sau">→</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var slides = [].slice.call(document.querySelectorAll('.slide'));
+  var cnt = document.getElementById('cnt');
+  var pbar = document.getElementById('pbar');
+  var prev = document.getElementById('prev');
+  var next = document.getElementById('next');
+  var i = 0;
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function go(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    for (var k = 0; k < slides.length; k++) slides[k].classList.toggle('on', k === i);
+    cnt.textContent = pad(i + 1) + ' / ' + pad(slides.length);
+    pbar.style.width = ((i + 1) / slides.length * 100) + '%';
+    prev.disabled = (i === 0);
+    next.disabled = (i === slides.length - 1);
+    slides[i].scrollTop = 0;
+    try { slides[i].focus({ preventScroll: true }); } catch (e) {}
+    try { history.replaceState(null, '', '#' + (i + 1)); } catch (e) {}
+  }
+  prev.addEventListener('click', function(){ go(i - 1); });
+  next.addEventListener('click', function(){ go(i + 1); });
+  document.addEventListener('keydown', function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown') { e.preventDefault(); go(i + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); go(i - 1); }
+    else if (k === 'Home') { e.preventDefault(); go(0); }
+    else if (k === 'End') { e.preventDefault(); go(slides.length - 1); }
+  });
+  var x0 = null, y0 = null;
+  document.addEventListener('touchstart', function(e){
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+  }, { passive: true });
+  document.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    var dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) go(i + (dx < 0 ? 1 : -1));
+    x0 = null; y0 = null;
+  }, { passive: true });
+  var start = parseInt((location.hash || '').replace('#', ''), 10);
+  go(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+
+</body>
+</html>
