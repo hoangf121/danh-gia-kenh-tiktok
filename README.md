@@ -3,10 +3,11 @@
 Bản audit một kênh TikTok thể thao (nữ, Việt Nam, 1.929 người theo dõi) dựa trên 160 video
 gần nhất và 613.963 lượt xem thu từ trang công khai.
 
-## Ba trang
+## Bốn trang
 1. **Bản đánh giá kênh** — https://hoangf121.github.io/danh-gia-kenh-tiktok/
 2. **Kho câu mở đầu (50 mẫu, gồm 14 câu cường độ cao)** — https://hoangf121.github.io/danh-gia-kenh-tiktok/cau-mo-dau.html
 3. **Chiến lược nội dung (17 trang trình bày)** — https://hoangf121.github.io/danh-gia-kenh-tiktok/chien-luoc.html
+4. **Kịch bản dựng sẵn (6 kịch bản theo từng giây)** — https://hoangf121.github.io/danh-gia-kenh-tiktok/kich-ban.html
 
 ## Kết luận chính
 - Lượt xem trung vị chỉ **824** trong khi trung bình là 3.837 — trung bình bị một video 251K kéo lệch.

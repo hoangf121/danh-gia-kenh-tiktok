@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex">
+<meta name="description" content="Sáu kịch bản video chia theo từng giây — quay hình gì, nói câu gì, chữ nào hiện trên hình — kèm phần mô tả, thẻ, ba khuôn điền chỗ trống và checklist trước khi đăng.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AC%3C/text%3E%3C/svg%3E">
+<title>Sáu kịch bản quay được ngay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#F4F7F4;
+  --surface:#FFFFFF;
+  --surface-2:#EDF2EE;
+  --ink:#121A16;
+  --ink-2:#3A4741;
+  --muted:#5C6A63;
+  --line:#DEE6E0;
+  --line-strong:#C6D2CB;
+  --accent:#0E7259;
+  --accent-wash:#DFEDE7;
+  --good:#2C7A50;
+  --warn:#A8620A;
+  --crit:#AD382C;
+  --violet:#5B4A9B;
+  --shadow:0 1px 2px rgba(18,26,22,.05), 0 8px 24px -16px rgba(18,26,22,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1311;
+    --surface:#141C19;
+    --surface-2:#1A2420;
+    --ink:#E9F0EB;
+    --ink-2:#C2CFC7;
+    --muted:#8FA098;
+    --line:#25302B;
+    --line-strong:#33413A;
+    --accent:#54D3AB;
+    --accent-wash:#123026;
+    --good:#5FC98D;
+    --warn:#E0A245;
+    --crit:#E58174;
+    --violet:#A99BE0;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1311;
+  --surface:#141C19;
+  --surface-2:#1A2420;
+  --ink:#E9F0EB;
+  --ink-2:#C2CFC7;
+  --muted:#8FA098;
+  --line:#25302B;
+  --line-strong:#33413A;
+  --accent:#54D3AB;
+  --accent-wash:#123026;
+  --good:#5FC98D;
+  --warn:#E0A245;
+  --crit:#E58174;
+  --violet:#A99BE0;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;
+  font-weight:300;font-size:16.5px;line-height:1.66;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px 96px}
+
+h1,h2,h3,h4{font-family:Archivo,"Arial Narrow",sans-serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.028em;line-height:1.04}
+h2{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700;letter-spacing:-.018em;line-height:1.15}
+h3{font-size:1.02rem;font-weight:700;letter-spacing:-.008em}
+p{margin:0}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:italic}
+.lede{font-size:1.07rem;line-height:1.62;color:var(--ink-2);max-width:64ch}
+.prose{max-width:68ch;color:var(--ink-2)}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.hdr{max-width:920px;margin:0 auto;padding:44px 24px 32px;display:flex;flex-direction:column;gap:18px}
+.hdr-top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+.badge{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.74rem;
+  color:var(--accent);background:var(--accent-wash);padding:5px 10px;border-radius:3px;
+}
+
+.xlink{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:15px 18px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;justify-content:space-between}
+.xlink .t{font-family:Archivo,sans-serif;font-weight:700;font-size:.98rem;letter-spacing:-.01em}
+.xlink .d{font-size:.85rem;color:var(--muted)}
+.xlink a{font-family:"IBM Plex Mono",monospace;font-size:.8rem;white-space:nowrap}
+
+section{margin-top:56px;display:flex;flex-direction:column;gap:20px}
+.sec-head{display:flex;flex-direction:column;gap:7px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sec-head .mix{
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--accent);
+  background:var(--accent-wash);padding:3px 8px;border-radius:3px;align-self:flex-start;
+}
+
+.warnbox{background:var(--surface-2);border-left:3px solid var(--warn);border-radius:3px;padding:14px 17px;font-size:.88rem;color:var(--muted);max-width:72ch;line-height:1.6}
+.note{background:var(--accent-wash);border-left:3px solid var(--accent);border-radius:3px;padding:14px 17px;font-size:.9rem;color:var(--ink-2);max-width:72ch}
+
+/* ---------- 5-beat skeleton ---------- */
+.tl{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.tl > div{background:var(--surface);padding:15px 15px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl .b1{flex:1.5} .tl .b2{flex:1.6} .tl .b3{flex:4} .tl .b4{flex:2} .tl .b5{flex:1.4}
+.tl .t{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.09em;color:var(--accent)}
+.tl .n{font-family:Archivo,sans-serif;font-weight:700;font-size:.98rem;letter-spacing:-.014em}
+.tl .d{font-size:.8rem;color:var(--muted);line-height:1.45}
+@media (max-width:760px){.tl{flex-direction:column}}
+
+/* ---------- build rules ---------- */
+.rulelist{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.rl{background:var(--surface);padding:14px 20px;display:grid;grid-template-columns:78px 1fr;gap:16px;align-items:baseline;font-size:.94rem;color:var(--ink-2)}
+.rl b{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+@media (max-width:560px){.rl{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- script card ---------- */
+.script{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:0}
+.sc-top{padding:15px 20px;background:var(--surface-2);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.chip{
+  font-family:"IBM Plex Mono",monospace;font-size:.61rem;font-weight:500;letter-spacing:.09em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;
+}
+.c-front{background:var(--accent);color:var(--ground)}
+.c-core{background:var(--accent-wash);color:var(--accent)}
+.c-money{background:rgba(91,74,155,.15);color:var(--violet)}
+.c-dur{background:rgba(168,98,10,.15);color:var(--warn)}
+.sc-top .nm{font-family:Archivo,sans-serif;font-weight:700;font-size:1.06rem;letter-spacing:-.016em;margin-right:auto}
+
+.beats{display:flex;flex-direction:column}
+.beat{display:grid;grid-template-columns:84px 1fr 1fr;border-bottom:1px solid var(--line)}
+.beat > *{padding:13px 18px}
+.beat .sec{
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--accent);
+  background:var(--surface-2);border-right:1px solid var(--line);white-space:nowrap;
+}
+.beat .shot{border-right:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
+.beat .say{display:flex;flex-direction:column;gap:5px}
+.lb{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.beat p{font-size:.88rem;color:var(--ink-2);line-height:1.55}
+.ovl-sm{font-family:Archivo,sans-serif;font-weight:800;font-size:1.02rem;letter-spacing:-.018em;line-height:1.22;color:var(--ink)}
+@media (max-width:700px){
+  .beat{grid-template-columns:1fr}
+  .beat .sec{border-right:none;border-bottom:1px solid var(--line)}
+  .beat .shot{border-right:none;border-bottom:1px solid var(--line)}
+}
+
+.sc-foot{border-top:1px solid var(--line-strong);background:var(--surface-2);display:flex;flex-direction:column}
+.ff{padding:13px 20px;display:flex;flex-direction:column;gap:3px;border-bottom:1px solid var(--line)}
+.ff:last-child{border-bottom:none}
+.ff p{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+.ff .tags{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--accent)}
+
+.scripts{display:flex;flex-direction:column;gap:16px}
+
+/* ---------- fill-in templates ---------- */
+.fills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:13px}
+.fill{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px 20px;display:flex;flex-direction:column;gap:9px}
+.fill h3{font-size:1rem}
+.fill .ln{font-family:Archivo,sans-serif;font-weight:700;font-size:.98rem;line-height:1.35;letter-spacing:-.014em;color:var(--ink)}
+.fill p{font-size:.87rem;color:var(--muted);line-height:1.55}
+.bl{
+  font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:.9em;
+  background:var(--accent-wash);color:var(--accent);border-radius:2px;padding:1px 6px;
+}
+
+/* ---------- shot bank ---------- */
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.sh{background:var(--surface);padding:14px 17px;display:flex;flex-direction:column;gap:3px}
+.sh b{font-family:Archivo,sans-serif;font-weight:700;font-size:.92rem;letter-spacing:-.01em}
+.sh span{font-size:.81rem;color:var(--muted);line-height:1.45}
+
+/* ---------- checklist ---------- */
+.chk{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.ck{background:var(--surface);padding:13px 20px;display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:baseline;font-size:.93rem;color:var(--ink-2)}
+.ck i{
+  display:block;width:15px;height:15px;border:1.5px solid var(--line-strong);
+  border-radius:3px;transform:translateY(3px);
+}
+.ck.hard i{border-color:var(--accent)}
+
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem;max-width:70ch;display:flex;flex-direction:column;gap:9px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="hdr">
+    <div class="hdr-top">
+      <p class="eyebrow">Trang 4 · Kịch bản dựng sẵn · 20.08.2026</p>
+      <span class="badge">6 kịch bản · 3 khuôn điền · 12 cảnh nên quay sẵn</span>
+    </div>
+    <h1>Kịch bản, tính theo giây.</h1>
+    <p class="lede">Câu mở đầu chỉ mua được 1,5 giây. Trang này lo phần còn lại: mỗi kịch bản chia theo từng nhịp — quay hình gì, nói câu gì, chữ nào hiện trên hình — cộng phần mô tả và thẻ viết sẵn. Hai kịch bản cho tầng mặt tiền, hai cho tầng lõi, hai cho tầng đáy, đúng theo ba tầng ở trang chiến lược.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="xlink">
+    <span>
+      <span class="t">Ba trang trước</span><br>
+      <span class="d">Bản đánh giá kênh · Kho câu mở đầu (50 mẫu) · Chiến lược nội dung (17 trang).</span>
+    </span>
+    <a href="./">Mở trang đánh giá →</a>
+  </div>
+
+  <!-- ============ KHUNG XƯƠNG ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Khung xương</p>
+      <h2>Năm nhịp, dùng cho mọi video</h2>
+      <span class="mix">Tỉ lệ chiều rộng bên dưới xấp xỉ tỉ lệ thời lượng</span>
+    </div>
+
+    <div class="tl">
+      <div class="b1">
+        <p class="t">0 – 1,5s</p>
+        <p class="n">Móc</p>
+        <p class="d">Đặt một thứ lên bàn: con số, cái sai, hoặc câu buộc chọn phe.</p>
+      </div>
+      <div class="b2">
+        <p class="t">1,5 – 4s</p>
+        <p class="n">Cược</p>
+        <p class="d">Nói rõ người xem được gì nếu ở lại. Đây là nhịp hay bị bỏ nhất.</p>
+      </div>
+      <div class="b3">
+        <p class="t">4s – 70%</p>
+        <p class="n">Trả</p>
+        <p class="d">Các nhịp nội dung, mỗi nhịp 2–4 giây. Hứa ba thì phải có đúng ba.</p>
+      </div>
+      <div class="b4">
+        <p class="t">70 – 90%</p>
+        <p class="n">Chốt</p>
+        <p class="d">Kết luận thật, có nêu cả mặt dở. Nêu mặt dở là chỗ tạo lòng tin.</p>
+      </div>
+      <div class="b5">
+        <p class="t">2s cuối</p>
+        <p class="n">Vòng</p>
+        <p class="d">Về lại khung mở đầu, kèm một câu hỏi.</p>
+      </div>
+    </div>
+
+    <p class="prose">Nhịp <strong>Cược</strong> là nhịp bị bỏ quên nhiều nhất. Móc làm người ta dừng lại, nhưng nếu giây thứ hai không nói rõ “ở lại thì được gì” thì họ vẫn kéo qua — và lúc đó thuật toán ghi nhận là móc lừa. Nhịp <strong>Vòng</strong> thì ngược lại: nó rẻ nhất mà lợi nhất, vì khung cuối trùng khung đầu khiến người xem xem lại từ đầu, và tỉ lệ xem hết vượt 100% là tín hiệu mạnh nhất trên TikTok.</p>
+  </section>
+
+  <!-- ============ LUẬT DỰNG ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Luật dựng</p>
+      <h2>Sáu luật áp cho mọi kịch bản</h2>
+    </div>
+    <div class="rulelist">
+      <div class="rl"><b>NHỊP CẮT</b><span>Cắt cảnh mỗi 1,5–2,5 giây. Cảnh nào dài quá 3 giây thì trong khung phải có thứ đang thay đổi — người đang di chuyển, số đang chạy, tay đang làm.</span></div>
+      <div class="rl"><b>CHỮ</b><span>Tối đa 7 chữ một dòng, tối đa hai dòng. Chữ dài hơn thì người xem chưa đọc xong đã kéo.</span></div>
+      <div class="rl"><b>VÙNG AN TOÀN</b><span>Tránh 20% dưới và 15% bên phải khung hình — TikTok phủ nút và phần mô tả lên đúng chỗ đó. Chữ quan trọng đặt ở nửa trên.</span></div>
+      <div class="rl"><b>TIẾNG NÓI</b><span>Mỗi video có ít nhất một câu nói bằng giọng mình. Video chỉ có nhạc thì không xây được giọng kênh, và không ai nhớ được người làm.</span></div>
+      <div class="rl"><b>NHẠC</b><span>Nhạc thịnh hành bắt trong 48 giờ đầu. Cắt cảnh khớp nhịp nhạc, không cắt tuỳ ý — cắt lệch nhịp làm video trông rẻ dù nội dung tốt.</span></div>
+      <div class="rl"><b>VÒNG LẶP</b><span>Khung cuối dựng trùng khung đầu. Người xem sẽ xem lại mà không nhận ra, và đó là cách rẻ nhất để nâng tỉ lệ xem hết.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ KỊCH BẢN ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Sáu kịch bản đầy đủ</p>
+      <h2>Quay được ngay, không cần thêm gì</h2>
+      <span class="mix">Hai mặt tiền · hai lõi · hai đáy</span>
+    </div>
+
+    <div class="scripts">
+
+      <!-- A -->
+      <div class="script">
+        <div class="sc-top">
+          <span class="nm">A · Lần đầu thử một môn lạ</span>
+          <span class="chip c-front">Tầng mặt tiền</span>
+          <span class="chip c-dur">22 giây</span>
+        </div>
+        <div class="beats">
+          <div class="beat">
+            <div class="sec">0 – 1,5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Góc nhìn từ đỉnh vách xuống, tay đang run trên dây. Nỗi sợ phải thấy được ngay.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · đọc to đúng câu này</span><p class="ovl-sm">Mình sợ độ cao. Và mình vừa nhảy xuống</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">1,5 – 4s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Cận mặt, đang thở, chân chưa dám rời mép.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Người ta bảo bước đầu là khó nhất. Người ta nói thật.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">4 – 9s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Ba nhịp cắt nhanh khớp nhạc: buộc dây · chân rời mép · lơ lửng giữa vách.</p></div>
+            <div class="say"><span class="lb">Chữ nhỏ góc trên</span><p>“giây thứ 3” → “giây thứ 7” — cho người xem cảm giác đang đếm cùng.</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">9 – 14s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Xuống được nửa vách, mặt bắt đầu cười.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Đến đây thì hết sợ. Nhưng cái lần đầu vẫn là cái đáng nhớ nhất.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">14 – 19s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Chạm đất, tháo dây, ngồi bệt xuống.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Xong. Môn thứ bảy rồi.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">19 – 22s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Cắt về đúng khung mở đầu — đỉnh vách, tay trên dây.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · vòng lặp</span><p class="ovl-sm">Môn tiếp theo nên là gì?</p></div>
+          </div>
+        </div>
+        <div class="sc-foot">
+          <div class="ff"><span class="lb">Phần mô tả</span><p>Mình sợ độ cao thật, không diễn. Đu dây xuống vách lần đầu — môn thứ bảy trong danh sách. Bạn nghĩ môn tiếp theo nên là gì?</p></div>
+          <div class="ff"><span class="lb">Thẻ</span><p class="tags">#dudayxuongvach #trekking #landauthu #thethao</p></div>
+          <div class="ff"><span class="lb">Nhạc &amp; ghi chú dựng</span><p>Nhạc thịnh hành nhịp mạnh, cắt cảnh khớp nhịp ở đoạn 4–9s. Khung cuối trùng khung đầu nên nhiều người sẽ xem lại mà không nhận ra — đây là kịch bản dễ vượt 100% tỉ lệ xem hết nhất trong sáu cái.</p></div>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="script">
+        <div class="sc-top">
+          <span class="nm">B · Mì ăn liền, trò đùa gắn cầu lông</span>
+          <span class="chip c-front">Tầng mặt tiền</span>
+          <span class="chip c-dur">14 giây</span>
+        </div>
+        <div class="beats">
+          <div class="beat">
+            <div class="sec">0 – 1,5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Đứng giữa sân, hai tay hai cây vợt, mặt tỉnh bơ.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình</span><p class="ovl-sm">Bạn tôi nói vợt nào cũng như nhau</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">1,5 – 4s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Đưa cây vợt rẻ lên, đánh một quả, cầu bay lệch hẳn.</p></div>
+            <div class="say"><span class="lb">Âm</span><p>Không lời. Để tiếng cầu và nhạc nói. Cú “drop” của nhạc rơi đúng lúc cầu lệch.</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">4 – 8s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Đổi cây vợt quen, đánh cùng một góc, cầu đi thẳng và căng.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình</span><p class="ovl-sm">cùng một tay đấy</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">8 – 12s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Nhìn camera, nhướng mắt, chìa cây vợt rẻ ra như đang mời.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình</span><p class="ovl-sm">vẫn muốn thử không</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">12 – 14s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Đóng băng khung lúc cầu đang bay giữa không.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · vòng lặp</span><p class="ovl-sm">Ai cũng như nhau hết á?</p></div>
+          </div>
+        </div>
+        <div class="sc-foot">
+          <div class="ff"><span class="lb">Phần mô tả</span><p>Nói thật là ở trình mình thì chưa cần vợt xịn — nhưng “cây nào cũng như nhau” thì hơi quá. Bạn đứng phe nào?</p></div>
+          <div class="ff"><span class="lb">Thẻ</span><p class="tags">#caulong #caulongvietnam #votcaulong #cầulông</p></div>
+          <div class="ff"><span class="lb">Nhạc &amp; ghi chú dựng</span><p>Bắt đúng đoạn nhạc đang lên trong 48 giờ. Đây là loại mì ăn liền <strong>có ích</strong>: trò đùa chỉ người chơi cầu lông hiểu hết, nên trào lưu mang người lạ tới còn bộ môn lọc lại đúng người ở lại.</p></div>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="script">
+        <div class="sc-top">
+          <span class="nm">C · Chuỗi đánh số, ngày khó nhất</span>
+          <span class="chip c-core">Tầng lõi</span>
+          <span class="chip c-dur">25 giây</span>
+        </div>
+        <div class="beats">
+          <div class="beat">
+            <div class="sec">0 – 1,5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Cận đôi chân đang bước, đường vắng lúc sáng sớm.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · đọc to</span><p class="ovl-sm">Ngày 12 của 42KM. Hôm nay mình muốn bỏ</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">1,5 – 4s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Nói vào camera cầm tay, còn đang thở.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Không phải vì mệt. Vì hôm qua chạy tệ quá.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">4 – 10s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Ảnh Strava hôm qua, tốc độ xấu, phóng to. Cắt sang tờ lịch tập.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình</span><p>“hôm qua” → “hôm nay” — hai chữ, hai khung, cắt dứt khoát.</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">10 – 17s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Ba nhịp chạy, mỗi nhịp một góc khác, cắt theo nhịp nhạc.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Nên hôm nay mình đổi: chậm hơn, ngắn hơn, nhưng vẫn chạy.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">17 – 22s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Ảnh Strava hôm nay — không đẹp hơn nhiều, và đừng che chỗ đó.</p></div>
+            <div class="say"><span class="lb">Lời nói · nhịp chốt</span><p>“Vẫn chưa đẹp. Nhưng chuỗi chưa đứt.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">22 – 25s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Về lại đôi chân ở khung đầu, viết số 12 lên sổ hoặc lên tay.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · vòng lặp</span><p class="ovl-sm">Ngày 13 mai gặp</p></div>
+          </div>
+        </div>
+        <div class="sc-foot">
+          <div class="ff"><span class="lb">Phần mô tả</span><p>Ngày 12 của 42KM — đây là buổi mình gần bỏ nhất. Ai đang chạy chuỗi nào thì báo mình đang ở ngày thứ mấy, mình đọc hết.</p></div>
+          <div class="ff"><span class="lb">Thẻ</span><p class="tags">#chaybo #running #runner #42km</p></div>
+          <div class="ff"><span class="lb">Nhạc &amp; ghi chú dựng</span><p>Số ngày là thứ giữ cả chuỗi — phải xuất hiện ở ba chỗ: chữ trên hình, phần mô tả, và ảnh bìa. Kịch bản này cố tình chọn <em>ngày tệ</em> chứ không chọn ngày đẹp: buổi muốn bỏ mới là buổi người ta thấy mình trong đó.</p></div>
+        </div>
+      </div>
+
+      <!-- D -->
+      <div class="script">
+        <div class="sc-top">
+          <span class="nm">D · Phản trực giác, có số liệu</span>
+          <span class="chip c-core">Tầng lõi</span>
+          <span class="chip c-dur">28 giây</span>
+        </div>
+        <div class="beats">
+          <div class="beat">
+            <div class="sec">0 – 1,5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Ảnh Strava của buổi tốc độ tệ nhất tháng, phóng to gần hết khung.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · đọc to</span><p class="ovl-sm">Buổi tập tốt nhất của mình là buổi chạy chậm nhất</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">1,5 – 5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Ngồi bệt sau buổi chạy, nói vào camera.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Nghe vô lý. Nhưng số của mình nói vậy, để mình cho xem.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">5 – 12s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Ba ảnh Strava: tuần chạy nhiều mà tốc độ tệ · tuần chạy ít mà tốc độ tốt · nhịp tim hai buổi.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình</span><p>Đánh số nhỏ “1” “2” “3” theo từng ảnh. Người xem cần biết còn mấy cái nữa.</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">12 – 20s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Đang chạy chậm, nói chuyện được, không thở dốc.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Chậm đủ để nói chuyện. Nghe dở, nhưng đó là chỗ thể lực lên.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">20 – 25s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Cắt sang buổi chạy nhanh: mặt tái, phải ngồi xuống.</p></div>
+            <div class="say"><span class="lb">Lời nói · nhịp chốt</span><p>“Còn chạy nhanh mỗi buổi thì mình chỉ mệt, không khoẻ hơn.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">25 – 28s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Về lại ảnh Strava ở khung đầu.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · vòng lặp</span><p class="ovl-sm">Bạn chạy chậm được mấy buổi một tuần?</p></div>
+          </div>
+        </div>
+        <div class="sc-foot">
+          <div class="ff"><span class="lb">Phần mô tả</span><p>Chạy chậm hơn trong phần lớn thời gian — mình mất nửa năm mới tin. Ai không đồng ý thì nói mình nghe, mình có số của mình rồi.</p></div>
+          <div class="ff"><span class="lb">Thẻ</span><p class="tags">#chaybo #running #runner #easyrun</p></div>
+          <div class="ff"><span class="lb">Nhạc &amp; ghi chú dựng</span><p>Đây là kịch bản ăn bình luận nhất trong sáu cái, vì nó để lại chỗ cho người ta tranh luận. Ghim sẵn một bình luận của mình để mở hướng bàn luận. Nếu chưa từng đo nhịp tim thì bỏ ảnh thứ ba — đừng bịa số.</p></div>
+        </div>
+      </div>
+
+      <!-- E -->
+      <div class="script">
+        <div class="sc-top">
+          <span class="nm">E · So sánh hai món, có nêu giá</span>
+          <span class="chip c-money">Tầng đáy</span>
+          <span class="chip c-dur">32 giây</span>
+        </div>
+        <div class="beats">
+          <div class="beat">
+            <div class="sec">0 – 1,5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Hai áo bra tập đặt cạnh nhau trên sàn, tay che tem giá.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · đọc to</span><p class="ovl-sm">Áo bra 200k và 600k khác nhau ở đâu thật</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">1,5 – 5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Bỏ tay ra, giá hiện lên hình ngay bên cạnh từng cái.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Cùng size, cùng mình mặc. Mình thử cả hai trong ba tuần.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">5 – 13s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Bốn nhịp thử: kéo dây · mặc thử · chạy 1km · sau năm lần giặt.</p></div>
+            <div class="say"><span class="lb">Chữ theo từng nhịp</span><p>“độ giãn” · “form” · “khi chạy” · “sau 5 lần giặt”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">13 – 22s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Cận vào đúng chỗ dở của từng cái. Nêu nhược điểm cái đắt trước.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Cái 600k nóng hơn. Cái 200k thì lỏng dần từ tháng thứ hai.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">22 – 28s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Cầm lần lượt từng cái lên khi nói tới nó.</p></div>
+            <div class="say"><span class="lb">Lời nói · nhịp chốt</span><p>“Buổi nhẹ mình vẫn dùng cái 200k. Chạy trên 10km thì mình lấy cái kia.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">28 – 32s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Về lại khung mở đầu, hai cái cạnh nhau, giá hiện sẵn.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · vòng lặp</span><p class="ovl-sm">Bạn đang dùng loại nào?</p></div>
+          </div>
+        </div>
+        <div class="sc-foot">
+          <div class="ff"><span class="lb">Phần mô tả</span><p>Áo bra tập cho nữ — 200k so với 600k, mình thử ba tuần và nêu cả nhược điểm của cả hai. Lưu lại trước khi mua. Bạn đang dùng loại nào?</p></div>
+          <div class="ff"><span class="lb">Thẻ</span><p class="tags">#dotap #chaybo #reviewdotap #nucotap</p></div>
+          <div class="ff"><span class="lb">Nhạc &amp; ghi chú dựng</span><p>Tầng đáy bắt buộc phải <strong>nêu giá</strong> và <strong>nêu nhược điểm</strong> — đó là hai thứ tạo lòng tin và làm người ta bấm lưu. Nhạc để nhỏ, ưu tiên nghe rõ giọng. Video này ít lượt xem lúc mới đăng nhưng còn chảy về qua ô tìm kiếm sau nhiều tháng.</p></div>
+        </div>
+      </div>
+
+      <!-- F -->
+      <div class="script">
+        <div class="sc-top">
+          <span class="nm">F · Danh sách sai lầm, mồi lưu về</span>
+          <span class="chip c-money">Tầng đáy</span>
+          <span class="chip c-dur">30 giây</span>
+        </div>
+        <div class="beats">
+          <div class="beat">
+            <div class="sec">0 – 1,5s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Cầm cây vợt sai tầm tiền lên rồi đặt xuống dứt khoát.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · đọc to</span><p class="ovl-sm">Năm cái sai khi mua vợt cầu lông lần đầu</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">1,5 – 4s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Xoè năm ngón tay, rồi gập ba ngón lại.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Mình mắc ba trên năm cái. Cái số hai đau nhất.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">4 – 24s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Năm nhịp, mỗi nhịp 4 giây: cho thấy cái sai, rồi cho thấy cách đúng.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình</span><p>Số to 1 → 5, mỗi số một cái sai, viết cực ngắn. Số phải nằm nửa trên khung.</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">24 – 27s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Một khung tóm tắt cả năm cái sai trên cùng màn hình, chữ đủ to để chụp lại.</p></div>
+            <div class="say"><span class="lb">Lời nói</span><p>“Chụp lại cái này rồi mang ra cửa hàng.”</p></div>
+          </div>
+          <div class="beat">
+            <div class="sec">27 – 30s</div>
+            <div class="shot"><span class="lb">Hình</span><p>Về lại khung mở đầu, cây vợt trên tay.</p></div>
+            <div class="say"><span class="lb">Chữ trên hình · vòng lặp</span><p class="ovl-sm">Bạn mắc cái số mấy?</p></div>
+          </div>
+        </div>
+        <div class="sc-foot">
+          <div class="ff"><span class="lb">Phần mô tả</span><p>Năm cái sai khi mua vợt cầu lông lần đầu — mình mắc ba. Lưu lại trước khi ra cửa hàng. Bạn mắc cái số mấy? Gõ số.</p></div>
+          <div class="ff"><span class="lb">Thẻ</span><p class="tags">#caulong #caulongvietnam #votcaulong #nguoimoi</p></div>
+          <div class="ff"><span class="lb">Nhạc &amp; ghi chú dựng</span><p>Khung tóm tắt ở giây 24 chính là thứ khiến người ta bấm lưu — không có khung đó thì gần như không ai lưu. Đó cũng là lý do kịch bản này dài 30 giây chứ không ngắn hơn: cần chỗ cho khung tóm tắt.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ KHUÔN ĐIỀN ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Tự viết thêm</p>
+      <h2>Ba khuôn điền chỗ trống</h2>
+      <span class="mix">Đổi phần trong ô là ra kịch bản mới, giữ nguyên nhịp</span>
+    </div>
+
+    <div class="fills">
+      <div class="fill">
+        <h3>Khuôn mặt tiền</h3>
+        <p class="ln">“Mình <span class="bl">sợ / chưa từng / tưởng không làm được</span> <span class="bl">môn X</span>. Và mình vừa <span class="bl">làm rồi</span>”</p>
+        <p>Nhịp: nỗi sợ (1,5s) → lý do vẫn làm (2,5s) → ba nhịp làm (5s) → cảm giác sau đó (5s) → về khung đầu kèm câu hỏi môn tiếp theo.</p>
+      </div>
+      <div class="fill">
+        <h3>Khuôn lõi</h3>
+        <p class="ln">“Ngày <span class="bl">N</span> của <span class="bl">mục tiêu</span>. Hôm nay mình <span class="bl">điều tệ đã xảy ra</span>”</p>
+        <p>Nhịp: số ngày + điều tệ (1,5s) → nguyên nhân thật (2,5s) → cái mình đổi (6s) → kết quả chưa đẹp nhưng chuỗi chưa đứt (5s) → hẹn ngày sau.</p>
+      </div>
+      <div class="fill">
+        <h3>Khuôn đáy</h3>
+        <p class="ln">“<span class="bl">Món A giá X</span> và <span class="bl">món B giá Y</span> khác nhau ở đâu thật”</p>
+        <p>Nhịp: che giá rồi mở giá (5s) → ba đến bốn phép thử có tên (8s) → nhược điểm của cả hai (9s) → kết luận theo tình huống chứ không theo giá (6s) → câu hỏi.</p>
+      </div>
+    </div>
+
+    <div class="note">Ba khuôn này khớp với ba trụ ở trang chiến lược, nên cứ một tuần bảy video thì lấy: khuôn mặt tiền dùng hai đến ba lần, khuôn lõi ba lần, khuôn đáy một lần. Môn nào cắm vào khuôn nào cũng được — cái phải giữ nguyên là nhịp, không phải bộ môn.</div>
+  </section>
+
+  <!-- ============ KHO CẢNH ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Chuẩn bị</p>
+      <h2>Mười hai cảnh nên quay sẵn</h2>
+      <span class="mix">Có sẵn kho này thì dựng một video mất 20 phút, không phải hai tiếng</span>
+    </div>
+
+    <div class="shots">
+      <div class="sh"><b>Cận chân những bước đầu</b><span>Dùng mở đầu cho gần như mọi kịch bản chạy bộ.</span></div>
+      <div class="sh"><b>Ảnh Strava sau mỗi buổi</b><span>Chụp cả buổi tệ. Buổi tệ mới là buổi dùng được nhiều nhất.</span></div>
+      <div class="sh"><b>Xỏ giày và tháo giày</b><span>Hai hành động mở và đóng, dùng để bọc đầu cuối một video.</span></div>
+      <div class="sh"><b>Mở túi, bày đồ ra sàn</b><span>Cảnh nền của mọi video tầng đáy.</span></div>
+      <div class="sh"><b>Ba góc chạy</b><span>Ngang, từ sau, và góc thấp phía trước. Đủ để cắt ba nhịp không lặp.</span></div>
+      <div class="sh"><b>Pha đập cầu quay chậm</b><span>Một pha đẹp dùng lại được cả tháng.</span></div>
+      <div class="sh"><b>Pha đánh lỗi</b><span>Đừng xoá. Đây là nguyên liệu của mọi video “cái sai”.</span></div>
+      <div class="sh"><b>Mặt lúc thở dốc</b><span>Không cần đẹp. Cần thật.</span></div>
+      <div class="sh"><b>Sân lúc vắng và lúc đông</b><span>Hai không khí khác nhau cho hai loại nội dung.</span></div>
+      <div class="sh"><b>Bảng tỉ số</b><span>Bằng chứng, dùng cho kịch bản thắng và cả kịch bản thua.</span></div>
+      <div class="sh"><b>Số áo và vật phẩm giải chạy</b><span>Neo cho các kịch bản đếm ngược tới giải.</span></div>
+      <div class="sh"><b>Khung “trước – sau” cùng một góc</b><span>Quay lại đúng góc đó mỗi tháng. Ba tháng sau là có video.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHECKLIST ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Trước khi bấm đăng</p>
+      <h2>Mười ô phải tích</h2>
+      <span class="mix">Ô viền xanh là ô hay bị bỏ nhất</span>
+    </div>
+
+    <div class="chk">
+      <div class="ck hard"><i></i><span>Giây đầu đã có chữ, và chữ đó nêu <strong>cái được</strong> hoặc <strong>cái mất</strong> — không nêu tâm trạng.</span></div>
+      <div class="ck hard"><i></i><span>Đã <strong>đọc to đúng câu</strong> đang hiện trên hình.</span></div>
+      <div class="ck"><i></i><span>Thời lượng: dưới 25 giây nếu là tầng mặt tiền, dưới 45 giây nếu là lõi hoặc đáy.</span></div>
+      <div class="ck"><i></i><span>Chữ quan trọng nằm ở nửa trên khung, không lọt vào vùng TikTok phủ nút.</span></div>
+      <div class="ck hard"><i></i><span>Sáu chữ đầu phần mô tả có <strong>từ khoá người ta thật sự gõ</strong>.</span></div>
+      <div class="ck hard"><i></i><span>Phần mô tả kết bằng câu hỏi <strong>chọn một trong hai</strong> hoặc câu bắt gõ số.</span></div>
+      <div class="ck"><i></i><span>Đúng bốn thẻ: một rộng, hai ngách Việt, một riêng của kênh.</span></div>
+      <div class="ck hard"><i></i><span>Khung cuối đã nối về khung đầu.</span></div>
+      <div class="ck"><i></i><span>Nếu là tầng đáy: đã <strong>nêu giá</strong> và đã <strong>nêu nhược điểm</strong>.</span></div>
+      <div class="ck"><i></i><span>Đăng trong khung 19:30–21:30, cách video trước ít nhất sáu giờ, và đã ghim một bình luận của mình.</span></div>
+    </div>
+
+    <div class="warnbox"><strong>Một điều quan trọng hơn cả mười ô trên.</strong> Nếu giây thứ tám không trả được điều câu mở đầu đã hứa thì đừng đăng — sửa lại hoặc bỏ. Lượt xem sẽ lên rồi tụt, và lần sau TikTok đẩy ít hơn cho mọi video, không riêng video đó.</div>
+  </section>
+
+  <div class="xlink" style="margin-top:44px">
+    <span>
+      <span class="t">Kho câu mở đầu — 50 mẫu</span><br>
+      <span class="d">Đổi câu mở của sáu kịch bản trên bằng bất kỳ câu nào trong đó, nhịp giữ nguyên.</span>
+    </span>
+    <a href="cau-mo-dau.html">Mở trang →</a>
+  </div>
+
+  <div class="xlink">
+    <span>
+      <span class="t">Chiến lược nội dung — 17 trang</span><br>
+      <span class="d">Ba tầng mặt tiền / lõi / đáy được giải thích ở đó, kèm hạn mức cho nội dung “mì ăn liền”.</span>
+    </span>
+    <a href="chien-luoc.html">Mở trang →</a>
+  </div>
+
+  <footer>
+    <p><strong>Cơ sở của sáu kịch bản.</strong> Cả sáu đều dựng từ những gì kênh đã có sẵn — ảnh Strava, sân cầu, số áo giải chạy, đồ tập — và theo đúng ba tầng ở trang chiến lược. Độ dài lấy từ số liệu thật của kênh: hai video mạnh nhất dài 10 và 29 giây, còn video nhật ký 39 giây chỉ đạt 254 lượt xem.</p>
+    <p><strong>Đừng quay cả sáu trong một tuần.</strong> Một tuần bảy video theo tỉ lệ hai đến ba mặt tiền, ba lõi, một đáy. Sáu kịch bản này là sáu khuôn để lặp lại, không phải danh sách việc cần làm cho tuần đầu.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
