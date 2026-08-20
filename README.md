@@ -15,3 +15,7 @@ và 613.963 lượt xem thu từ trang công khai.
 ## Ẩn danh
 Tên kênh, link, tên riêng trong caption, tên thương hiệu và tên giải đấu đã được lược bỏ hoặc
 diễn đạt lại. Toàn bộ số liệu giữ nguyên.
+
+## Trang trong repo
+- `index.html` — bản đánh giá kênh: https://hoangf121.github.io/danh-gia-kenh-tiktok/
+- `cau-mo-dau.html` — 36 câu mở đầu viết từ bản đánh giá: https://hoangf121.github.io/danh-gia-kenh-tiktok/cau-mo-dau.html
