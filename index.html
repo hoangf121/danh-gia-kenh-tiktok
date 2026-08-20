@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex">
+<title>Audit kênh 1.9K follower</title>
+<meta name="description" content="Case study ẩn danh: một kênh TikTok thể thao 1.929 follower, 160 video, median chỉ 824 view. Vì sao nội dung tốt vẫn không lên xu hướng và không chuyển đổi.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%88%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#F4F7F4;
+  --surface:#FFFFFF;
+  --surface-2:#EDF2EE;
+  --ink:#121A16;
+  --ink-2:#3A4741;
+  --muted:#5C6A63;
+  --line:#DEE6E0;
+  --line-strong:#C6D2CB;
+  --accent:#0E7259;
+  --accent-wash:#DFEDE7;
+  --good:#2C7A50;
+  --warn:#A8620A;
+  --crit:#AD382C;
+  --shadow:0 1px 2px rgba(18,26,22,.05), 0 8px 24px -16px rgba(18,26,22,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1311;
+    --surface:#141C19;
+    --surface-2:#1A2420;
+    --ink:#E9F0EB;
+    --ink-2:#C2CFC7;
+    --muted:#8FA098;
+    --line:#25302B;
+    --line-strong:#33413A;
+    --accent:#54D3AB;
+    --accent-wash:#123026;
+    --good:#5FC98D;
+    --warn:#E0A245;
+    --crit:#E58174;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1311;
+  --surface:#141C19;
+  --surface-2:#1A2420;
+  --ink:#E9F0EB;
+  --ink-2:#C2CFC7;
+  --muted:#8FA098;
+  --line:#25302B;
+  --line-strong:#33413A;
+  --accent:#54D3AB;
+  --accent-wash:#123026;
+  --good:#5FC98D;
+  --warn:#E0A245;
+  --crit:#E58174;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;
+  font-weight:300;
+  font-size:16.5px;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px 96px}
+
+h1,h2,h3,h4,.disp{font-family:Archivo,"Arial Narrow",sans-serif;text-wrap:balance}
+h1{font-size:clamp(2.1rem,5.2vw,3.35rem);font-weight:800;letter-spacing:-.028em;line-height:1.03;margin:0}
+h2{font-size:clamp(1.35rem,3vw,1.75rem);font-weight:700;letter-spacing:-.018em;line-height:1.15;margin:0}
+h3{font-size:1.06rem;font-weight:700;letter-spacing:-.008em;margin:0}
+p{margin:0}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:italic}
+.lede{font-size:1.09rem;line-height:1.62;color:var(--ink-2);max-width:66ch}
+.prose{max-width:68ch;display:flex;flex-direction:column;gap:14px;color:var(--ink-2)}
+p.prose{display:block}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.hdr{max-width:920px;margin:0 auto;padding:44px 24px 34px;display:flex;flex-direction:column;gap:20px}
+.hdr-top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+.handle{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;
+  color:var(--accent);background:var(--accent-wash);
+  padding:5px 10px;border-radius:3px;
+}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:8px 22px}
+.hdr-meta div{display:flex;flex-direction:column;gap:1px}
+.hdr-meta b{font-family:Archivo,sans-serif;font-size:1.18rem;font-weight:700;font-variant-numeric:tabular-nums}
+.hdr-meta span{font-size:.74rem;color:var(--muted);letter-spacing:.02em}
+
+.anon{
+  margin-top:34px;background:var(--surface-2);border:1px dashed var(--line-strong);
+  border-radius:4px;padding:15px 18px;display:flex;flex-direction:column;gap:6px;
+}
+.anon p{font-size:.87rem;color:var(--muted);max-width:74ch}
+
+.verdict{
+  margin-top:20px;background:var(--surface);border:1px solid var(--line);
+  border-left:3px solid var(--accent);border-radius:4px;
+  padding:26px 28px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);
+}
+.verdict .big{font-family:Archivo,sans-serif;font-weight:700;font-size:1.22rem;line-height:1.3;letter-spacing:-.015em;color:var(--ink)}
+
+section{margin-top:60px;display:flex;flex-direction:column;gap:22px}
+.sec-head{display:flex;flex-direction:column;gap:7px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.tile{background:var(--surface);padding:17px 18px 15px;display:flex;flex-direction:column;gap:5px}
+.tile .v{font-family:Archivo,sans-serif;font-weight:700;font-size:1.62rem;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tile .k{font-size:.76rem;color:var(--muted);line-height:1.4}
+.tile .n{font-size:.72rem;color:var(--muted);opacity:.85}
+.v.warn{color:var(--warn)} .v.crit{color:var(--crit)} .v.good{color:var(--good)}
+
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:22px 22px 16px;overflow-x:auto}
+.chart-title{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;margin-bottom:20px}
+.legend{display:flex;gap:14px;font-size:.73rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.cols{display:flex;align-items:flex-end;gap:clamp(6px,1.6vw,16px);height:210px;min-width:520px;border-bottom:1px solid var(--line-strong);padding-top:24px}
+.col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+.pair{display:flex;align-items:flex-end;width:100%;height:100%;justify-content:center}
+.bar{width:56%;border-radius:2px 2px 0 0;min-height:2px}
+.bar.b{background:var(--accent)}
+.col .num{position:absolute;top:0;font-size:.64rem;color:var(--muted);font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+.xlab{display:flex;gap:clamp(6px,1.6vw,16px);min-width:520px;margin-top:10px}
+.xlab span{flex:1;text-align:center;font-size:.68rem;color:var(--muted);font-family:"IBM Plex Mono",monospace;line-height:1.65}
+.xlab b{display:block;color:var(--ink);font-family:Archivo,sans-serif;font-size:.86rem;font-weight:700;font-variant-numeric:tabular-nums}
+
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;min-width:520px;font-size:.88rem}
+th{
+  text-align:left;font-family:"IBM Plex Mono",monospace;font-weight:500;
+  font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);white-space:nowrap;
+}
+td{padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:.84rem;color:var(--ink)}
+.meter{position:relative;height:7px;background:var(--surface-2);border-radius:99px;min-width:90px}
+.meter i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:99px}
+.meter i.dim{background:var(--line-strong)}
+
+.finds{display:flex;flex-direction:column;gap:14px}
+.find{
+  background:var(--surface);border:1px solid var(--line);border-radius:4px;
+  padding:20px 22px;display:flex;flex-direction:column;gap:10px;
+}
+.find-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.chip{
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;padding:4px 8px;border-radius:3px;white-space:nowrap;
+}
+.chip.crit{background:rgba(173,56,44,.13);color:var(--crit)}
+.chip.warn{background:rgba(168,98,10,.15);color:var(--warn)}
+.chip.info{background:var(--accent-wash);color:var(--accent)}
+.find p{color:var(--ink-2);font-size:.95rem;max-width:68ch}
+.evi{
+  font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--muted);
+  background:var(--surface-2);border-radius:3px;padding:9px 12px;line-height:1.55;
+}
+
+.fix-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px}
+.fix{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:19px 20px;display:flex;flex-direction:column;gap:9px}
+.fix h3{font-size:1rem}
+.fix ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font-size:.92rem;color:var(--ink-2)}
+.fix li::marker{color:var(--accent)}
+
+.plan{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;background:var(--surface);overflow:hidden}
+.week{display:grid;grid-template-columns:86px 1fr;border-bottom:1px solid var(--line)}
+.week:last-child{border-bottom:none}
+.week-n{
+  background:var(--surface-2);border-right:1px solid var(--line);
+  padding:18px 14px;display:flex;flex-direction:column;gap:2px;align-items:flex-start;
+}
+.week-n b{font-family:Archivo,sans-serif;font-size:1.5rem;font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--accent)}
+.week-n span{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-family:"IBM Plex Mono",monospace}
+.week-b{padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.week-b ul{margin:0;padding-left:17px;display:flex;flex-direction:column;gap:6px;font-size:.92rem;color:var(--ink-2)}
+.week-b li::marker{color:var(--line-strong)}
+@media (max-width:520px){
+  .week{grid-template-columns:1fr}
+  .week-n{border-right:none;border-bottom:1px solid var(--line);flex-direction:row;align-items:baseline;gap:9px;padding:12px 16px}
+}
+
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.kpi-c{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:5px}
+.kpi-c .now{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--muted)}
+.kpi-c .goal{font-family:Archivo,sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:-.015em}
+.kpi-c .why{font-size:.85rem;color:var(--muted)}
+
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem;max-width:70ch;display:flex;flex-direction:column;gap:9px}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="hdr-top">
+      <p class="eyebrow">Case study ẩn danh · dữ liệu công khai · 20.08.2026</p>
+      <span class="handle">Kênh A · nữ · thể thao · VN</span>
+    </div>
+    <h1>Nội dung không yếu.<br>Phân phối mới là vấn đề.</h1>
+    <p class="lede">160 video gần nhất, 613.963 lượt xem. Tỉ lệ like trên video mới đạt 7–13% — cao bất thường. Nhưng 100 trong 160 video không vượt 1.000 view. Kênh đang bị giữ trong vòng người theo dõi, chưa bao giờ có một nền phân phối thật.</p>
+    <div class="hdr-meta">
+      <div><b>1.929</b><span>Followers</span></div>
+      <div><b>25K</b><span>Likes</span></div>
+      <div><b>160</b><span>Video đã quét</span></div>
+      <div><b>~1,1</b><span>Video / ngày</span></div>
+      <div><b>3,1</b><span>Follower / 1.000 view</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="anon">
+    <p class="eyebrow">Về bản công khai này</p>
+    <p>Đây là bản đã ẩn danh của một bản audit thật. Tên kênh, link, tên riêng trong caption, tên thương hiệu và tên giải đấu đã được lược bỏ hoặc diễn đạt lại. Toàn bộ số liệu giữ nguyên. Kênh được mô tả là “Kênh A”: nữ, Việt Nam, nội dung thể thao (cầu lông + chạy bộ + vài môn ngoài trời), 1.929 follower tại thời điểm đo.</p>
+  </div>
+
+  <div class="verdict">
+    <p class="eyebrow">Kết luận ngắn</p>
+    <p class="big">Kênh có hai cú hit đơn lẻ (251K và 91K) nhưng median chưa từng vượt 1.100 view. Đó không phải kênh đang tụt — đó là kênh chưa có nền. Nguyên nhân gốc: một feed đang chia cho 6 môn thể thao khác nhau, nên thuật toán không xây được cụm khán giả nào đủ dày để đẩy video ra ngoài.</p>
+    <p class="prose">Về chuyển đổi thì gần như bằng không, và đây là phần dễ sửa nhất: không có link bio, không có video ghim, không có playlist, không có series có tên, không có sản phẩm. Video có ý định mua cao nhất toàn kênh — một video liệt kê 5 món đồ nên đầu tư cho nữ mới tập (4.771 view) — là một video lẻ, không được lặp lại lần nào.</p>
+  </div>
+
+  <!-- ============ 1 ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 1</p>
+      <h2>Kênh đang thật sự ở đâu</h2>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><span class="v">3.837</span><span class="k">View trung bình / video</span><span class="n">bị 1 video 251K kéo lệch</span></div>
+      <div class="tile"><span class="v crit">824</span><span class="k">View trung vị (median)</span><span class="n">con số thật của kênh</span></div>
+      <div class="tile"><span class="v crit">100 / 160</span><span class="k">Video dưới 1.000 view</span><span class="n">62,5%</span></div>
+      <div class="tile"><span class="v warn">6 / 160</span><span class="k">Video trên 10.000 view</span><span class="n">3,75%</span></div>
+      <div class="tile"><span class="v good">7–13%</span><span class="k">Tỉ lệ like video mới</span><span class="n">chuẩn tốt là 4–6%</span></div>
+      <div class="tile"><span class="v crit">0,02%</span><span class="k">Tỉ lệ comment video top</span><span class="n">50 comment / 251K view</span></div>
+    </div>
+
+    <div class="prose">
+      <p><strong>Đọc hai con số này cạnh nhau là ra vấn đề.</strong> Video mới nhất: 254 view, 34 like — tỉ lệ like 13,4%. Một video 439 view có 31 like — 7,1%. Người xem xong thì thích thật, tỉ lệ này cao hơn hẳn mức bình thường. Nhưng video chỉ chạm tới vài trăm người. Nghĩa là TikTok đang thả video cho một nhóm test rất nhỏ (chủ yếu là follower) rồi dừng, không mở rộng ra người lạ.</p>
+      <p>Ngược lại, video 251K view chỉ có 5.781 like (2,3%) và 50 comment. Nó viral nhờ trend và nhạc, không nhờ nội dung — nên nó không kéo theo được follower hay cụm khán giả nào. 614K view tổng cộng chỉ đổi được 1.929 follower: <strong>3,1 follower trên mỗi 1.000 view</strong>. Kênh khoẻ thường ở mức 8–15.</p>
+    </div>
+
+    <div class="chart">
+      <div class="chart-title">
+        <h3>View trung vị theo nhóm 20 video, mới nhất bên trái</h3>
+        <div class="legend">
+          <span><i style="background:var(--accent)"></i>Trung vị</span>
+          <span>Số phía trên: trung bình</span>
+        </div>
+      </div>
+      <div class="cols" role="img" aria-label="Biểu đồ cột view trung vị theo từng nhóm 20 video. Cả 8 nhóm đều nằm trong khoảng 638 đến 1.139 view, gần như bằng phẳng, trong khi trung bình dao động từ 933 đến 14.471.">
+        <div class="col"><span class="num">TB 1.845</span><div class="pair"><div class="bar b" style="height:53%"></div></div></div>
+        <div class="col"><span class="num">TB 1.429</span><div class="pair"><div class="bar b" style="height:75%"></div></div></div>
+        <div class="col"><span class="num">TB 2.389</span><div class="pair"><div class="bar b" style="height:76%"></div></div></div>
+        <div class="col"><span class="num">TB 3.015</span><div class="pair"><div class="bar b" style="height:58%"></div></div></div>
+        <div class="col"><span class="num">TB 5.489</span><div class="pair"><div class="bar b" style="height:68%"></div></div></div>
+        <div class="col"><span class="num">TB 14.471</span><div class="pair"><div class="bar b" style="height:95%"></div></div></div>
+        <div class="col"><span class="num">TB 1.127</span><div class="pair"><div class="bar b" style="height:89%"></div></div></div>
+        <div class="col"><span class="num">TB 933</span><div class="pair"><div class="bar b" style="height:70%"></div></div></div>
+      </div>
+      <div class="xlab">
+        <span><b>638</b>1–20</span><span><b>895</b>21–40</span><span><b>906</b>41–60</span><span><b>700</b>61–80</span><span><b>820</b>81–100</span><span><b>1.139</b>101–120</span><span><b>1.062</b>121–140</span><span><b>837</b>141–160</span>
+      </div>
+      <p class="prose" style="margin-top:18px;font-size:.9rem">Trung bình nhóm 101–120 vọt lên 14.471 chỉ vì đúng một video 251K nằm trong đó. Còn trung vị — con số nói lên video bình thường của kênh đi được tới đâu — nằm bẹt trong khoảng <span class="mono">638–1.139</span> suốt 4 tháng, dù đã đăng hơn 160 video. <strong>Đây là phát hiện quan trọng nhất của cả bản audit:</strong> không có thời hoàng kim nào để “lấy lại”, cái nền đó chưa từng được xây.</p>
+    </div>
+  </section>
+
+  <!-- ============ 2 ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 2</p>
+      <h2>Đang dồn sức vào chủ đề yếu hơn</h2>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Hashtag</th><th style="text-align:right">Số video</th><th style="text-align:right">View TB</th><th style="width:34%">Tương quan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="tag">#runner</td><td class="num">28</td><td class="num">10.536</td><td><div class="meter"><i style="width:100%"></i></div></td></tr>
+          <tr><td class="tag">#running</td><td class="num">38</td><td class="num">8.353</td><td><div class="meter"><i style="width:79%"></i></div></td></tr>
+          <tr><td class="tag">#abseiling</td><td class="num">6</td><td class="num">5.863</td><td><div class="meter"><i style="width:56%"></i></div></td></tr>
+          <tr><td class="tag">#badminton</td><td class="num">52</td><td class="num">3.194</td><td><div class="meter"><i class="dim" style="width:30%"></i></div></td></tr>
+          <tr><td class="tag">#caulong</td><td class="num">61</td><td class="num">2.930</td><td><div class="meter"><i class="dim" style="width:28%"></i></div></td></tr>
+          <tr><td class="tag">#badmintonlovers</td><td class="num">42</td><td class="num">1.582</td><td><div class="meter"><i class="dim" style="width:15%"></i></div></td></tr>
+          <tr><td class="tag">#trail</td><td class="num">12</td><td class="num">1.261</td><td><div class="meter"><i class="dim" style="width:12%"></i></div></td></tr>
+          <tr><td class="tag">#training</td><td class="num">14</td><td class="num">720</td><td><div class="meter"><i class="dim" style="width:7%"></i></div></td></tr>
+          <tr><td class="tag">#easyrun</td><td class="num">5</td><td class="num">530</td><td><div class="meter"><i class="dim" style="width:5%"></i></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p><strong>61 video gắn #caulong, trung bình 2.930 view. 38 video gắn #running, trung bình 8.353 view.</strong> Chạy bộ đang hiệu quả gấp gần 3 lần cầu lông, nhưng cầu lông lại được đăng nhiều hơn 60%. Đây là sai lệch phân bổ rõ ràng nhất trong kênh.</p>
+      <p>Lý do rất dễ hiểu: pool khán giả chạy bộ ở Việt Nam đang lớn và đang được TikTok đẩy mạnh (race, PR, marathon), còn nội dung cầu lông của kênh đa phần là clip đánh cầu không có bối cảnh — người lạ không có lý do để xem hết. Đáng chú ý là <span class="mono">#caulongvietnam</span> (9 video) đạt trung bình 11.314 view, cao hơn <span class="mono">#badmintonlovers</span> gấp 7 lần: hashtag cộng đồng Việt hoạt động tốt, hashtag tiếng Anh chung chung thì không.</p>
+      <p><span class="mono">#training</span>, <span class="mono">#easyrun</span> và hashtag riêng của kênh đều dưới 800 view — đây là các tag nhật ký tập luyện. Chúng đang kéo video vào đúng nhóm khán giả nhỏ nhất.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3 ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 3</p>
+      <h2>7 điểm cần sửa, theo mức độ</h2>
+    </div>
+
+    <div class="finds">
+
+      <div class="find">
+        <div class="find-head"><span class="chip crit">Chặn tăng trưởng</span><h3>Một feed đang gánh 6 môn thể thao</h3></div>
+        <p>Cầu lông, chạy bộ, trail, freediving, gokart, abseiling, trekking — cộng thêm vài video selfie không thể thao. Mỗi lần đổi môn, TikTok phải đi tìm lại khán giả từ đầu; cụm khán giả nào cũng không kịp dày. Bio của kênh viết đúng nguyên nhân: tự giới thiệu là người đang thử hết mọi môn thể thao mình thích. Với người xem thì đó là sở thích; với thuật toán thì đó là nhiễu.</p>
+        <p class="evi">Cần: 1 trụ chính (chạy bộ — view TB cao nhất) + 1 trụ phụ (cầu lông — nơi có cộng đồng). Môn lạ giữ tối đa 1/8 video, và chỉ khi có hook mạnh.</p>
+      </div>
+
+      <div class="find">
+        <div class="find-head"><span class="chip crit">Chặn chuyển đổi</span><h3>Không có bất kỳ đường dẫn ra khỏi video</h3></div>
+        <p>Không link bio, không video ghim, không playlist, không series có tên, không sản phẩm, không CTA cuối video, không nhóm cộng đồng. Người xem thích video xong thì hết — không có chỗ nào để đi tiếp. Đây là lý do 614K view chỉ ra 1.929 follower.</p>
+        <p class="evi">Video liệt kê 5 món đồ nên đầu tư cho nữ mới tập — 4.771 view, format có ý định mua cao nhất kênh — chỉ xuất hiện đúng một lần.</p>
+      </div>
+
+      <div class="find">
+        <div class="find-head"><span class="chip crit">Chặn phân phối</span><h3>Comment gần như không có</h3></div>
+        <p>Video top: 251.200 view / 50 comment. Video 91K: 52 comment. Chỉ 3 trong 34 caption gần nhất có câu hỏi. Comment và save là hai tín hiệu xếp hạng mạnh nhất sau thời gian xem — kênh đang tự bỏ cả hai.</p>
+        <p class="evi">Điểm sáng: video top có 899 save so với 50 comment. Khán giả đang coi nội dung là “hữu ích để lưu lại” — nên nội dung dạng checklist, hướng dẫn, review sẽ ăn.</p>
+      </div>
+
+      <div class="find">
+        <div class="find-head"><span class="chip warn">Định dạng</span><h3>Format thắng bị đăng ít, format thua bị đăng nhiều</h3></div>
+        <p>Hai video mạnh nhất đều ngắn và bám trend: 251K ở 10 giây, 91K ở 29 giây. Video mới nhất là nhật ký một buổi tập trong chuỗi 42KM, dài 39 giây — 254 view. Nhật ký tập luyện là nội dung dành cho người đã theo dõi, không phải nội dung để tiếp cận người lạ.</p>
+        <p class="evi">Đề xuất: nội dung tiếp cận giữ 12–25 giây. Trên 35 giây chỉ dùng khi có câu chuyện và có payoff ở cuối.</p>
+      </div>
+
+      <div class="find">
+        <div class="find-head"><span class="chip warn">Vận hành</span><h3>Đăng vào giờ khán giả đang ngủ</h3></div>
+        <p>Trong 34 video gần nhất, một lượng lớn được đăng khoảng <span class="mono">23:00–02:00</span> giờ Việt Nam. Giờ đăng cũng rải rác không theo khung nào, nên TikTok không học được nhịp của kênh. Có ngày đăng 2 video cách nhau đúng 2 phút — hai video đó tự chia phần phân phối của nhau.</p>
+        <p class="evi">Khung nên thử: <span class="mono">11:30–13:00</span> và <span class="mono">19:30–21:30</span>. Một video mỗi ngày, hai video cách nhau tối thiểu 6 giờ.</p>
+      </div>
+
+      <div class="find">
+        <div class="find-head"><span class="chip warn">Caption</span><h3>Caption viết theo cảm xúc, không theo từ khoá</h3></div>
+        <p>Caption trung bình 100 ký tự, 3,1 hashtag — độ dài ổn. Nhưng nội dung là tâm trạng và câu động lực chung chung. Không ai gõ những cụm đó vào ô tìm kiếm. TikTok Search giờ là nguồn traffic thật, và caption cần chứa đúng câu người ta thật sự tìm.</p>
+        <p class="evi">Đổi “tin vào quá trình” → “Chạy 5km cho người mới bắt đầu — 4 tuần đầu tôi làm gì”. Vẫn giữ được cảm xúc, nhưng có từ khoá đứng đầu.</p>
+      </div>
+
+      <div class="find">
+        <div class="find-head"><span class="chip info">Đòn bẩy sẵn có</span><h3>Collab đã chứng minh hiệu quả nhưng chưa dùng lại</h3></div>
+        <p>Chuỗi video theo một chiến dịch gây quỹ của giải marathon là nhóm nội dung mới hoạt động tốt nhất: 14.200 / 5.394 / 4.069 / 1.502 view — cao hơn nhiều lần median 824. Video có mời một creator khác cùng chạy đạt 737 view so với 254–500 của các video đơn cùng thời điểm.</p>
+        <p class="evi">Nội dung có sự kiện, có lý do, có người thứ hai đều thắng. Đây là hướng nên đẩy mạnh, không phải làm một lần rồi thôi.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 4 ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 4</p>
+      <h2>Việc cần làm</h2>
+    </div>
+
+    <h3 style="margin-top:4px">Để lên xu hướng</h3>
+    <div class="fix-grid">
+      <div class="fix">
+        <h3>Chốt trụ nội dung</h3>
+        <ul>
+          <li><strong>60% chạy bộ</strong> — trụ tăng trưởng, view TB cao nhất</li>
+          <li><strong>30% cầu lông</strong> — trụ cộng đồng, ưu tiên <span class="mono">#caulongvietnam</span></li>
+          <li><strong>10% còn lại</strong> — môn khác, chỉ khi có hook riêng</li>
+          <li>Bỏ hẳn selfie / video không thể thao khỏi feed chính</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Sửa 1,5 giây đầu</h3>
+        <ul>
+          <li>Chữ overlay đầu tiên phải nêu <em>cái được</em> hoặc <em>cái mất</em>, không nêu tâm trạng</li>
+          <li>“Ngày 5/42KM” → “Tuần đầu chạy 42KM tôi làm sai 3 thứ này”</li>
+          <li>Khung hình đầu là hành động, không phải cảnh mở đầu</li>
+          <li>Không dùng 2 giây đầu để chào</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Nhạc &amp; độ dài</h3>
+        <ul>
+          <li>Nâng tỉ lệ nhạc trend lên ~80% (hiện 68%)</li>
+          <li>Bắt trend trong 48 giờ đầu, không dùng khi trend đã bão hoà</li>
+          <li>Âm thanh gốc chỉ dùng cho video nói / chia sẻ kinh nghiệm</li>
+          <li>Tiếp cận: 12–25 giây. Kể chuyện: tối đa 45 giây, có payoff</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Kỹ thuật lấy comment</h3>
+        <ul>
+          <li>Mỗi caption kết bằng câu hỏi <em>chọn A hay B</em>, không hỏi mở</li>
+          <li>Cố ý để một chi tiết sai nhỏ để người xem sửa</li>
+          <li>Trả lời comment bằng video trong 24 giờ đầu</li>
+          <li>Ghim 1 comment của mình để mở hướng bàn luận</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Hashtag &amp; tìm kiếm</h3>
+        <ul>
+          <li>4 tag: 1 rộng + 2 ngách Việt + 1 riêng của kênh</li>
+          <li>Giữ <span class="mono">#caulongvietnam</span>, <span class="mono">#running</span>, <span class="mono">#runner</span></li>
+          <li>Bỏ <span class="mono">#badmintonlovers</span>, <span class="mono">#training</span>, <span class="mono">#easyrun</span>, <span class="mono">#fyp</span></li>
+          <li>Đặt từ khoá tìm kiếm ở 6 chữ đầu caption</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Series có tên</h3>
+        <ul>
+          <li>Chuỗi 42KM đã có sẵn — đặt tên, đánh số, làm playlist</li>
+          <li>Thêm 1 series cầu lông cố định, ví dụ “Sai lầm của newbie”</li>
+          <li>Mỗi series 1 khung giờ + 1 kiểu thumbnail riêng</li>
+          <li>Người xem cần biết trước họ sắp được xem gì</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:26px">Để có chuyển đổi</h3>
+    <div class="fix-grid">
+      <div class="fix">
+        <h3>Dựng phễu — làm được trong 1 buổi</h3>
+        <ul>
+          <li>Thêm link bio (Beacons / Linktree)</li>
+          <li>Ghim 3 video: hook mạnh nhất, bằng chứng (PR race), sản phẩm (review đồ)</li>
+          <li>Tạo playlist theo môn để người mới xem liền mạch</li>
+          <li>CTA cuối video trỏ về bio, không trỏ chung chung</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Viết lại bio</h3>
+        <ul>
+          <li>Hiện tại nói <em>bạn là ai</em>. Cần nói <em>người xem được gì</em></li>
+          <li>Gợi ý: “Cầu lông &amp; chạy bộ cho nữ mới bắt đầu · review đồ tập thật”</li>
+          <li>Nêu rõ đối tượng — “nữ mới bắt đầu” là ngách có sức mua</li>
+          <li>Một dòng, một đối tượng, một lợi ích</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Trụ review đồ — 1 video/tuần</h3>
+        <ul>
+          <li>Vợt, giày, váy cầu lông, áo bra, đồng hồ chạy</li>
+          <li>Format thắng: so sánh 2 món, và “sai lầm khi mua”</li>
+          <li>Nêu giá và nêu cả nhược điểm — đây là thứ tạo lòng tin</li>
+          <li>899 save trên video top cho thấy khán giả sẵn sàng lưu để mua</li>
+        </ul>
+      </div>
+      <div class="fix">
+        <h3>Kiếm tiền</h3>
+        <ul>
+          <li>Đăng ký TikTok Shop Affiliate ngay khi đủ điều kiện</li>
+          <li>Làm media kit: 25K like, 1 video 251K, ngách nữ thể thao</li>
+          <li>Ưu tiên brand vợt / giày / đồ tập — đúng nội dung sẵn có</li>
+          <li>Nội dung có tài trợ đã chứng minh chạy tốt</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5 ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 5</p>
+      <h2>Lộ trình 4 tuần</h2>
+      <p class="prose" style="font-size:.92rem">Thứ tự này quan trọng: dựng phễu trước, rồi mới đổ traffic vào. Đẩy reach khi chưa có chỗ để người xem đi tiếp là đổ view xuống cống.</p>
+    </div>
+
+    <div class="plan">
+      <div class="week">
+        <div class="week-n"><b>01</b><span>Tuần 1</span></div>
+        <div class="week-b">
+          <h3>Dọn nhà</h3>
+          <ul>
+            <li>Viết lại bio, thêm link bio</li>
+            <li>Ghim 3 video, tạo playlist theo môn</li>
+            <li>Chốt tỉ lệ 60/30/10 và khung giờ đăng cố định</li>
+            <li>Vào Creator Center ghi lại số nền: thời gian xem TB, nguồn traffic, tỉ lệ xem hết của 20 video gần nhất</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week-n"><b>02</b><span>Tuần 2</span></div>
+        <div class="week-b">
+          <h3>Test hook và độ dài</h3>
+          <ul>
+            <li>7 video, tất cả 12–25 giây, tất cả dùng nhạc trend</li>
+            <li>Mỗi caption có 1 câu hỏi chọn A/B</li>
+            <li>Ra mắt series 42KM có tên và số thứ tự</li>
+            <li>Đăng 1 video/ngày trong khung 19:30–21:30</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week-n"><b>03</b><span>Tuần 3</span></div>
+        <div class="week-b">
+          <h3>Mở trụ review đồ</h3>
+          <ul>
+            <li>2 video review có nêu giá và nhược điểm</li>
+            <li>1 video “5 sai lầm khi mua vợt cầu lông” — dạng save-bait</li>
+            <li>1 collab hoặc duet với creator cùng ngách</li>
+            <li>So khung 11:30–13:00 với khung tối ở tuần 2</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week-n"><b>04</b><span>Tuần 4</span></div>
+        <div class="week-b">
+          <h3>Nhân bản cái thắng</h3>
+          <ul>
+            <li>Lấy 3 video tốt nhất trong 3 tuần, làm lại mỗi cái 2 biến thể</li>
+            <li>Chốt 2 format cố định để chạy dài hạn</li>
+            <li>Đối chiếu follower/1.000 view với mốc 3,1 hiện tại</li>
+            <li>Đăng ký affiliate hoặc gửi media kit cho 5 brand</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6 ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 6</p>
+      <h2>Đo bằng 4 số này, không đo bằng lượt xem</h2>
+    </div>
+    <div class="kpi">
+      <div class="kpi-c">
+        <p class="now">Hiện tại: 824</p>
+        <p class="goal">View trung vị &gt; 3.000</p>
+        <p class="why">Chỉ số duy nhất cho biết nền phân phối có được xây hay không. Bỏ qua view trung bình.</p>
+      </div>
+      <div class="kpi-c">
+        <p class="now">Hiện tại: 3,1</p>
+        <p class="goal">Follower / 1.000 view &gt; 8</p>
+        <p class="why">Cho biết người lạ có lý do bấm theo dõi hay không. Đây là thước đo của định vị kênh.</p>
+      </div>
+      <div class="kpi-c">
+        <p class="now">Hiện tại: ~0,02%</p>
+        <p class="goal">Comment / view &gt; 0,5%</p>
+        <p class="why">Tín hiệu đẩy mạnh thứ hai sau thời gian xem. Đang gần bằng không nên còn rất nhiều chỗ tăng.</p>
+      </div>
+      <div class="kpi-c">
+        <p class="now">Chưa theo dõi</p>
+        <p class="goal">Save / view &gt; 1,5%</p>
+        <p class="why">Save đang là điểm mạnh sẵn có (899/251K). Đây là chỉ số dự báo doanh thu review đồ.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Phạm vi dữ liệu.</strong> Toàn bộ số liệu lấy từ trang công khai của kênh ngày 20.08.2026: 160 video gần nhất (khoảng tháng 4 đến 18.08.2026), tổng 613.963 lượt xem, cộng thêm số like / comment / save / độ dài của 5 video được mở kiểm tra riêng.</p>
+    <p><strong>Chưa kiểm tra được.</strong> Thời gian xem trung bình, tỉ lệ xem hết video, nguồn traffic (FYP so với Search so với Following) và nhân khẩu học người theo dõi — những số này chỉ có trong Creator Center. Hai chẩn đoán “video quá dài” và “bị giữ trong vòng follower” cần xác nhận lại bằng mục <em>Traffic source</em> và <em>Average watch time</em> trước khi làm theo hoàn toàn.</p>
+    <p>Bản công khai đã ẩn danh · phân tích thực hiện 20.08.2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
