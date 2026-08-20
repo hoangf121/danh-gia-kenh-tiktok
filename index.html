@@ -126,7 +126,9 @@ header{border-bottom:1px solid var(--line);background:var(--surface)}
 section{margin-top:60px;display:flex;flex-direction:column;gap:22px}
 .sec-head{display:flex;flex-direction:column;gap:7px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+@media (max-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.tiles{grid-template-columns:1fr}}
 .tile{background:var(--surface);padding:17px 18px 15px;display:flex;flex-direction:column;gap:5px}
 .tile .v{font-family:Archivo,sans-serif;font-weight:700;font-size:1.62rem;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .tile .k{font-size:.76rem;color:var(--muted);line-height:1.4}
