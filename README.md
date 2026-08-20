@@ -5,7 +5,7 @@ gần nhất và 613.963 lượt xem thu từ trang công khai.
 
 ## Ba trang
 1. **Bản đánh giá kênh** — https://hoangf121.github.io/danh-gia-kenh-tiktok/
-2. **Kho câu mở đầu (36 mẫu)** — https://hoangf121.github.io/danh-gia-kenh-tiktok/cau-mo-dau.html
+2. **Kho câu mở đầu (50 mẫu, gồm 14 câu cường độ cao)** — https://hoangf121.github.io/danh-gia-kenh-tiktok/cau-mo-dau.html
 3. **Chiến lược nội dung (17 trang trình bày)** — https://hoangf121.github.io/danh-gia-kenh-tiktok/chien-luoc.html
 
 ## Kết luận chính
