@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex">
+<meta name="description" content="Đo lại kênh sau bốn ngày: việc nào đã làm, ba chỗ bản đánh giá cũ nói sai, và bảy điểm đọc lại theo thị hiếu TikTok Việt.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%81%3C/text%3E%3C/svg%3E">
+<title>Đo lại sau bốn ngày</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#F4F7F4;
+  --surface:#FFFFFF;
+  --surface-2:#EDF2EE;
+  --ink:#121A16;
+  --ink-2:#3A4741;
+  --muted:#5C6A63;
+  --line:#DEE6E0;
+  --line-strong:#C6D2CB;
+  --accent:#0E7259;
+  --accent-wash:#DFEDE7;
+  --good:#2C7A50;
+  --warn:#A8620A;
+  --crit:#AD382C;
+  --violet:#5B4A9B;
+  --shadow:0 1px 2px rgba(18,26,22,.05), 0 8px 24px -16px rgba(18,26,22,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1311;
+    --surface:#141C19;
+    --surface-2:#1A2420;
+    --ink:#E9F0EB;
+    --ink-2:#C2CFC7;
+    --muted:#8FA098;
+    --line:#25302B;
+    --line-strong:#33413A;
+    --accent:#54D3AB;
+    --accent-wash:#123026;
+    --good:#5FC98D;
+    --warn:#E0A245;
+    --crit:#E58174;
+    --violet:#A99BE0;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1311;
+  --surface:#141C19;
+  --surface-2:#1A2420;
+  --ink:#E9F0EB;
+  --ink-2:#C2CFC7;
+  --muted:#8FA098;
+  --line:#25302B;
+  --line-strong:#33413A;
+  --accent:#54D3AB;
+  --accent-wash:#123026;
+  --good:#5FC98D;
+  --warn:#E0A245;
+  --crit:#E58174;
+  --violet:#A99BE0;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;
+  font-weight:300;font-size:16.5px;line-height:1.66;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px 96px}
+
+h1,h2,h3,h4{font-family:Archivo,"Arial Narrow",sans-serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,5.2vw,3.25rem);font-weight:800;letter-spacing:-.03em;line-height:1.03}
+h2{font-size:clamp(1.3rem,3vw,1.72rem);font-weight:700;letter-spacing:-.018em;line-height:1.15}
+h3{font-size:1.04rem;font-weight:700;letter-spacing:-.008em}
+p{margin:0}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:italic}
+.lede{font-size:1.07rem;line-height:1.62;color:var(--ink-2);max-width:64ch}
+.prose{max-width:68ch;color:var(--ink-2)}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.hdr{max-width:920px;margin:0 auto;padding:44px 24px 32px;display:flex;flex-direction:column;gap:18px}
+.hdr-top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+.badge{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.74rem;
+  color:var(--accent);background:var(--accent-wash);padding:5px 10px;border-radius:3px;
+}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:2px}
+.hdr-meta div{display:flex;flex-direction:column;gap:1px}
+.hdr-meta b{font-family:Archivo,sans-serif;font-size:1.16rem;font-weight:700;font-variant-numeric:tabular-nums}
+.hdr-meta span{font-size:.74rem;color:var(--muted)}
+
+.xlink{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:15px 18px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;justify-content:space-between}
+.xlink .t{font-family:Archivo,sans-serif;font-weight:700;font-size:.98rem;letter-spacing:-.01em}
+.xlink .d{font-size:.85rem;color:var(--muted)}
+.xlink a{font-family:"IBM Plex Mono",monospace;font-size:.8rem;white-space:nowrap}
+
+section{margin-top:56px;display:flex;flex-direction:column;gap:20px}
+.sec-head{display:flex;flex-direction:column;gap:7px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sec-head .mix{
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--accent);
+  background:var(--accent-wash);padding:3px 8px;border-radius:3px;align-self:flex-start;
+}
+
+.note{background:var(--accent-wash);border-left:3px solid var(--accent);border-radius:3px;padding:14px 17px;font-size:.9rem;color:var(--ink-2);max-width:72ch}
+.warnbox{background:var(--surface-2);border-left:3px solid var(--warn);border-radius:3px;padding:14px 17px;font-size:.88rem;color:var(--muted);max-width:72ch;line-height:1.6}
+
+/* corrections */
+.fixes{margin-top:34px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--crit);border-radius:4px;padding:24px 26px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow)}
+.fx-grid{display:flex;flex-direction:column;gap:15px}
+.fx{display:grid;grid-template-columns:minmax(150px,.85fr) 1.5fr;gap:6px 22px;align-items:baseline;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.fx:last-child{border-bottom:none;padding-bottom:0}
+.fx .was{font-size:.9rem;color:var(--crit);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--line-strong)}
+.fx .now{font-size:.94rem;color:var(--ink-2)}
+.fx .now b{font-family:Archivo,sans-serif;font-weight:700;letter-spacing:-.012em;color:var(--ink);display:block;margin-bottom:2px}
+
+/* tables */
+.tbl{border:1px solid var(--line);border-radius:4px;background:var(--surface);overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:520px;font-size:.92rem}
+th{
+  text-align:left;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.63rem;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  padding:11px 17px;border-bottom:1px solid var(--line);background:var(--surface-2);white-space:nowrap;
+}
+td{padding:12px 17px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+td.big{font-family:Archivo,sans-serif;font-weight:700;font-size:1.02rem;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--good)} .dn{color:var(--crit)} .mid{color:var(--warn)}
+.pill{
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;
+  padding:3px 8px;border-radius:3px;white-space:nowrap;display:inline-block;
+}
+.p-no{background:rgba(173,56,44,.13);color:var(--crit)}
+.p-part{background:rgba(168,98,10,.15);color:var(--warn)}
+.p-yes{background:var(--accent-wash);color:var(--accent)}
+td .ev{display:block;font-size:.85rem;color:var(--muted);margin-top:4px;line-height:1.5}
+.hh{font-family:"IBM Plex Mono",monospace;font-size:.86rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hh.bad{color:var(--crit)} .hh.ok{color:var(--good)}
+
+/* taste cards */
+.taste{display:flex;flex-direction:column;gap:13px}
+.ts{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:19px 22px;display:flex;flex-direction:column;gap:9px}
+.ts.key{border-left:3px solid var(--accent)}
+.ts h3{font-size:1.06rem;line-height:1.28}
+.ts p{font-size:.94rem;color:var(--ink-2);max-width:70ch}
+.ts .sw{
+  font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted);
+  background:var(--surface-2);border-radius:3px;padding:10px 13px;line-height:1.65;max-width:72ch;
+}
+.ts .sw i{color:var(--crit);font-style:normal}
+.ts .sw b{color:var(--accent);font-weight:500}
+
+/* ordered tasks */
+.tasks{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;background:var(--surface);overflow:hidden}
+.tk{display:grid;grid-template-columns:66px 1fr;border-bottom:1px solid var(--line)}
+.tk:last-child{border-bottom:none}
+.tk-n{background:var(--surface-2);border-right:1px solid var(--line);padding:16px 12px;display:flex;align-items:flex-start;justify-content:center}
+.tk-n b{font-family:Archivo,sans-serif;font-size:1.3rem;font-weight:800;line-height:1;color:var(--accent)}
+.tk-b{padding:16px 20px;display:flex;flex-direction:column;gap:5px}
+.tk-b p{font-size:.93rem;color:var(--ink-2);max-width:66ch}
+@media (max-width:520px){
+  .tk{grid-template-columns:1fr}
+  .tk-n{border-right:none;border-bottom:1px solid var(--line);justify-content:flex-start;padding:11px 18px}
+}
+
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem;max-width:70ch;display:flex;flex-direction:column;gap:9px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="hdr">
+    <div class="hdr-top">
+      <p class="eyebrow">Trang 5 · Đo lại · 24.08.2026 · bốn ngày sau bản đánh giá</p>
+      <span class="badge">5 video mới · trung vị 627</span>
+    </div>
+    <h1>Nền chưa nhúc nhích.<br>Nhưng chưa có gì để kết luận.</h1>
+    <p class="lede">Bốn ngày, năm video. Giờ đăng đã đổi — nhưng đó là mục thứ năm trong bảy mục, và bốn mục trên nó vẫn nguyên. Trang này đối chiếu việc nào đã làm, sửa lại ba chỗ bản đánh giá cũ nói sai, rồi đọc lại kênh theo thị hiếu TikTok Việt.</p>
+    <div class="hdr-meta">
+      <div><b>1.956</b><span>Người theo dõi · +27 trong 4 ngày</span></div>
+      <div><b>25,8K</b><span>Lượt thích · từ 25K</span></div>
+      <div><b>627</b><span>Trung vị 5 video mới</span></div>
+      <div><b>824</b><span>Trung vị 160 video cũ</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ SỬA LẠI ============ -->
+  <div class="fixes">
+    <p class="eyebrow">Ba chỗ bản đánh giá cũ nói sai</p>
+    <div class="fx-grid">
+      <div class="fx">
+        <p class="was">“Tỉ lệ thích 7–13%, cao bất thường”</p>
+        <p class="now"><b>Con số đó là ảo.</b> Nó đo trên một video mới đăng bốn tiếng — lúc đó lượt thích đã có mà lượt xem chưa tới. Video ấy hôm nay là 2.597 lượt xem. Tỉ lệ thích thật của kênh ở mức bình thường.</p>
+      </div>
+      <div class="fx">
+        <p class="was">“Nội dung không yếu, chỉ phân phối yếu”</p>
+        <p class="now"><b>Phải hạ xuống: nội dung ở mức trung bình.</b> Kết luận cũ dựa vào tỉ lệ thích ảo ở trên. Điều này quan trọng — nó nghĩa là phần nội dung cũng cần sửa, không chỉ phần phân phối.</p>
+      </div>
+      <div class="fx">
+        <p class="was">“Đăng 23:00–02:00 là lúc khán giả đang ngủ”</p>
+        <p class="now"><b>Nói quá.</b> Với TikTok Việt, 21:00–23:00 vẫn là giờ tốt. Sau 00:00 mới thật sự yếu. Lỗi thật của tuần rồi không phải giờ muộn — mà là <em>hai video đăng cách nhau chưa tới một phút</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 1. SỐ LIỆU CHƯA CHÍN ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 1</p>
+      <h2>Số liệu bạn đang thấy chưa chín</h2>
+      <span class="mix">Cùng những video đó, đo ngày 20.08 và đo lại hôm nay</span>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Video</th><th style="text-align:right">20.08</th><th style="text-align:right">24.08</th><th style="text-align:right">Hệ số</th></tr></thead>
+        <tbody>
+          <tr><td>Day 5/42KM <span class="ev">lúc đo chỉ mới đăng 4 tiếng</span></td><td class="n">254</td><td class="big">2.597</td><td class="big up">×10,2</td></tr>
+          <tr><td>Lông thủ và runner</td><td class="n">1.783</td><td class="big">2.608</td><td class="big up">×1,46</td></tr>
+          <tr><td>Tin vào quá trình</td><td class="n">439</td><td class="big">610</td><td class="big up">×1,39</td></tr>
+          <tr><td>Dụ bạn chạy 5KM</td><td class="n">737</td><td class="big">856</td><td class="big mid">×1,16</td></tr>
+          <tr><td>10K gây quỹ</td><td class="n">5.394</td><td class="big">5.696</td><td class="big mid">×1,06</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="prose">Video của kênh tăng chậm trong ngày đầu rồi mới chảy tiếp. Năm video mới nhất — 237 đến 1.501 lượt xem — mới đăng một đến bốn ngày, nên chúng sẽ còn tăng và rơi vào đúng dải 600–2.500 như bốn tháng qua. <strong>Nền chưa nhúc nhích, nhưng bốn ngày cũng chưa đủ để kết luận là hỏng.</strong></p>
+
+    <div class="warnbox"><strong>Cách đọc đúng từ giờ.</strong> Đừng nhìn lượt xem của video mới đăng, và đừng nhìn từng video. Đợi ba tuần, rồi đo trung vị của hai mươi video. Mọi con số dưới 72 giờ đều đang nói dối theo hướng bi quan.</div>
+  </section>
+
+  <!-- ============ 2. NĂM VIDEO MỚI ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 2</p>
+      <h2>Năm video mới, đọc từng cái</h2>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Giờ đăng (VN)</th><th style="text-align:right">Xem</th><th>Nội dung · nhạc · thẻ</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="hh ok">21.08 · 20:45</td>
+            <td class="big up">1.501</td>
+            <td>Day 6/42KM — nhanh hơn, nhịp tim ổn định hơn<span class="ev">Âm thanh gốc · <span class="mono">#chaybo #running #janiechaybo #easyrunning #roadto42km</span></span></td>
+          </tr>
+          <tr>
+            <td class="hh ok">23.08 · 13:45</td>
+            <td class="big">1.041</td>
+            <td>Luyện tập leo núi Bà Đen cho giải tuần sau<span class="ev">Âm thanh gốc · <span class="mono">#janiechaybo #leonuibadentayninh #cungcotdien</span> — không còn thẻ chạy bộ</span></td>
+          </tr>
+          <tr>
+            <td class="hh">22.08 · 23:05</td>
+            <td class="big">627</td>
+            <td>Đi trail một mình thì được, đi nhiều mình thì vui hơn<span class="ev">Âm thanh gốc · cùng bộ thẻ trên — không còn thẻ chạy bộ</span></td>
+          </tr>
+          <tr>
+            <td class="hh bad">20.08 · 23:59</td>
+            <td class="big dn">323</td>
+            <td>“mọi người có thích chơi cầu lông hông? hãy cmt cho mình biết thêm các lý do…”<span class="ev">Nhạc Việt remix · <span class="mono">#caulongvietnam #cầulông #janiecaulong</span> — câu hỏi mở</span></td>
+          </tr>
+          <tr>
+            <td class="hh bad">20.08 · 23:59</td>
+            <td class="big dn">237</td>
+            <td>“Mình là Ngộ Hen, đệ tử của Ngộ Không. Lên sân là mình múa”<span class="ev">Âm thanh gốc · <span class="mono">#caulongvietnam #cầulông</span> — đăng cách video trên chưa tới một phút</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note"><strong>Bằng chứng lời khuyên có tác dụng khi áp đúng.</strong> Video duy nhất vừa đăng trong khung tối vừa giữ <span class="mono">#chaybo #running</span> là video 1.501 lượt xem — cao nhất cả đợt, gấp 2,4 lần hai video đăng trùng nhau lúc nửa đêm. Hai video bỏ thẻ chạy bộ tụt xuống 1.041 và 627, dù chủ đề vẫn là chạy.</div>
+  </section>
+
+  <!-- ============ 3. ĐỐI CHIẾU ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 3</p>
+      <h2>Việc nào đã làm, việc nào chưa</h2>
+      <span class="mix">Giờ đăng là mục thứ 5 trong 7 mục — bốn mục trên nó vẫn nguyên</span>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Việc đề xuất</th><th>Tình trạng</th><th>Bằng chứng trên kênh</th></tr></thead>
+        <tbody>
+          <tr><td>Khung giờ tối</td><td><span class="pill p-part">Một phần</span></td><td>2 trong 5 video đúng khung — 20:45 và 13:45. Ba video còn lại 23:05 và hai cái 23:59.</td></tr>
+          <tr><td>Hai video cách nhau ≥ 6 giờ</td><td><span class="pill p-no">Không</span></td><td>Ngày 20.08 đăng hai video cách nhau chưa tới một phút. Chúng tự chia phần phân phối, và đúng hai cái đó là 237 và 323 — thấp nhất cả đợt.</td></tr>
+          <tr><td>Nhạc thịnh hành ≥ 80%</td><td><span class="pill p-no">Đi ngược</span></td><td>4 trong 5 video dùng âm thanh gốc. Đây là thay đổi có hại nhất trong đợt này.</td></tr>
+          <tr><td>Câu mở nêu cái được hoặc cái mất</td><td><span class="pill p-no">Không</span></td><td>“Day 6/42KM — nhanh hơn và nhịp tim ổn định hơn” vẫn là câu mở nhật ký, không có gì bị đe doạ.</td></tr>
+          <tr><td>Câu hỏi chọn một trong hai</td><td><span class="pill p-no">Không</span></td><td>“hãy cmt cho mình biết thêm các lý do mn đến với môn này” — đúng loại câu hỏi mở đã nói là không ai trả lời.</td></tr>
+          <tr><td>Giữ <span class="mono">#running #runner</span></td><td><span class="pill p-no">Bỏ ở 2/5</span></td><td>Hai video chủ đề chạy bộ không còn thẻ chạy bộ nào. Đây là bộ thẻ mạnh nhất kênh — trung bình 8.353 và 10.536.</td></tr>
+          <tr><td>Bỏ <span class="mono">#janiechaybo</span></td><td><span class="pill p-no">Không</span></td><td>3 trong 5 video vẫn dùng. Thẻ riêng của kênh trung bình 444 lượt xem.</td></tr>
+          <tr><td>Link ở phần giới thiệu</td><td><span class="pill p-no">Chưa</span></td><td>Phần giới thiệu y nguyên, không có đường dẫn nào.</td></tr>
+          <tr><td>Ghim 3 video · danh sách phát</td><td><span class="pill p-no">Chưa</span></td><td>Không có video ghim, không có danh sách phát.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="prose">Nói gọn: <strong>tuần rồi chỉ đổi giờ đăng, và đổi được một nửa.</strong> Mục giờ đăng nằm ở vị trí thứ năm trong bảy mục của bản đánh giá. Bốn mục xếp trên nó — trục nội dung, phễu chuyển đổi, bình luận, định dạng — chưa động tới mục nào. Nên việc nền không nhúc nhích là điều đúng như dự đoán, không phải dấu hiệu lời khuyên sai.</p>
+  </section>
+
+  <!-- ============ 4. THỊ HIẾU VN ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 4</p>
+      <h2>Đọc lại theo thị hiếu TikTok Việt</h2>
+      <span class="mix">Bảy điểm, phần lớn chưa nói ở bản đánh giá</span>
+    </div>
+
+    <div class="taste">
+
+      <div class="ts key">
+        <h3>Bạn đã có bản năng đúng nhưng chôn nó ở chỗ không ai thấy</h3>
+        <p>Video “Mình là Ngộ Hen, đệ tử của Ngộ Không. Lên sân là mình múa” <strong>chính xác</strong> là kiểu hài ăn khách ở Việt Nam: tự dìm, mượn tích Tây Du Ký, không cần giải thích một chữ. Nó chỉ đạt 237 lượt xem — nhưng không phải vì câu đó dở.</p>
+        <p class="sw">Câu hay bị đặt sai chỗ: nằm trong <i>phần mô tả</i> chứ không phải <b>chữ trên hình giây đầu</b> · dùng <i>âm thanh gốc</i> thay vì <b>nhạc đang thịnh hành</b> · đăng <i>trùng phút</i> với một video khác.</p>
+      </div>
+
+      <div class="ts key">
+        <h3>Khán giả Việt trả thưởng cho cái giá, không trả thưởng cho tiến bộ</h3>
+        <p>Ảnh Strava tiến bộ, nhịp tim ổn định, tốc độ tốt hơn — với người Việt xem TikTok thì đó là <em>flex</em>, và flex thể thao gần như không lan. Thứ lan được là <strong>tốn kém</strong>: tốn bao nhiêu tiền, mất bao lâu, đau ở đâu, bỏ mấy lần rồi.</p>
+        <p class="sw"><i>“Day 6/42KM — nhanh hơn và nhịp tim ổn định hơn”</i><br><b>“Ngày 6 của 42KM và mình đã muốn bỏ”</b> — cùng một buổi tập, khác toàn bộ sức lan.</p>
+      </div>
+
+      <div class="ts">
+        <h3>Địa danh là đòn bẩy bị đánh giá thấp nhất ở Việt Nam</h3>
+        <p>Video núi Bà Đen là hướng đúng — địa danh thật thì có người tìm, có người tự hào địa phương, có người đang tính đi. Nhưng tên nơi phải nằm ở <strong>chữ trên hình giây đầu</strong>, không chỉ nằm trong thẻ.</p>
+        <p class="sw"><i>#leonuibadentayninh</i> — không ai gõ cụm này vào ô tìm kiếm<br><b>“Leo núi Bà Đen để tập cho giải”</b> — đây là câu người ta thật sự gõ</p>
+      </div>
+
+      <div class="ts">
+        <h3>Thẻ cộng đồng Việt hơn thẻ tiếng Anh bảy lần</h3>
+        <p><span class="mono">#caulongvietnam</span> — 9 video, trung bình <strong>11.314</strong> lượt xem. <span class="mono">#badmintonlovers</span> — 42 video, trung bình <strong>1.582</strong>. Bạn đã dùng đúng thẻ ở hai video cầu lông mới, giữ nguyên hướng đó.</p>
+        <p class="sw">Bỏ hẳn: <i>#cungcotdien</i> · <i>#janiechaybo</i> · <i>#janiecaulong</i> — không ai tìm, và chúng kéo video vào nhóm khán giả nhỏ nhất.</p>
+      </div>
+
+      <div class="ts key">
+        <h3>Văn hoá bình luận Việt không trả lời câu hỏi mở</h3>
+        <p>“Cho mình biết lý do bạn đến với môn này” là một bài luận — không ai viết. Người Việt bình luận khi được <strong>chọn phe</strong>, được <strong>sửa lưng</strong>, được <strong>điểm danh</strong>, hoặc kể chuyện mình trong <strong>một câu</strong>.</p>
+        <p class="sw"><i>“mọi người có thích chơi cầu lông hông? hãy cmt cho mình biết thêm các lý do”</i><br><b>“Bạn chơi cầu vì vui hay vì giảm cân? Gõ VUI hay CÂN.”</b> — cùng một ý, khác hẳn tỉ lệ trả lời.</p>
+      </div>
+
+      <div class="ts">
+        <h3>Âm thanh gốc trên kênh dưới 2K người theo dõi là tự tắt một kênh phân phối</h3>
+        <p>Nhạc thịnh hành cho video một đường vào qua trang âm thanh của bài đó; âm thanh gốc thì không có đường nào. Bốn trong năm video mới dùng âm thanh gốc — và ở Việt Nam thì nhạc Việt đang lên ăn hơn nhạc nước ngoài.</p>
+        <p class="sw">Âm thanh gốc chỉ dùng khi video có <b>giọng mình nói</b> và lời nói là nội dung chính. Còn lại: bắt nhạc Việt trong 48 giờ đầu.</p>
+      </div>
+
+      <div class="ts">
+        <h3>Định dạng đang thắng mạnh nhất: kể chuyện bằng chữ trên hình</h3>
+        <p>Hình đơn giản, chữ dài dần theo nhịp, có xung đột và có kết. Kênh đang có chữ nhưng là chữ tâm trạng, không phải chuyện có xung đột. Đây là định dạng rẻ nhất để làm, và nguyên liệu thì đã có sẵn.</p>
+        <p class="sw">Ba câu chuyện đang nằm sẵn trong kho: <b>buổi muốn bỏ</b> · <b>lần bỏ cuộc giữa đường ở km 17</b> · <b>lần bị một người lớn tuổi hơn hạ trên sân</b>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 5. BẢY NGÀY ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 5</p>
+      <h2>Bảy ngày tới, chỉ làm năm việc</h2>
+      <span class="mix">Đúng thứ tự này · đừng làm lại cả danh sách cũ</span>
+    </div>
+
+    <div class="tasks">
+      <div class="tk">
+        <div class="tk-n"><b>01</b></div>
+        <div class="tk-b">
+          <h3>Một video mỗi ngày, không hơn</h3>
+          <p>Không bao giờ hai video trong cùng một buổi. Đây là lỗi tốn nhất tuần rồi — hai video đăng cách nhau chưa tới một phút và cả hai đều chết.</p>
+        </div>
+      </div>
+      <div class="tk">
+        <div class="tk-n"><b>02</b></div>
+        <div class="tk-b">
+          <h3>Bốn trong bảy video dùng nhạc Việt đang thịnh hành</h3>
+          <p>Bắt trong 48 giờ đầu của trào lưu. Âm thanh gốc chỉ để dành cho video có giọng mình nói làm nội dung chính.</p>
+        </div>
+      </div>
+      <div class="tk">
+        <div class="tk-n"><b>03</b></div>
+        <div class="tk-b">
+          <h3>Chữ trên hình giây đầu nêu cái giá hoặc cái sai</h3>
+          <p>Không nêu tiến bộ. Lấy thẳng câu từ trang kho câu mở đầu, ưu tiên nhóm cường độ cao — nhóm đó viết đúng cho thị hiếu này.</p>
+        </div>
+      </div>
+      <div class="tk">
+        <div class="tk-n"><b>04</b></div>
+        <div class="tk-b">
+          <h3>Mọi phần mô tả kết bằng câu chọn một trong hai</h3>
+          <p>Không hỏi mở lần nào nữa. Gõ một chữ là việc dễ nhất trên TikTok; viết một đoạn thì không ai làm.</p>
+        </div>
+      </div>
+      <div class="tk">
+        <div class="tk-n"><b>05</b></div>
+        <div class="tk-b">
+          <h3>Làm phần giới thiệu và ghim ba video</h3>
+          <p>Mất mười lăm phút và vẫn chưa làm. Đổ được lượt xem về mà không có chỗ cho người ta đi tiếp thì tuần sau vẫn y như tuần này.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warnbox"><strong>Rồi đợi ba tuần, không đợi bốn ngày.</strong> Đo trung vị của hai mươi video và tỉ lệ người theo dõi trên 1.000 lượt xem. Đừng đo từng video, và đừng đo bất cứ video nào chưa đủ 72 giờ.</div>
+  </section>
+
+  <div class="xlink" style="margin-top:44px">
+    <span>
+      <span class="t">Kho câu mở đầu — 50 mẫu</span><br>
+      <span class="d">Nhóm 14 câu cường độ cao viết đúng cho thị hiếu ở phần 4.</span>
+    </span>
+    <a href="cau-mo-dau.html">Mở trang →</a>
+  </div>
+
+  <div class="xlink">
+    <span>
+      <span class="t">Kịch bản dựng sẵn — 6 kịch bản</span><br>
+      <span class="d">Kịch bản C là bản đầy đủ của “ngày muốn bỏ”, đúng thứ nên làm tuần này.</span>
+    </span>
+    <a href="kich-ban.html">Mở trang →</a>
+  </div>
+
+  <div class="xlink">
+    <span>
+      <span class="t">Bản đánh giá kênh &amp; chiến lược nội dung</span><br>
+      <span class="d">Bảy mục gốc và ba tầng mặt tiền / lõi / đáy.</span>
+    </span>
+    <a href="./">Mở trang →</a>
+  </div>
+
+  <footer>
+    <p><strong>Phạm vi dữ liệu.</strong> Lấy từ trang công khai của kênh ngày 24.08.2026: năm video đăng từ 20 đến 23.08, cộng số lượt xem hiện tại của năm video đã đo hôm 20.08 để tính hệ số tăng trưởng.</p>
+    <p><strong>Hai chỗ không lấy được lần này.</strong> TikTok chặn phiên truy cập giữa lúc đo (lỗi 403), nên không đọc được <em>số bình luận</em> và <em>độ dài</em> của năm video mới. Muốn biết chúng chết ở giây thứ mấy thì cần <em>thời gian xem trung bình</em> và <em>nguồn truy cập</em> trong Creator Center — hiện tại phần đó vẫn là suy luận từ bên ngoài, không phải số đo.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
