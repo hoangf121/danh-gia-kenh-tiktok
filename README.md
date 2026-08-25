@@ -24,12 +24,24 @@ gần nhất và 613.963 lượt xem thu từ trang công khai.
 Tên kênh, đường dẫn, tên riêng trong phần mô tả, tên thương hiệu và tên giải đấu đã được lược bỏ
 hoặc diễn đạt lại. Toàn bộ số liệu giữ nguyên.
 
-## Cập nhật 24.08.2026 — đo lại sau 4 ngày
-- Người theo dõi 1.929 → **1.956** (+27 trong 4 ngày). Trung vị 5 video mới: **627**.
-- Video của kênh tăng chậm ngày đầu rồi mới chảy tiếp: một video đo được 254 lượt xem lúc mới
-  đăng 4 tiếng, bốn ngày sau là **2.597** (×10,2). Mọi con số dưới 72 giờ đều đang nói dối.
-- **Sửa lại ba kết luận cũ:** tỉ lệ thích "7–13%" là ảo vì đo trên video 4 tiếng; kết luận
-  "nội dung không yếu" phải hạ xuống "nội dung ở mức trung bình"; và 21:00–23:00 với TikTok Việt
-  vẫn là giờ tốt, không phải giờ khán giả ngủ.
-- Tuần rồi chỉ đổi giờ đăng và đổi được một nửa. Giờ đăng là mục thứ 5 trong 7 mục — bốn mục
-  xếp trên nó (trục nội dung, phễu chuyển đổi, bình luận, định dạng) chưa động tới mục nào.
+## Cập nhật 25.08.2026 — kiểm lại toàn bộ bản đánh giá
+
+**Bốn kết luận đã rút hoặc sửa:**
+- ~~"20.08 đăng hai video cách nhau khoảng 40 giây"~~ — **sai**. Giờ đăng được suy từ mã số video,
+  mà mã đó ghi lúc video được tạo trên máy chủ (tải lên / lưu nháp), không phải lúc bấm đăng.
+  Chủ kênh xác nhận các video cách nhau vài tiếng.
+- ~~Toàn bộ mục "giờ đăng"~~ — **rút khỏi phân tích**. Từ bên ngoài không đo được giờ bấm đăng.
+  Mục này chỉ quay lại khi có "giờ người theo dõi online" trong Creator Center.
+- ~~"Tỉ lệ thích 7–13%, cao bất thường"~~ — đo trên video mới đăng 4 tiếng nên là con số ảo.
+- "Nội dung không yếu, chỉ phân phối yếu" — hạ xuống **"nội dung ở mức trung bình"**.
+
+**Tám kết luận còn đứng** (đều đo trên 160 video đã chín, không dùng dữ liệu giờ): trung vị 824 ·
+3,1 người theo dõi/1.000 lượt xem · cầu lông 2.930 so với chạy bộ 8.353 · #caulongvietnam 11.314 so
+với #badmintonlovers 1.582 · bình luận 0,02% · không có phễu · video ngắn bám nhạc thịnh hành thắng ·
+trục nên là định dạng chứ không phải bộ môn.
+
+**Quy luật vừa được xác nhận lại** bằng 5 video mới: ba video chạy bộ (1.501 / 1.041 / 627) nằm trên,
+hai video cầu lông (323 / 237) nằm dưới — không có ngoại lệ.
+
+Lộ trình đã dựng lại thành **sáu bậc xếp theo thứ tự phụ thuộc**, mỗi bậc có điều kiện vào và cổng ra:
+https://hoangf121.github.io/danh-gia-kenh-tiktok/do-lai.html

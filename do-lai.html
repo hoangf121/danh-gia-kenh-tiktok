@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="robots" content="noindex">
-<meta name="description" content="Đo lại kênh sau bốn ngày: việc nào đã làm, ba chỗ bản đánh giá cũ nói sai, và bảy điểm đọc lại theo thị hiếu TikTok Việt.">
+<meta name="description" content="Kiểm lại toàn bộ bản đánh giá: kết luận nào còn đứng, bốn kết luận phải rút, và lộ trình sáu bậc xếp theo thứ tự phụ thuộc.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%81%3C/text%3E%3C/svg%3E">
 <title>Đo lại sau bốn ngày</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,7 +122,7 @@ section{margin-top:56px;display:flex;flex-direction:column;gap:20px}
 /* corrections */
 .fixes{margin-top:34px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--crit);border-radius:4px;padding:24px 26px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow)}
 .fx-grid{display:flex;flex-direction:column;gap:15px}
-.fx{display:grid;grid-template-columns:minmax(150px,.85fr) 1.5fr;gap:6px 22px;align-items:baseline;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.fx{display:grid;grid-template-columns:minmax(160px,.85fr) 1.5fr;gap:6px 22px;align-items:baseline;padding-bottom:14px;border-bottom:1px dashed var(--line)}
 .fx:last-child{border-bottom:none;padding-bottom:0}
 .fx .was{font-size:.9rem;color:var(--crit);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--line-strong)}
 .fx .now{font-size:.94rem;color:var(--ink-2)}
@@ -148,9 +148,11 @@ td.big{font-family:Archivo,sans-serif;font-weight:700;font-size:1.02rem;text-ali
 .p-no{background:rgba(173,56,44,.13);color:var(--crit)}
 .p-part{background:rgba(168,98,10,.15);color:var(--warn)}
 .p-yes{background:var(--accent-wash);color:var(--accent)}
+.p-out{background:rgba(92,106,99,.16);color:var(--muted)}
 td .ev{display:block;font-size:.85rem;color:var(--muted);margin-top:4px;line-height:1.5}
-.hh{font-family:"IBM Plex Mono",monospace;font-size:.86rem;font-variant-numeric:tabular-nums;white-space:nowrap}
-.hh.bad{color:var(--crit)} .hh.ok{color:var(--good)}
+.sport{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.s-run{background:var(--accent-wash);color:var(--accent)}
+.s-bad{background:rgba(173,56,44,.13);color:var(--crit)}
 
 /* taste cards */
 .taste{display:flex;flex-direction:column;gap:13px}
@@ -165,17 +167,30 @@ td .ev{display:block;font-size:.85rem;color:var(--muted);margin-top:4px;line-hei
 .ts .sw i{color:var(--crit);font-style:normal}
 .ts .sw b{color:var(--accent);font-weight:500}
 
-/* ordered tasks */
-.tasks{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;background:var(--surface);overflow:hidden}
-.tk{display:grid;grid-template-columns:66px 1fr;border-bottom:1px solid var(--line)}
-.tk:last-child{border-bottom:none}
-.tk-n{background:var(--surface-2);border-right:1px solid var(--line);padding:16px 12px;display:flex;align-items:flex-start;justify-content:center}
-.tk-n b{font-family:Archivo,sans-serif;font-size:1.3rem;font-weight:800;line-height:1;color:var(--accent)}
-.tk-b{padding:16px 20px;display:flex;flex-direction:column;gap:5px}
-.tk-b p{font-size:.93rem;color:var(--ink-2);max-width:66ch}
-@media (max-width:520px){
-  .tk{grid-template-columns:1fr}
-  .tk-n{border-right:none;border-bottom:1px solid var(--line);justify-content:flex-start;padding:11px 18px}
+/* ladder */
+.ladder{display:flex;flex-direction:column;gap:13px}
+.rung{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.rung.now{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.rg-top{display:grid;grid-template-columns:62px 1fr;border-bottom:1px solid var(--line)}
+.rg-n{background:var(--surface-2);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:14px 8px}
+.rg-n b{font-family:Archivo,sans-serif;font-size:1.34rem;font-weight:800;line-height:1;color:var(--accent)}
+.rg-h{padding:14px 20px;display:flex;flex-wrap:wrap;gap:5px 12px;align-items:baseline}
+.rg-h h3{font-size:1.08rem;margin-right:auto}
+.rg-h .tag{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.rg-h .tag.hot{color:var(--accent)}
+.rg-b{padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.rg-row{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:baseline}
+.rg-row .k{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.rg-row p{font-size:.93rem;color:var(--ink-2);max-width:66ch}
+.rg-row ul{margin:0;padding-left:17px;display:flex;flex-direction:column;gap:5px;font-size:.93rem;color:var(--ink-2)}
+.rg-row li::marker{color:var(--line-strong)}
+.gate{background:var(--surface-2);border-radius:3px;padding:11px 14px;display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:baseline}
+.gate .k{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.gate p{font-size:.9rem;color:var(--ink-2)}
+@media (max-width:620px){
+  .rg-top{grid-template-columns:1fr}
+  .rg-n{border-right:none;border-bottom:1px solid var(--line);justify-content:flex-start;padding:10px 20px}
+  .rg-row,.gate{grid-template-columns:1fr;gap:4px}
 }
 
 footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem;max-width:70ch;display:flex;flex-direction:column;gap:9px}
@@ -190,16 +205,16 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 <header>
   <div class="hdr">
     <div class="hdr-top">
-      <p class="eyebrow">Trang 5 · Đo lại · 24.08.2026 · bốn ngày sau bản đánh giá</p>
-      <span class="badge">5 video mới · trung vị 627</span>
+      <p class="eyebrow">Trang 5 · Đo lại · cập nhật 25.08.2026</p>
+      <span class="badge">4 kết luận đã rút · 8 kết luận còn đứng</span>
     </div>
-    <h1>Nền chưa nhúc nhích.<br>Nhưng chưa có gì để kết luận.</h1>
-    <p class="lede">Bốn ngày, năm video. Giờ đăng đã đổi — nhưng đó là mục thứ năm trong bảy mục, và bốn mục trên nó vẫn nguyên. Trang này đối chiếu việc nào đã làm, sửa lại ba chỗ bản đánh giá cũ nói sai, rồi đọc lại kênh theo thị hiếu TikTok Việt.</p>
+    <h1>Mục duy nhất đã làm<br>là mục không đo được.</h1>
+    <p class="lede">Bản đánh giá xếp “giờ đăng” ở vị trí thứ năm trong bảy mục. Đó lại đúng là mục được thực hiện — và hôm nay phải rút khỏi phân tích, vì cách mình đo giờ đăng là sai. Trang này liệt kê kết luận nào còn đứng, kết luận nào đã rút, rồi dựng lại lộ trình theo thứ tự phụ thuộc chứ không theo thứ tự quan trọng.</p>
     <div class="hdr-meta">
       <div><b>1.956</b><span>Người theo dõi · +27 trong 4 ngày</span></div>
-      <div><b>25,8K</b><span>Lượt thích · từ 25K</span></div>
-      <div><b>627</b><span>Trung vị 5 video mới</span></div>
-      <div><b>824</b><span>Trung vị 160 video cũ</span></div>
+      <div><b>25,8K</b><span>Lượt thích</span></div>
+      <div><b>824</b><span>Trung vị 160 video</span></div>
+      <div><b>3,1</b><span>Người theo dõi / 1.000 lượt xem</span></div>
     </div>
   </div>
 </header>
@@ -208,29 +223,64 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 
   <!-- ============ SỬA LẠI ============ -->
   <div class="fixes">
-    <p class="eyebrow">Ba chỗ bản đánh giá cũ nói sai</p>
+    <p class="eyebrow">Bốn chỗ phải rút hoặc sửa</p>
     <div class="fx-grid">
       <div class="fx">
+        <p class="was">“20.08 đăng hai video cách nhau khoảng 40 giây”</p>
+        <p class="now"><b>Sai. Thực tế hai video cách nhau vài tiếng.</b> Mình suy giờ đăng từ mã số video — mã đó ghi lúc video được <em>tạo trên máy chủ</em>, tức là lúc tải lên hoặc lưu nháp, không phải lúc bấm đăng. Tải hai video trong một lượt rồi đăng cách nhau vài tiếng thì mã vẫn sát nhau. Người đăng biết chính xác, còn mã số thì không.</p>
+      </div>
+      <div class="fx">
+        <p class="was">Toàn bộ mục “giờ đăng”</p>
+        <p class="now"><b>Rút khỏi phân tích.</b> Nếu mã số không nói được lúc bấm đăng thì mọi giờ mình ghi cho năm video mới đều không đáng tin — kể cả câu “video 1.501 lượt xem nhờ đăng lúc 20:45”. Giờ đăng chỉ quay lại khi có số thật trong Creator Center. Xem bậc 5.</p>
+      </div>
+      <div class="fx">
         <p class="was">“Tỉ lệ thích 7–13%, cao bất thường”</p>
-        <p class="now"><b>Con số đó là ảo.</b> Nó đo trên một video mới đăng bốn tiếng — lúc đó lượt thích đã có mà lượt xem chưa tới. Video ấy hôm nay là 2.597 lượt xem. Tỉ lệ thích thật của kênh ở mức bình thường.</p>
+        <p class="now"><b>Là ảo.</b> Đo trên một video mới đăng bốn tiếng — lượt thích đã có mà lượt xem chưa tới. Video ấy hôm nay là 2.597 lượt xem.</p>
       </div>
       <div class="fx">
         <p class="was">“Nội dung không yếu, chỉ phân phối yếu”</p>
-        <p class="now"><b>Phải hạ xuống: nội dung ở mức trung bình.</b> Kết luận cũ dựa vào tỉ lệ thích ảo ở trên. Điều này quan trọng — nó nghĩa là phần nội dung cũng cần sửa, không chỉ phần phân phối.</p>
-      </div>
-      <div class="fx">
-        <p class="was">“Đăng 23:00–02:00 là lúc khán giả đang ngủ”</p>
-        <p class="now"><b>Nói quá.</b> Với TikTok Việt, 21:00–23:00 vẫn là giờ tốt. Sau 00:00 mới thật sự yếu. Lỗi thật của tuần rồi không phải giờ muộn — mà là <em>hai video đăng cách nhau chưa tới một phút</em>.</p>
+        <p class="now"><b>Hạ xuống: nội dung ở mức trung bình.</b> Kết luận cũ dựa vào tỉ lệ thích ảo ở trên. Nghĩa là phần nội dung cũng cần sửa, không chỉ phần phân phối.</p>
       </div>
     </div>
   </div>
 
-  <!-- ============ 1. SỐ LIỆU CHƯA CHÍN ============ -->
+  <!-- ============ 1. KIỂM LẠI ============ -->
   <section>
     <div class="sec-head">
       <p class="eyebrow">Phần 1</p>
+      <h2>Kiểm lại toàn bộ bản đánh giá</h2>
+      <span class="mix">Cái gì còn đứng, cái gì đã rút</span>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Kết luận</th><th>Trạng thái</th><th>Vì sao</th></tr></thead>
+        <tbody>
+          <tr><td>Trung vị 824 · nền phẳng 638–1.139 suốt 4 tháng</td><td><span class="pill p-yes">Còn đứng</span></td><td>Đo trên 160 video đã chín, không phụ thuộc giờ đăng.</td></tr>
+          <tr><td>3,1 người theo dõi trên 1.000 lượt xem</td><td><span class="pill p-yes">Còn đứng</span></td><td>Tổng lượt xem chia tổng người theo dõi. Kênh khoẻ ở mức 8–15.</td></tr>
+          <tr><td>Cầu lông 2.930 · chạy bộ 8.353 lượt xem TB</td><td><span class="pill p-yes">Vừa xác nhận lại</span></td><td>Năm video mới lặp lại đúng khoảng cách đó. Xem phần 3.</td></tr>
+          <tr><td><span class="mono">#caulongvietnam</span> 11.314 · <span class="mono">#badmintonlovers</span> 1.582</td><td><span class="pill p-yes">Còn đứng</span></td><td>Thẻ cộng đồng Việt hơn thẻ tiếng Anh bảy lần.</td></tr>
+          <tr><td>Tỉ lệ bình luận 0,02%</td><td><span class="pill p-yes">Còn đứng</span></td><td>50 bình luận trên 251.200 lượt xem — video đã chín từ lâu.</td></tr>
+          <tr><td>Không có phễu: không link, không ghim, không danh sách phát</td><td><span class="pill p-yes">Còn đứng</span></td><td>Kiểm lại ngày 24.08, phần giới thiệu vẫn y nguyên.</td></tr>
+          <tr><td>Video ngắn bám nhạc thịnh hành thắng</td><td><span class="pill p-yes">Còn đứng</span></td><td>251.200 ở 10 giây và 91.000 ở 29 giây — cả hai đã chín.</td></tr>
+          <tr><td>Trục nên là định dạng, không phải bộ môn</td><td><span class="pill p-yes">Còn đứng</span></td><td>Suy từ phân bố 160 video, không dùng dữ liệu giờ.</td></tr>
+          <tr><td>Giờ đăng sai khung</td><td><span class="pill p-out">Đã rút</span></td><td>Không có cách đo giờ bấm đăng từ bên ngoài.</td></tr>
+          <tr><td>Hai video cách nhau 40 giây</td><td><span class="pill p-no">Sai</span></td><td>Thực tế cách nhau vài tiếng.</td></tr>
+          <tr><td>Tỉ lệ thích 7–13%</td><td><span class="pill p-no">Sai</span></td><td>Đo trên video mới đăng bốn tiếng.</td></tr>
+          <tr><td>“Nội dung không yếu”</td><td><span class="pill p-part">Đã hạ</span></td><td>Xuống mức “trung bình”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note"><strong>Điều đáng chú ý nhất của bảng này.</strong> Tám kết luận còn nguyên đều là những kết luận <em>không dùng dữ liệu giờ</em> — chúng đo trên 160 video đã chín. Bốn kết luận phải rút đều xoay quanh giờ đăng và quanh một video đo quá sớm. Và mục bị rút lại chính là mục duy nhất đã được thực hiện tuần rồi. Tuần đó không mất công vô ích, nhưng nó dồn vào đúng chỗ ít đòn bẩy nhất và cũng là chỗ mình đo sai.</div>
+  </section>
+
+  <!-- ============ 2. SỐ LIỆU CHƯA CHÍN ============ -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Phần 2</p>
       <h2>Số liệu bạn đang thấy chưa chín</h2>
-      <span class="mix">Cùng những video đó, đo ngày 20.08 và đo lại hôm nay</span>
+      <span class="mix">Cùng những video đó, đo ngày 20.08 và đo lại ngày 24.08</span>
     </div>
 
     <div class="tbl">
@@ -246,80 +296,55 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
       </table>
     </div>
 
-    <p class="prose">Video của kênh tăng chậm trong ngày đầu rồi mới chảy tiếp. Năm video mới nhất — 237 đến 1.501 lượt xem — mới đăng một đến bốn ngày, nên chúng sẽ còn tăng và rơi vào đúng dải 600–2.500 như bốn tháng qua. <strong>Nền chưa nhúc nhích, nhưng bốn ngày cũng chưa đủ để kết luận là hỏng.</strong></p>
-
-    <div class="warnbox"><strong>Cách đọc đúng từ giờ.</strong> Đừng nhìn lượt xem của video mới đăng, và đừng nhìn từng video. Đợi ba tuần, rồi đo trung vị của hai mươi video. Mọi con số dưới 72 giờ đều đang nói dối theo hướng bi quan.</div>
+    <div class="warnbox"><strong>Cách đọc đúng từ giờ.</strong> Đừng nhìn lượt xem của video mới đăng, và đừng nhìn từng video. Đợi ba tuần rồi đo trung vị của hai mươi video. Mọi con số dưới 72 giờ đều đang nói dối theo hướng bi quan — chính con số 254 đó đã làm mình kết luận sai một lần.</div>
   </section>
 
-  <!-- ============ 2. NĂM VIDEO MỚI ============ -->
+  <!-- ============ 3. NĂM VIDEO MỚI ============ -->
   <section>
     <div class="sec-head">
-      <p class="eyebrow">Phần 2</p>
-      <h2>Năm video mới, đọc từng cái</h2>
+      <p class="eyebrow">Phần 3</p>
+      <h2>Năm video mới, đọc lại không dùng giờ</h2>
+      <span class="mix">Bỏ cột giờ ra thì lộ ngay một quy luật khác</span>
     </div>
 
     <div class="tbl">
       <table>
-        <thead><tr><th>Giờ đăng (VN)</th><th style="text-align:right">Xem</th><th>Nội dung · nhạc · thẻ</th></tr></thead>
+        <thead><tr><th>Môn</th><th style="text-align:right">Xem</th><th>Nội dung · nhạc · thẻ</th></tr></thead>
         <tbody>
           <tr>
-            <td class="hh ok">21.08 · 20:45</td>
+            <td><span class="sport s-run">Chạy bộ</span></td>
             <td class="big up">1.501</td>
-            <td>Day 6/42KM — nhanh hơn, nhịp tim ổn định hơn<span class="ev">Âm thanh gốc · <span class="mono">#chaybo #running #janiechaybo #easyrunning #roadto42km</span></span></td>
+            <td>Day 6/42KM — nhanh hơn, nhịp tim ổn định hơn<span class="ev">Âm thanh gốc · <span class="mono">#chaybo #running #janiechaybo #easyrunning #roadto42km</span> — video duy nhất còn giữ thẻ chạy bộ</span></td>
           </tr>
           <tr>
-            <td class="hh ok">23.08 · 13:45</td>
+            <td><span class="sport s-run">Chạy bộ</span></td>
             <td class="big">1.041</td>
-            <td>Luyện tập leo núi Bà Đen cho giải tuần sau<span class="ev">Âm thanh gốc · <span class="mono">#janiechaybo #leonuibadentayninh #cungcotdien</span> — không còn thẻ chạy bộ</span></td>
+            <td>Luyện tập leo núi Bà Đen cho giải tuần sau<span class="ev">Âm thanh gốc · <span class="mono">#janiechaybo #leonuibadentayninh #cungcotdien</span> — bỏ hết thẻ chạy bộ</span></td>
           </tr>
           <tr>
-            <td class="hh">22.08 · 23:05</td>
+            <td><span class="sport s-run">Chạy bộ</span></td>
             <td class="big">627</td>
-            <td>Đi trail một mình thì được, đi nhiều mình thì vui hơn<span class="ev">Âm thanh gốc · cùng bộ thẻ trên — không còn thẻ chạy bộ</span></td>
+            <td>Đi trail một mình thì được, đi nhiều mình thì vui hơn<span class="ev">Âm thanh gốc · cùng bộ thẻ trên — bỏ hết thẻ chạy bộ</span></td>
           </tr>
           <tr>
-            <td class="hh bad">20.08 · 23:59</td>
+            <td><span class="sport s-bad">Cầu lông</span></td>
             <td class="big dn">323</td>
             <td>“mọi người có thích chơi cầu lông hông? hãy cmt cho mình biết thêm các lý do…”<span class="ev">Nhạc Việt remix · <span class="mono">#caulongvietnam #cầulông #janiecaulong</span> — câu hỏi mở</span></td>
           </tr>
           <tr>
-            <td class="hh bad">20.08 · 23:59</td>
+            <td><span class="sport s-bad">Cầu lông</span></td>
             <td class="big dn">237</td>
-            <td>“Mình là Ngộ Hen, đệ tử của Ngộ Không. Lên sân là mình múa”<span class="ev">Âm thanh gốc · <span class="mono">#caulongvietnam #cầulông</span> — đăng cách video trên chưa tới một phút</span></td>
+            <td>“Mình là Ngộ Hen, đệ tử của Ngộ Không. Lên sân là mình múa”<span class="ev">Âm thanh gốc · <span class="mono">#caulongvietnam #cầulông</span></span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="note"><strong>Bằng chứng lời khuyên có tác dụng khi áp đúng.</strong> Video duy nhất vừa đăng trong khung tối vừa giữ <span class="mono">#chaybo #running</span> là video 1.501 lượt xem — cao nhất cả đợt, gấp 2,4 lần hai video đăng trùng nhau lúc nửa đêm. Hai video bỏ thẻ chạy bộ tụt xuống 1.041 và 627, dù chủ đề vẫn là chạy.</div>
-  </section>
+    <p class="prose"><strong>Ba video chạy bộ nằm trên, hai video cầu lông nằm dưới — không có ngoại lệ.</strong> Đây mới là quy luật thật, và nó lặp lại đúng khoảng cách đã thấy ở 160 video cũ: chạy bộ trung bình 8.353, cầu lông trung bình 2.930. Hai video cầu lông còn được đăng sớm hơn nên đã có nhiều thời gian hơn để tích lượt xem, vậy mà vẫn thấp nhất.</p>
 
-  <!-- ============ 3. ĐỐI CHIẾU ============ -->
-  <section>
-    <div class="sec-head">
-      <p class="eyebrow">Phần 3</p>
-      <h2>Việc nào đã làm, việc nào chưa</h2>
-      <span class="mix">Giờ đăng là mục thứ 5 trong 7 mục — bốn mục trên nó vẫn nguyên</span>
-    </div>
+    <p class="prose">Trong ba video chạy bộ, cái giữ <span class="mono">#chaybo #running</span> đạt 1.501; hai cái bỏ hết thẻ chạy bộ tụt xuống 1.041 và 627. Cỡ mẫu quá nhỏ để chắc chắn, nhưng nó cùng chiều với số liệu 160 video, nên vẫn nên giữ lại bộ thẻ đó.</p>
 
-    <div class="tbl">
-      <table>
-        <thead><tr><th>Việc đề xuất</th><th>Tình trạng</th><th>Bằng chứng trên kênh</th></tr></thead>
-        <tbody>
-          <tr><td>Khung giờ tối</td><td><span class="pill p-part">Một phần</span></td><td>2 trong 5 video đúng khung — 20:45 và 13:45. Ba video còn lại 23:05 và hai cái 23:59.</td></tr>
-          <tr><td>Hai video cách nhau ≥ 6 giờ</td><td><span class="pill p-no">Không</span></td><td>Ngày 20.08 đăng hai video cách nhau chưa tới một phút. Chúng tự chia phần phân phối, và đúng hai cái đó là 237 và 323 — thấp nhất cả đợt.</td></tr>
-          <tr><td>Nhạc thịnh hành ≥ 80%</td><td><span class="pill p-no">Đi ngược</span></td><td>4 trong 5 video dùng âm thanh gốc. Đây là thay đổi có hại nhất trong đợt này.</td></tr>
-          <tr><td>Câu mở nêu cái được hoặc cái mất</td><td><span class="pill p-no">Không</span></td><td>“Day 6/42KM — nhanh hơn và nhịp tim ổn định hơn” vẫn là câu mở nhật ký, không có gì bị đe doạ.</td></tr>
-          <tr><td>Câu hỏi chọn một trong hai</td><td><span class="pill p-no">Không</span></td><td>“hãy cmt cho mình biết thêm các lý do mn đến với môn này” — đúng loại câu hỏi mở đã nói là không ai trả lời.</td></tr>
-          <tr><td>Giữ <span class="mono">#running #runner</span></td><td><span class="pill p-no">Bỏ ở 2/5</span></td><td>Hai video chủ đề chạy bộ không còn thẻ chạy bộ nào. Đây là bộ thẻ mạnh nhất kênh — trung bình 8.353 và 10.536.</td></tr>
-          <tr><td>Bỏ <span class="mono">#janiechaybo</span></td><td><span class="pill p-no">Không</span></td><td>3 trong 5 video vẫn dùng. Thẻ riêng của kênh trung bình 444 lượt xem.</td></tr>
-          <tr><td>Link ở phần giới thiệu</td><td><span class="pill p-no">Chưa</span></td><td>Phần giới thiệu y nguyên, không có đường dẫn nào.</td></tr>
-          <tr><td>Ghim 3 video · danh sách phát</td><td><span class="pill p-no">Chưa</span></td><td>Không có video ghim, không có danh sách phát.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="prose">Nói gọn: <strong>tuần rồi chỉ đổi giờ đăng, và đổi được một nửa.</strong> Mục giờ đăng nằm ở vị trí thứ năm trong bảy mục của bản đánh giá. Bốn mục xếp trên nó — trục nội dung, phễu chuyển đổi, bình luận, định dạng — chưa động tới mục nào. Nên việc nền không nhúc nhích là điều đúng như dự đoán, không phải dấu hiệu lời khuyên sai.</p>
+    <div class="warnbox"><strong>Còn thiếu.</strong> TikTok chặn phiên truy cập (lỗi 403) nên không đọc được số bình luận, lượt lưu và độ dài của năm video này. Chưa có ba số đó thì không nói được chúng chết ở giây thứ mấy — hiện vẫn là suy luận từ bên ngoài.</div>
   </section>
 
   <!-- ============ 4. THỊ HIẾU VN ============ -->
@@ -327,7 +352,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
     <div class="sec-head">
       <p class="eyebrow">Phần 4</p>
       <h2>Đọc lại theo thị hiếu TikTok Việt</h2>
-      <span class="mix">Bảy điểm, phần lớn chưa nói ở bản đánh giá</span>
+      <span class="mix">Bảy điểm — phần này không dùng dữ liệu giờ nên không bị ảnh hưởng</span>
     </div>
 
     <div class="taste">
@@ -335,7 +360,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
       <div class="ts key">
         <h3>Bạn đã có bản năng đúng nhưng chôn nó ở chỗ không ai thấy</h3>
         <p>Video “Mình là Ngộ Hen, đệ tử của Ngộ Không. Lên sân là mình múa” <strong>chính xác</strong> là kiểu hài ăn khách ở Việt Nam: tự dìm, mượn tích Tây Du Ký, không cần giải thích một chữ. Nó chỉ đạt 237 lượt xem — nhưng không phải vì câu đó dở.</p>
-        <p class="sw">Câu hay bị đặt sai chỗ: nằm trong <i>phần mô tả</i> chứ không phải <b>chữ trên hình giây đầu</b> · dùng <i>âm thanh gốc</i> thay vì <b>nhạc đang thịnh hành</b> · đăng <i>trùng phút</i> với một video khác.</p>
+        <p class="sw">Câu hay bị đặt sai chỗ: nằm trong <i>phần mô tả</i> chứ không phải <b>chữ trên hình giây đầu</b> · dùng <i>âm thanh gốc</i> thay vì <b>nhạc Việt đang thịnh hành</b> · và nằm ở <i>bộ môn yếu nhất kênh</i> nên xuất phát đã thấp.</p>
       </div>
 
       <div class="ts key">
@@ -352,7 +377,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 
       <div class="ts">
         <h3>Thẻ cộng đồng Việt hơn thẻ tiếng Anh bảy lần</h3>
-        <p><span class="mono">#caulongvietnam</span> — 9 video, trung bình <strong>11.314</strong> lượt xem. <span class="mono">#badmintonlovers</span> — 42 video, trung bình <strong>1.582</strong>. Bạn đã dùng đúng thẻ ở hai video cầu lông mới, giữ nguyên hướng đó.</p>
+        <p><span class="mono">#caulongvietnam</span> — 9 video, trung bình <strong>11.314</strong> lượt xem. <span class="mono">#badmintonlovers</span> — 42 video, trung bình <strong>1.582</strong>. Nội dung cầu lông không chết; cầu lông chung chung mới chết.</p>
         <p class="sw">Bỏ hẳn: <i>#cungcotdien</i> · <i>#janiechaybo</i> · <i>#janiecaulong</i> — không ai tìm, và chúng kéo video vào nhóm khán giả nhỏ nhất.</p>
       </div>
 
@@ -377,59 +402,150 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
     </div>
   </section>
 
-  <!-- ============ 5. BẢY NGÀY ============ -->
+  <!-- ============ 5. LỘ TRÌNH ============ -->
   <section>
     <div class="sec-head">
       <p class="eyebrow">Phần 5</p>
-      <h2>Bảy ngày tới, chỉ làm năm việc</h2>
-      <span class="mix">Đúng thứ tự này · đừng làm lại cả danh sách cũ</span>
+      <h2>Lộ trình sáu bậc, xếp theo phụ thuộc</h2>
+      <span class="mix">Không xếp theo mức quan trọng — xếp theo cái nào phải xong trước thì cái sau mới có nghĩa</span>
     </div>
 
-    <div class="tasks">
-      <div class="tk">
-        <div class="tk-n"><b>01</b></div>
-        <div class="tk-b">
-          <h3>Một video mỗi ngày, không hơn</h3>
-          <p>Không bao giờ hai video trong cùng một buổi. Đây là lỗi tốn nhất tuần rồi — hai video đăng cách nhau chưa tới một phút và cả hai đều chết.</p>
+    <p class="prose">Đây là chỗ lần trước dựng sai. Danh sách bảy mục cũ xếp theo <em>mức nghiêm trọng</em>, nên mục dễ làm nhất lại nằm ở giữa và được làm trước. Lần này xếp theo <em>phụ thuộc</em>: mỗi bậc có điều kiện vào và một cổng ra. Chưa qua cổng thì đừng lên bậc kế, vì bậc kế sẽ không đo được.</p>
+
+    <div class="ladder">
+
+      <div class="rung now">
+        <div class="rg-top">
+          <div class="rg-n"><b>0</b></div>
+          <div class="rg-h"><h3>Đóng băng biến số</h3><span class="tag hot">Làm ngay · 5 phút</span></div>
+        </div>
+        <div class="rg-b">
+          <div class="rg-row"><span class="k">Vì sao trước</span><p>Tuần rồi đổi giờ đăng, đổi bộ thẻ và đổi loại nhạc cùng một lúc. Khi ba thứ đổi cùng lúc thì kết quả không quy được cho thứ nào — và đó là lý do thật khiến tuần đó không rút ra được bài học nào.</p></div>
+          <div class="rg-row"><span class="k">Việc</span><p>Chọn <strong>đúng một thứ</strong> để thay đổi trong mỗi hai tuần. Mọi thứ còn lại giữ nguyên, kể cả khi thấy ngứa tay.</p></div>
+          <div class="gate"><span class="k">Cổng ra</span><p>Viết được một câu: “Hai tuần này tôi chỉ đổi ___ .” Chưa viết được thì chưa qua.</p></div>
         </div>
       </div>
-      <div class="tk">
-        <div class="tk-n"><b>02</b></div>
-        <div class="tk-b">
-          <h3>Bốn trong bảy video dùng nhạc Việt đang thịnh hành</h3>
-          <p>Bắt trong 48 giờ đầu của trào lưu. Âm thanh gốc chỉ để dành cho video có giọng mình nói làm nội dung chính.</p>
+
+      <div class="rung now">
+        <div class="rg-top">
+          <div class="rg-n"><b>1</b></div>
+          <div class="rg-h"><h3>Dựng đích đến</h3><span class="tag hot">15 phút · làm một lần</span></div>
+        </div>
+        <div class="rg-b">
+          <div class="rg-row"><span class="k">Vì sao trước</span><p>Mọi lượt xem đổ về trước khi có bậc này đều rơi ra ngoài. 614.000 lượt xem đổi được 1.956 người theo dõi — tỉ lệ 3,1 trên 1.000 — chính là cái giá của việc chưa có đích đến. Đẩy thêm lượt xem trước bậc này là đổ nước vào thùng thủng.</p></div>
+          <div class="rg-row"><span class="k">Việc</span>
+            <ul>
+              <li>Viết lại phần giới thiệu: nêu <em>ai xem</em> và <em>được gì</em>, không nêu bạn là ai</li>
+              <li>Thêm một đường dẫn (Beacons hoặc Linktree)</li>
+              <li>Ghim 3 video: mạnh nhất · có bằng chứng · có sản phẩm</li>
+              <li>Tạo 2 danh sách phát: Chạy bộ và Cầu lông</li>
+            </ul>
+          </div>
+          <div class="gate"><span class="k">Cổng ra</span><p>Một người lạ mở trang, trong 5 giây nói được kênh này dành cho ai. Nhờ một người chưa từng xem kênh thử — đừng tự chấm.</p></div>
         </div>
       </div>
-      <div class="tk">
-        <div class="tk-n"><b>03</b></div>
-        <div class="tk-b">
-          <h3>Chữ trên hình giây đầu nêu cái giá hoặc cái sai</h3>
-          <p>Không nêu tiến bộ. Lấy thẳng câu từ trang kho câu mở đầu, ưu tiên nhóm cường độ cao — nhóm đó viết đúng cho thị hiếu này.</p>
+
+      <div class="rung">
+        <div class="rg-top">
+          <div class="rg-n"><b>2</b></div>
+          <div class="rg-h"><h3>Chọn trụ theo số liệu, không theo sở thích</h3><span class="tag">3 tuần</span></div>
+        </div>
+        <div class="rg-b">
+          <div class="rg-row"><span class="k">Điều kiện vào</span><p>Xong bậc 1.</p></div>
+          <div class="rg-row"><span class="k">Việc</span>
+            <ul>
+              <li><strong>Chạy bộ làm mặt tiền</strong> — trung bình 8.353, và năm video mới vừa xác nhận lại</li>
+              <li><strong>Cầu lông làm lõi</strong>, nhưng chỉ đi bằng <span class="mono">#caulongvietnam</span> (11.314) — bỏ hẳn thẻ tiếng Anh chung chung (1.582)</li>
+              <li>Môn ngoài trời tối đa 1 trên 8 video</li>
+            </ul>
+          </div>
+          <div class="rg-row"><span class="k">Chỗ khó</span><p>Cầu lông đang được đăng nhiều nhất nhưng cho kết quả thấp nhất. Đây là chỗ số liệu đi ngược sở thích — và là quyết định có đòn bẩy lớn nhất trong cả lộ trình.</p></div>
+          <div class="gate"><span class="k">Cổng ra</span><p>Ba tuần liền giữ đúng tỉ lệ, không lệch một video nào.</p></div>
         </div>
       </div>
-      <div class="tk">
-        <div class="tk-n"><b>04</b></div>
-        <div class="tk-b">
-          <h3>Mọi phần mô tả kết bằng câu chọn một trong hai</h3>
-          <p>Không hỏi mở lần nào nữa. Gõ một chữ là việc dễ nhất trên TikTok; viết một đoạn thì không ai làm.</p>
+
+      <div class="rung">
+        <div class="rg-top">
+          <div class="rg-n"><b>3</b></div>
+          <div class="rg-h"><h3>Mở lại đường vào bằng âm thanh</h3><span class="tag">2 tuần</span></div>
+        </div>
+        <div class="rg-b">
+          <div class="rg-row"><span class="k">Điều kiện vào</span><p>Xong bậc 2. Chọn trụ trước rồi mới chọn nhạc, vì nhạc phải hợp với khán giả của trụ.</p></div>
+          <div class="rg-row"><span class="k">Việc</span>
+            <ul>
+              <li>5 trên 7 video dùng nhạc Việt đang lên, bắt trong 48 giờ đầu</li>
+              <li>Âm thanh gốc chỉ khi giọng nói là nội dung chính</li>
+              <li>Video tiếp cận giữ 12–25 giây</li>
+            </ul>
+          </div>
+          <div class="gate"><span class="k">Cổng ra</span><p>Tỉ lệ dùng nhạc thịnh hành đạt trên 70% trong hai tuần liền. Hiện tại là 20%.</p></div>
         </div>
       </div>
-      <div class="tk">
-        <div class="tk-n"><b>05</b></div>
-        <div class="tk-b">
-          <h3>Làm phần giới thiệu và ghim ba video</h3>
-          <p>Mất mười lăm phút và vẫn chưa làm. Đổ được lượt xem về mà không có chỗ cho người ta đi tiếp thì tuần sau vẫn y như tuần này.</p>
+
+      <div class="rung">
+        <div class="rg-top">
+          <div class="rg-n"><b>4</b></div>
+          <div class="rg-h"><h3>Bơm tín hiệu tương tác</h3><span class="tag">2 tuần</span></div>
+        </div>
+        <div class="rg-b">
+          <div class="rg-row"><span class="k">Điều kiện vào</span><p>Xong bậc 3. Bơm bình luận khi chưa có tiếp cận thì chỉ bơm vào nhóm người theo dõi cũ, không đo được gì.</p></div>
+          <div class="rg-row"><span class="k">Việc</span>
+            <ul>
+              <li>Mỗi phần mô tả kết bằng câu chọn một trong hai, hoặc câu bắt gõ số</li>
+              <li>Ghim một bình luận của mình để mở hướng bàn luận</li>
+              <li>Trả lời bình luận hay bằng video trong 24 giờ</li>
+            </ul>
+          </div>
+          <div class="gate"><span class="k">Cổng ra</span><p>Tỉ lệ bình luận trên lượt xem vượt 0,3%. Hiện tại là 0,02%.</p></div>
         </div>
       </div>
+
+      <div class="rung">
+        <div class="rg-top">
+          <div class="rg-n"><b>5</b></div>
+          <div class="rg-h"><h3>Đo bằng dụng cụ thật — giờ đăng quay lại ở đây</h3><span class="tag">1 buổi</span></div>
+        </div>
+        <div class="rg-b">
+          <div class="rg-row"><span class="k">Điều kiện vào</span><p>Đã chạy đủ ba tuần theo bậc 2 đến 4, tức là đã có hai mươi video cùng một công thức để so.</p></div>
+          <div class="rg-row"><span class="k">Việc</span>
+            <ul>
+              <li>Mở Creator Center, ghi lại cho 20 video: <em>thời gian xem trung bình</em>, <em>tỉ lệ xem hết</em>, <em>nguồn truy cập</em></li>
+              <li>Lấy <em>giờ người theo dõi online</em> — đây là số duy nhất nói được giờ đăng nên là mấy giờ</li>
+              <li>Đo trung vị 20 video và tỉ lệ người theo dõi trên 1.000 lượt xem</li>
+            </ul>
+          </div>
+          <div class="rg-row"><span class="k">Ghi chú</span><p>Mọi kết luận về giờ đăng đều phải chờ tới bậc này. Từ bên ngoài không đo được, và lần trước mình đã đoán sai vì cố đoán.</p></div>
+          <div class="gate"><span class="k">Cổng ra</span><p>Có bảng số của 20 video. Lúc đó mới biết video chết ở giây thứ mấy — và đó là điều cả năm bậc trên đều chỉ đang suy đoán.</p></div>
+        </div>
+      </div>
+
+      <div class="rung">
+        <div class="rg-top">
+          <div class="rg-n"><b>6</b></div>
+          <div class="rg-h"><h3>Kiếm tiền</h3><span class="tag">Khi đủ điều kiện</span></div>
+        </div>
+        <div class="rg-b">
+          <div class="rg-row"><span class="k">Điều kiện vào</span><p>Trung vị vượt 3.000 và tỉ lệ người theo dõi trên 1.000 lượt xem vượt 8. Chưa đạt hai số này thì thương hiệu không có lý do trả tiền, và người xem không có lý do bấm mua.</p></div>
+          <div class="rg-row"><span class="k">Việc</span>
+            <ul>
+              <li>Một video đánh giá đồ mỗi tuần, có nêu giá và nêu nhược điểm</li>
+              <li>Đăng ký tiếp thị liên kết TikTok Shop</li>
+              <li>Làm hồ sơ hợp tác, gửi thương hiệu vợt, giày, đồ tập</li>
+            </ul>
+          </div>
+          <div class="gate"><span class="k">Cổng ra</span><p>Đơn hàng đầu tiên hoặc hợp đồng đầu tiên.</p></div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="warnbox"><strong>Rồi đợi ba tuần, không đợi bốn ngày.</strong> Đo trung vị của hai mươi video và tỉ lệ người theo dõi trên 1.000 lượt xem. Đừng đo từng video, và đừng đo bất cứ video nào chưa đủ 72 giờ.</div>
+    <div class="warnbox"><strong>Bậc 0 và bậc 1 làm được trong một buổi tối và không cần quay video nào.</strong> Chúng cũng là hai bậc duy nhất chưa từng được làm kể từ bản đánh giá đầu tiên. Nếu tuần này chỉ làm được một việc thì làm bậc 1 — chứ đừng quay thêm video.</div>
   </section>
 
   <div class="xlink" style="margin-top:44px">
     <span>
       <span class="t">Kho câu mở đầu — 50 mẫu</span><br>
-      <span class="d">Nhóm 14 câu cường độ cao viết đúng cho thị hiếu ở phần 4.</span>
+      <span class="d">Nguyên liệu cho bậc 2 và bậc 4. Nhóm 14 câu cường độ cao viết đúng cho thị hiếu ở phần 4.</span>
     </span>
     <a href="cau-mo-dau.html">Mở trang →</a>
   </div>
@@ -437,7 +553,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   <div class="xlink">
     <span>
       <span class="t">Kịch bản dựng sẵn — 6 kịch bản</span><br>
-      <span class="d">Kịch bản C là bản đầy đủ của “ngày muốn bỏ”, đúng thứ nên làm tuần này.</span>
+      <span class="d">Kịch bản C là bản đầy đủ của “ngày muốn bỏ” — đúng thứ nên quay ở bậc 2.</span>
     </span>
     <a href="kich-ban.html">Mở trang →</a>
   </div>
@@ -445,14 +561,15 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   <div class="xlink">
     <span>
       <span class="t">Bản đánh giá kênh &amp; chiến lược nội dung</span><br>
-      <span class="d">Bảy mục gốc và ba tầng mặt tiền / lõi / đáy.</span>
+      <span class="d">Đọc kèm bảng ở phần 1 để biết mục nào trong hai trang đó đã bị rút.</span>
     </span>
     <a href="./">Mở trang →</a>
   </div>
 
   <footer>
-    <p><strong>Phạm vi dữ liệu.</strong> Lấy từ trang công khai của kênh ngày 24.08.2026: năm video đăng từ 20 đến 23.08, cộng số lượt xem hiện tại của năm video đã đo hôm 20.08 để tính hệ số tăng trưởng.</p>
-    <p><strong>Hai chỗ không lấy được lần này.</strong> TikTok chặn phiên truy cập giữa lúc đo (lỗi 403), nên không đọc được <em>số bình luận</em> và <em>độ dài</em> của năm video mới. Muốn biết chúng chết ở giây thứ mấy thì cần <em>thời gian xem trung bình</em> và <em>nguồn truy cập</em> trong Creator Center — hiện tại phần đó vẫn là suy luận từ bên ngoài, không phải số đo.</p>
+    <p><strong>Phạm vi dữ liệu.</strong> Trang công khai của kênh, đo ngày 24 và 25.08.2026: năm video đăng từ 20 đến 23.08, cộng lượt xem hiện tại của năm video đã đo hôm 20.08 để tính hệ số tăng trưởng.</p>
+    <p><strong>Vì sao mục giờ đăng bị rút.</strong> Mình suy giờ từ mã số video — mã đó ghi lúc video được tạo trên máy chủ, tức lúc tải lên hoặc lưu nháp, không phải lúc bấm đăng. Người đăng biết chính xác, mã số thì không. Bài học đã áp vào lộ trình: giờ đăng chỉ quay lại ở bậc 5, khi có số trong Creator Center.</p>
+    <p><strong>Vẫn chưa lấy được.</strong> Số bình luận, lượt lưu và độ dài của năm video mới — TikTok chặn phiên truy cập giữa lúc đo. Không có ba số đó thì không nói được video chết ở giây thứ mấy.</p>
   </footer>
 
 </div>
