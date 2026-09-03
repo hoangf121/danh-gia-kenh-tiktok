@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%89%3C/text%3E%3C/svg%3E">
+<title>18 video sau lời khuyên</title>
+<meta name="description" content="Xem lại kênh sau 18 video đăng theo lời khuyên: cái gì đã tốt lên, cái gì mất đi, và ba lời khuyên cũ của tôi bị sai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+
+<style>
+:root{
+  --ground:#F5F7F5;
+  --surface:#FFFFFF;
+  --surface-2:#EBF1ED;
+  --ink:#0F1714;
+  --ink-2:#2E3B35;
+  --muted:#586661;
+  --line:#DCE5DF;
+  --line-strong:#C2CFC8;
+  --accent:#0B6A52;
+  --accent-wash:#DEECE6;
+  --good:#1F6B44;
+  --good-wash:#E0EFE6;
+  --warn:#96560A;
+  --warn-wash:#F6EBDC;
+  --crit:#A33327;
+  --crit-wash:#F8E7E4;
+  --s1:#0A8A5F;
+  --s2:#6B4FA8;
+  --grid:#DCE5DF;
+  --shadow:0 1px 2px rgba(15,23,20,.05), 0 10px 28px -18px rgba(15,23,20,.2);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1210;
+    --surface:#141C19;
+    --surface-2:#1B2521;
+    --ink:#EDF3EF;
+    --ink-2:#C9D5CE;
+    --muted:#93A49C;
+    --line:#26312C;
+    --line-strong:#35433C;
+    --accent:#5FD9B1;
+    --accent-wash:#123025;
+    --good:#6BD094;
+    --good-wash:#13291D;
+    --warn:#E5AB55;
+    --warn-wash:#2C2417;
+    --crit:#EC8A7D;
+    --crit-wash:#2E1D1B;
+    --s1:#22A583;
+    --s2:#9077E0;
+    --grid:#26312C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -20px rgba(0,0,0,.85);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1210;
+  --surface:#141C19;
+  --surface-2:#1B2521;
+  --ink:#EDF3EF;
+  --ink-2:#C9D5CE;
+  --muted:#93A49C;
+  --line:#26312C;
+  --line-strong:#35433C;
+  --accent:#5FD9B1;
+  --accent-wash:#123025;
+  --good:#6BD094;
+  --good-wash:#13291D;
+  --warn:#E5AB55;
+  --warn-wash:#2C2417;
+  --crit:#EC8A7D;
+  --crit-wash:#2E1D1B;
+  --s1:#22A583;
+  --s2:#9077E0;
+  --grid:#26312C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -20px rgba(0,0,0,.85);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;
+  font-weight:400;font-size:17.5px;line-height:1.74;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px 100px}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-family:inherit}
+h1{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.14}
+h2{font-size:clamp(1.35rem,3vw,1.75rem);font-weight:700;letter-spacing:-.015em;line-height:1.28}
+h3{font-size:1.13rem;font-weight:700;line-height:1.4}
+h4{font-size:1rem;font-weight:600;line-height:1.45}
+p{margin:0}
+strong{font-weight:600;color:var(--ink)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.lede{font-size:1.15rem;line-height:1.7;color:var(--ink-2);max-width:60ch}
+.prose{max-width:64ch;color:var(--ink-2)}
+.small{font-size:.95rem;line-height:1.68}
+.label{
+  font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+}
+.num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+.hdr{max-width:880px;margin:0 auto;padding:52px 24px 40px;display:flex;flex-direction:column;gap:20px}
+.stamp{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.stamp .label{letter-spacing:.08em}
+.pill{
+  font-size:.82rem;font-weight:600;color:var(--accent);background:var(--accent-wash);
+  padding:4px 12px;border-radius:100px;
+}
+
+.summary{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;
+  padding:26px 28px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow);
+}
+.summary>h2{font-size:1.28rem}
+ol.sum{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;counter-reset:k}
+ol.sum>li{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start}
+ol.sum>li::before{
+  counter-increment:k;content:counter(k);
+  font-weight:700;font-size:.95rem;color:var(--accent);background:var(--accent-wash);
+  width:30px;height:30px;border-radius:100px;display:grid;place-items:center;margin-top:3px;
+}
+ol.sum p{font-size:1.02rem;line-height:1.66;color:var(--ink-2)}
+
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.fig{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:3px}
+.fig b{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.15}
+.fig span{font-size:.85rem;line-height:1.45;color:var(--muted)}
+.fig .up{color:var(--good);font-weight:600}
+.fig .down{color:var(--crit);font-weight:600}
+
+section{margin-top:60px;display:flex;flex-direction:column;gap:22px}
+.sec-head{display:flex;flex-direction:column;gap:10px;padding-bottom:16px;border-bottom:2px solid var(--line)}
+
+.box{border-radius:8px;padding:18px 22px;font-size:1rem;line-height:1.68;max-width:66ch}
+.box.tip{background:var(--accent-wash);color:var(--ink-2);border-left:4px solid var(--accent)}
+.box.care{background:var(--warn-wash);color:var(--ink-2);border-left:4px solid var(--warn)}
+
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.97rem;min-width:540px}
+caption{
+  text-align:left;padding:14px 16px 10px;font-size:.85rem;font-weight:600;color:var(--muted);
+}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+thead th{font-size:.85rem;font-weight:600;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.q{color:var(--ink-2)}
+
+.tag{font-size:.82rem;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;display:inline-block}
+.tag.ok{color:var(--good);background:var(--good-wash)}
+.tag.no{color:var(--crit);background:var(--crit-wash)}
+.tag.half{color:var(--warn);background:var(--warn-wash)}
+
+figure{margin:0;display:flex;flex-direction:column;gap:12px}
+.figbox{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px 18px 16px;overflow-x:auto;display:flex;flex-direction:column;gap:14px}
+svg{display:block;width:100%;height:auto;min-width:560px}
+figcaption{font-size:.95rem;color:var(--muted);max-width:66ch;line-height:1.65}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;font-size:.92rem;color:var(--ink-2)}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:-1px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.card .big{font-size:1.72rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.1}
+.card p{font-size:.95rem;color:var(--ink-2);line-height:1.6}
+
+.fix{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.fix .was{font-size:.98rem;color:var(--muted);background:var(--surface-2);border-radius:6px;padding:12px 15px}
+.fix .now{font-size:1rem;color:var(--ink-2);line-height:1.68}
+.stack{display:flex;flex-direction:column;gap:16px}
+
+ol.todo{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;counter-reset:t}
+ol.todo>li{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:9px;
+}
+ol.todo>li h3::before{
+  counter-increment:t;content:"Việc " counter(t) " · ";color:var(--accent);font-weight:700;
+}
+ol.todo p{font-size:1rem;color:var(--ink-2);line-height:1.68}
+ul.check{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+ul.check li{display:grid;grid-template-columns:20px 1fr;gap:11px;font-size:1rem;color:var(--ink-2);line-height:1.6}
+ul.check li b{font-weight:700}
+ul.check .m{font-weight:700;text-align:center;line-height:1.55}
+ul.check .yes{color:var(--good)}
+ul.check .nope{color:var(--crit)}
+
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.split>div{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.split p{font-size:.94rem;color:var(--muted);line-height:1.6}
+
+footer{margin-top:70px;padding-top:28px;border-top:2px solid var(--line);display:flex;flex-direction:column;gap:16px}
+footer p{font-size:.95rem;color:var(--muted);max-width:68ch;line-height:1.7}
+@media (max-width:600px){
+  body{font-size:17px}
+  .wrap{padding:0 18px 80px}
+  .hdr{padding:40px 18px 32px}
+}
+</style>
+<style>
+html{color-scheme:light dark}
+img{max-width:100%}
+[hidden]{display:none!important}
+.xrow{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 20px;
+  display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;
+}
+.xrow .t{font-weight:600;font-size:1rem}
+.xrow .d{font-size:.93rem;color:var(--muted);line-height:1.55;flex:1 1 22ch}
+.xrow a{font-weight:600;font-size:.95rem;white-space:nowrap}
+.anon{
+  background:var(--surface-2);border-radius:8px;padding:18px 22px;
+  font-size:.95rem;color:var(--muted);line-height:1.7;max-width:66ch;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="stamp">
+      <span class="label">Xem lại kênh · ngày 3 tháng 9, 2026</span>
+      <span class="pill">183 video · 18 video mới</span>
+    </div>
+    <h1>18 video sau lời khuyên</h1>
+    <p class="lede">Sau khi đã xem qua kênh, tôi tóm tắt những ý chính như sau.</p>
+
+    <div class="summary">
+      <h2>Sáu ý chính</h2>
+      <ol class="sum">
+        <li><p><strong>Bạn đã làm đúng phần lớn những gì tôi đề nghị.</strong> Trong 18 video mới, chạy bộ đã thành nội dung chính (11 video), cầu lông giảm còn 5 video, và bạn đã ghim 3 video lên đầu trang.</p></li>
+        <li><p><strong>Số người xem mỗi video có nhích lên, nhưng chưa thoát khỏi mức cũ.</strong> Phần lớn video vẫn ở quanh <strong>1.000 lượt xem</strong> — đúng cái mức mà kênh đã đứng suốt năm tháng qua.</p></li>
+        <li><p><strong>Điều đáng lo hơn: hai tuần này không có video nào bật lên cao.</strong> Video cao nhất chỉ được 5.410 lượt, trong khi hai tuần trước đó có video 15.500 lượt. Lý do khá rõ — bạn đã ngừng làm video bắt trend từ 26.06, tức <strong>hơn hai tháng</strong>.</p></li>
+        <li><p><strong>Người xem rất thích nội dung của bạn.</strong> Lần này tôi đo được số bình luận: cứ 1.000 người xem thì có 6 đến 15 người bình luận. Đây là mức cao. Bạn cũng trả lời bình luận đầy đủ. <strong>Nội dung không phải vấn đề.</strong></p></li>
+        <li><p><strong>Nhưng gần như không ai lưu video lại.</strong> Có video 716 lượt xem, 100 người thích, 11 bình luận mà <strong>0 người lưu</strong>. Người ta thích xem cho vui, chứ chưa thấy video nào đáng để giữ lại xem sau.</p></li>
+        <li><p><strong>Lượt xem tăng nhưng người theo dõi gần như không tăng theo.</strong> Hai tuần qua kênh có thêm 77.000 lượt xem mà chỉ thêm 91 người theo dõi. Việc quan trọng nhất tôi đề nghị lần trước — sửa lại phần giới thiệu trang — vẫn chưa làm, và đây chính là cái giá của nó.</p></li>
+      </ol>
+    </div>
+
+    <div class="figures">
+      <div class="fig"><b>2.020</b><span>Người theo dõi<br><span class="up">+91</span> trong 14 ngày</span></div>
+      <div class="fig"><b>183</b><span>Video đã đăng<br>+23 video mới</span></div>
+      <div class="fig"><b>997</b><span>Lượt xem của 20 video mới nhất<br>mức thường thấy</span></div>
+      <div class="fig"><b>5.410</b><span>Video cao nhất 14 ngày<br><span class="down">hai tuần trước: 15.500</span></span></div>
+      <div class="fig"><b>0,1%</b><span>Tỉ lệ người lưu video<br>đây là điểm yếu nhất</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <div class="sec-head">
+    <h2>1. Bạn đã làm được những gì</h2>
+    <p class="prose">Lần trước tôi đưa bảy việc. Đây là những việc thấy được từ bên ngoài.</p>
+  </div>
+
+  <ul class="check">
+    <li><span class="m yes">✓</span><span><b>Đổi nội dung chính sang chạy bộ.</b> 18 video mới: 11 chạy bộ, 5 cầu lông, 2 leo núi. Trước đây cầu lông chiếm phần lớn. Việc này bạn làm rất đúng.</span></li>
+    <li><span class="m yes">✓</span><span><b>Ghim 3 video lên đầu trang.</b> Đã có.</span></li>
+    <li><span class="m yes">✓</span><span><b>Viết phần mô tả theo kiểu gần gũi hơn.</b> “Có ai giống mình hông”, “mình tuổi hamster chứ đâu phải tuổi báo” — đúng kiểu người Việt dễ bình luận. Bạn cũng trả lời bình luận đều.</span></li>
+    <li><span class="m yes">✓</span><span><b>Bớt dùng nhạc tự thu.</b> Giảm từ 8 trong 10 video xuống còn 4 trong 10. <em>Nhưng phần sau tôi sẽ nói: lời khuyên này của tôi sai, bạn không cần làm nữa.</em></span></li>
+    <li><span class="m nope">✗</span><span><b>Sửa phần giới thiệu trang — chưa làm.</b> Vẫn là một dòng liệt kê ba bộ môn bằng tiếng Anh, thêm một câu cảm hứng. Đây là câu nói về <em>bạn</em>, không nói người xem sẽ được gì khi theo dõi.</span></li>
+    <li><span class="m nope">✗</span><span><b>Thêm một đường dẫn ở phần giới thiệu — chưa có.</b></span></li>
+    <li><span class="m nope">✗</span><span><b>Tạo hai danh sách phát (chạy bộ và cầu lông) — chưa có.</b> Người mới vào không có đường nào để xem tiếp.</span></li>
+    <li><span class="m nope">✗</span><span><b>Video vẫn dài.</b> Bốn video tôi đo được: 15 giây, 28 giây, 36 giây và 45 giây. Video để tiếp cận người mới nên trong khoảng 12–25 giây.</span></li>
+  </ul>
+
+  <p class="box care"><strong>Một lưu ý nhỏ về cách thử.</strong> Hai tuần này bạn đổi ba thứ cùng lúc: tỉ lệ bộ môn, loại nhạc, và bộ thẻ. Khi đổi cùng lúc thì rất khó biết kết quả đến từ thứ nào. Lần tới nên đổi <strong>một thứ mỗi hai tuần</strong> rồi mới đổi thứ tiếp theo.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>2. Số người xem mỗi video có tăng không?</h2>
+    <p class="prose">Để so cho công bằng, tôi chia 183 video thành từng nhóm 20 video liền nhau, rồi lấy
+    <strong>mức xem ở giữa</strong> của mỗi nhóm — tức là mức mà một nửa video được xem nhiều hơn,
+    một nửa được xem ít hơn. Cách này không bị một video bùng nổ làm lệch kết quả.</p>
+  </div>
+
+  <figure>
+    <div class="figbox">
+      <svg viewBox="0 0 860 300" role="img" aria-label="Biểu đồ cột: mức xem ở giữa của từng nhóm 20 video, từ tháng 4 đến tháng 9. Chín nhóm lần lượt là 849, 770, 1.271, 763, 753, 902, 1.065, 705 và 997 lượt xem. Tất cả đều nằm trong khoảng 705 đến 1.271.">
+        <rect x="56" y="43.9" width="774" height="87.3" fill="var(--accent-wash)"></rect>
+        <line x1="56" y1="43.9" x2="830" y2="43.9" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="4 4"></line>
+        <line x1="56" y1="131.2" x2="830" y2="131.2" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="4 4"></line>
+
+        <line x1="56" y1="162.9" x2="830" y2="162.9" stroke="var(--grid)" stroke-width="1"></line>
+        <line x1="56" y1="85.7" x2="830" y2="85.7" stroke="var(--grid)" stroke-width="1"></line>
+        <line x1="56" y1="240" x2="830" y2="240" stroke="var(--line-strong)" stroke-width="1"></line>
+        <g fill="var(--muted)" font-family="'IBM Plex Mono',monospace" font-size="11" text-anchor="end">
+          <text x="48" y="167">500</text>
+          <text x="48" y="90">1.000</text>
+          <text x="48" y="244">0</text>
+        </g>
+
+        <path d="M77 240 L77 113 Q77 109 81 109 L117 109 Q121 109 121 113 L121 240 Z" fill="var(--s1)"></path>
+        <path d="M163 240 L163 125.2 Q163 121.2 167 121.2 L203 121.2 Q207 121.2 207 125.2 L207 240 Z" fill="var(--s1)"></path>
+        <path d="M249 240 L249 47.9 Q249 43.9 253 43.9 L289 43.9 Q293 43.9 293 47.9 L293 240 Z" fill="var(--s1)"></path>
+        <path d="M335 240 L335 126.3 Q335 122.3 339 122.3 L375 122.3 Q379 122.3 379 126.3 L379 240 Z" fill="var(--s1)"></path>
+        <path d="M421 240 L421 127.8 Q421 123.8 425 123.8 L461 123.8 Q465 123.8 465 127.8 L465 240 Z" fill="var(--s1)"></path>
+        <path d="M507 240 L507 104.8 Q507 100.8 511 100.8 L547 100.8 Q551 100.8 551 104.8 L551 240 Z" fill="var(--s1)"></path>
+        <path d="M593 240 L593 79.7 Q593 75.7 597 75.7 L633 75.7 Q637 75.7 637 79.7 L637 240 Z" fill="var(--s1)"></path>
+        <path d="M679 240 L679 135.2 Q679 131.2 683 131.2 L719 131.2 Q723 131.2 723 135.2 L723 240 Z" fill="var(--s1)"></path>
+        <path d="M765 240 L765 90.2 Q765 86.2 769 86.2 L805 86.2 Q809 86.2 809 90.2 L809 240 Z" fill="var(--s1)"></path>
+
+        <g fill="var(--ink)" font-family="'IBM Plex Mono',monospace" font-size="12" text-anchor="middle" font-variant-numeric="tabular-nums">
+          <text x="99" y="101">849</text>
+          <text x="185" y="113">770</text>
+          <text x="271" y="36">1.271</text>
+          <text x="357" y="114">763</text>
+          <text x="443" y="116">753</text>
+          <text x="529" y="93">902</text>
+          <text x="615" y="68">1.065</text>
+          <text x="701" y="123">705</text>
+          <text x="787" y="78">997</text>
+        </g>
+        <g fill="var(--muted)" font-size="11" text-anchor="middle" font-family="'Be Vietnam Pro',sans-serif">
+          <text x="99" y="258">20.04</text>
+          <text x="185" y="258">06.05</text>
+          <text x="271" y="258">24.05</text>
+          <text x="357" y="258">12.06</text>
+          <text x="443" y="258">04.07</text>
+          <text x="529" y="258">19.07</text>
+          <text x="615" y="258">04.08</text>
+          <text x="701" y="258">17.08</text>
+          <text x="787" y="258">02.09</text>
+        </g>
+
+        <line x1="765" y1="276" x2="809" y2="276" stroke="var(--s2)" stroke-width="2.5"></line>
+        <line x1="765" y1="272" x2="765" y2="280" stroke="var(--s2)" stroke-width="2.5"></line>
+        <line x1="809" y1="272" x2="809" y2="280" stroke="var(--s2)" stroke-width="2.5"></line>
+        <text x="787" y="294" text-anchor="middle" fill="var(--s2)" font-size="11" font-weight="600" font-family="'Be Vietnam Pro',sans-serif">18 video mới</text>
+        <text x="56" y="294" fill="var(--muted)" font-size="11" font-family="'Be Vietnam Pro',sans-serif">Lượt xem · mỗi cột là một nhóm 20 video, ghi ngày của video mới nhất trong nhóm</text>
+      </svg>
+    </div>
+    <figcaption>Vùng xanh nhạt là khoảng <strong>705 đến 1.271 lượt xem</strong>. Suốt năm tháng,
+    cả chín nhóm đều nằm trong khoảng này — không nhóm nào thoát ra. Nhóm mới nhất được 997,
+    cao thứ ba, nhưng vẫn nằm bên trong.</figcaption>
+  </figure>
+
+  <p class="box tip"><strong>Đừng nhìn lượt xem của video mới đăng.</strong> Năm video hôm 20.08 lúc đó
+  chỉ có 1.501 · 1.041 · 627 · 323 · 237 lượt. Hôm nay chúng đã là
+  <strong>2.901 · 2.380 · 979 · 455 · 388</strong> — tăng gấp rưỡi đến gấp đôi sau mười hai ngày.
+  Vậy nên ba video mới nhất của bạn (443, 438, 345) chưa nói lên điều gì cả; đợi hai tuần rồi hãy xem.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>3. Vì sao hai tuần này không có video nào bật lên cao</h2>
+    <p class="prose">Đây là phát hiện quan trọng nhất lần này, và lần trước tôi chưa thấy.
+    Tôi lấy 15 video được xem nhiều nhất kênh và xếp theo ngày đăng.</p>
+  </div>
+
+  <figure>
+    <div class="figbox">
+      <div class="legend">
+        <span><i style="background:var(--s2)"></i>Video kéo người mới — bắt trend, việc lạ, chạy gây quỹ, nói về đồ nghề <strong>(11 trong 15)</strong></span>
+        <span><i style="background:var(--s1)"></i>Video kể chuyện tập luyện thường ngày <strong>(4 trong 15)</strong></span>
+      </div>
+      <svg viewBox="0 0 860 340" role="img" aria-label="Biểu đồ điểm: 15 video được xem nhiều nhất kênh, theo ngày đăng từ tháng 5 đến hết tháng 8. Mười một video thuộc loại kéo người mới, bốn video là chuyện tập luyện thường ngày. Video cao nhất sau ngày 20 tháng 8 chỉ đạt 5.410 lượt xem.">
+        <g stroke="var(--grid)" stroke-width="1">
+          <line x1="78" y1="45.9" x2="820" y2="45.9"></line>
+          <line x1="78" y1="93.6" x2="820" y2="93.6"></line>
+          <line x1="78" y1="164.9" x2="820" y2="164.9"></line>
+          <line x1="78" y1="212.6" x2="820" y2="212.6"></line>
+          <line x1="78" y1="260" x2="820" y2="260"></line>
+        </g>
+        <g fill="var(--muted)" font-family="'IBM Plex Mono',monospace" font-size="11" text-anchor="end">
+          <text x="70" y="50">251.000</text>
+          <text x="70" y="98">100.000</text>
+          <text x="70" y="169">20.000</text>
+          <text x="70" y="217">8.000</text>
+          <text x="70" y="264">4.000</text>
+        </g>
+        <g fill="var(--muted)" font-size="11" text-anchor="middle" font-family="'Be Vietnam Pro',sans-serif">
+          <text x="200" y="282">01.05</text>
+          <text x="354" y="282">01.06</text>
+          <text x="502" y="282">01.07</text>
+          <text x="656" y="282">01.08</text>
+          <text x="810" y="282">01.09</text>
+        </g>
+
+        <line x1="751" y1="34" x2="751" y2="266" stroke="var(--s2)" stroke-width="1.5" stroke-dasharray="5 4"></line>
+        <text x="746" y="30" text-anchor="end" fill="var(--s2)" font-size="11" font-weight="600" font-family="'Be Vietnam Pro',sans-serif">20.08 — lúc tôi đưa lời khuyên</text>
+
+        <g stroke="var(--surface)" stroke-width="2.5">
+          <circle cx="244.5" cy="45.9" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="363.6" cy="93.6" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="552.1" cy="162.1" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="462.7" cy="163.1" r="6.5" fill="var(--s1)"></circle>
+          <circle cx="477.6" cy="176.9" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="720.6" cy="189.9" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="695.9" cy="196.2" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="552.1" cy="199.7" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="244.5" cy="223.6" r="6.5" fill="var(--s1)"></circle>
+          <circle cx="641.4" cy="235.3" r="6.5" fill="var(--s1)"></circle>
+          <circle cx="616.6" cy="236.6" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="725.6" cy="239.9" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="785.1" cy="244.2" r="6.5" fill="var(--s2)"></circle>
+          <circle cx="239.5" cy="247.3" r="6.5" fill="var(--s1)"></circle>
+          <circle cx="695.9" cy="256.7" r="6.5" fill="var(--s2)"></circle>
+        </g>
+
+        <g fill="var(--ink)" font-size="12" font-weight="600" font-family="'Be Vietnam Pro',sans-serif">
+          <text x="257" y="43">251.200 — bắt trend</text>
+          <text x="376" y="91">99.800 — bắt trend</text>
+          <text x="563" y="159">26.500 — đu dây</text>
+          <text x="732" y="187">15.500 — chạy gây quỹ</text>
+          <text x="795" y="248" text-anchor="end">5.410 — nói về đồ nghề</text>
+        </g>
+        <text x="78" y="308" fill="var(--muted)" font-size="11" font-family="'Be Vietnam Pro',sans-serif">Lượt xem · khoảng cách giữa các mức không đều nhau để nhìn được cả video 4.000 và video 251.000</text>
+        <text x="78" y="325" fill="var(--muted)" font-size="11" font-weight="600" font-family="'Be Vietnam Pro',sans-serif">Video bắt trend gần nhất: 26.06 — cách đây 68 ngày</text>
+      </svg>
+    </div>
+    <figcaption>Ba trong năm video cao nhất kênh có chữ “trend” ngay trong phần mô tả:
+    251.200 · 99.800 · 19.900 lượt xem. Video bắt trend gần nhất bạn đăng ngày <strong>26.06</strong>.
+    Từ đó đến nay đã 68 ngày, không có video nào nữa.</figcaption>
+  </figure>
+
+  <div class="tw">
+    <table>
+      <caption>Video cao nhất của từng nửa tháng</caption>
+      <thead><tr><th>Khoảng 14 ngày</th><th class="n">Số video</th><th class="n">Cao nhất</th><th class="n">Số video trên 3.000</th><th>Loại video kéo người mới trong khoảng đó</th></tr></thead>
+      <tbody>
+        <tr><td class="n">09.07 – 22.07</td><td class="n">19</td><td class="n">26.500</td><td class="n">2</td><td class="q">Đu dây, lặn biển, leo núi</td></tr>
+        <tr><td class="n">23.07 – 05.08</td><td class="n">18</td><td class="n">6.426</td><td class="n">2</td><td class="q">“Top 5 món đồ nên đầu tư”</td></tr>
+        <tr><td class="n">06.08 – 19.08</td><td class="n">21</td><td class="n">15.500</td><td class="n">5</td><td class="q">Chạy gây quỹ theo kilômét, đua gokart</td></tr>
+        <tr><td class="n">20.08 – 02.09</td><td class="n">18</td><td class="n">5.410</td><td class="n">1</td><td class="q">Chỉ một video nói về đồ nghề — và đó chính là video cao nhất</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="box care"><strong>Chỗ này tôi đã đưa lời khuyên chưa đủ.</strong> Tôi khuyên bạn chọn
+  <em>bộ môn</em> nào làm chính. Nhưng nhìn 15 video trên thì thấy: cái làm video bật lên cao
+  <strong>không phải bộ môn</strong>, mà là <em>loại</em> video — bắt trend, làm việc gì lạ, chạy vì
+  một mục đích, hoặc nói về đồ nghề. Hai tuần qua bạn đăng gần như toàn video tập luyện thường ngày,
+  nên kết quả đúng như vậy: mức xem chung nhích lên chút ít, còn video bật lên cao thì không có.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>4. Người xem có thích nội dung không? Có — rất thích</h2>
+    <p class="prose">Lần trước tôi không lấy được số bình luận và số người lưu video. Lần này lấy được
+    trên 7 video, bằng cách mở từng video ngay trên trang cá nhân.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption>7 video trong hai tuần vừa rồi</caption>
+      <thead>
+        <tr>
+          <th>Video</th><th class="n">Lượt xem</th><th class="n">Thích</th>
+          <th class="n">Bình luận</th><th class="n">Cứ 1.000 người xem thì bao nhiêu người bình luận</th>
+          <th class="n">Lưu lại</th><th class="n">Dài (giây)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="q">Nói về đồ nghề — “phải sở hữu ít nhất 1 brand”</td><td class="n">5.410</td><td class="n">161</td><td class="n">33</td><td class="n">6</td><td class="n">6</td><td class="n">36</td></tr>
+        <tr><td class="q">Kể chuyện giải trail — “lúc đi mệt quá, lúc về ủa khi nào có giải tiếp”</td><td class="n">2.722</td><td class="n">153</td><td class="n">16</td><td class="n">6</td><td class="n">2</td><td class="n">—</td></tr>
+        <tr><td class="q">Ngày 8 của hành trình 42km</td><td class="n">1.014</td><td class="n">93</td><td class="n">9</td><td class="n">9</td><td class="n">2</td><td class="n">45</td></tr>
+        <tr><td class="q">Ảnh giải trail — “chụp hình mùa nào cũng đẹp”</td><td class="n">716</td><td class="n">100</td><td class="n">11</td><td class="n">15</td><td class="n">0</td><td class="n">—</td></tr>
+        <tr><td class="q">Mang giày về quê nghỉ lễ</td><td class="n">443</td><td class="n">51</td><td class="n">4</td><td class="n">9</td><td class="n">0</td><td class="n">28</td></tr>
+        <tr><td class="q">Leo núi — “thật tình cờ, em cũng đi”</td><td class="n">438</td><td class="n">59</td><td class="n">3</td><td class="n">7</td><td class="n">1</td><td class="n">—</td></tr>
+        <tr><td class="q">Cầu lông — “mình tuổi hamster chứ đâu phải tuổi báo”</td><td class="n">345</td><td class="n">32</td><td class="n">4</td><td class="n">12</td><td class="n">1</td><td class="n">16</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="label">Bình luận</span>
+      <span class="big" style="color:var(--good)">6–15 / 1.000</span>
+      <p>Mức tôi từng đặt làm mục tiêu là <strong>3 trên 1.000</strong>. Cả bảy video đều đã vượt,
+      có video vượt gấp năm lần.</p>
+    </div>
+    <div class="card">
+      <span class="label">Người thích</span>
+      <span class="big" style="color:var(--good)">3–14%</span>
+      <p>Đo trên video đã đăng 1–7 ngày. Lượt xem còn tăng khoảng gấp đôi nên tỉ lệ này sẽ về
+      <strong>khoảng 5–7%</strong> — vẫn là mức tốt.</p>
+    </div>
+    <div class="card">
+      <span class="label">Người lưu video</span>
+      <span class="big" style="color:var(--crit)">0–6 người</span>
+      <p>Đây mới là chỗ yếu. Video 716 lượt xem có <strong>0 người lưu</strong>.
+      Video được lưu nhiều nhất là video nói về đồ nghề: 6 người.</p>
+    </div>
+    <div class="card">
+      <span class="label">Độ dài</span>
+      <span class="big">16–45 giây</span>
+      <p>Ba trong bốn video đo được dài 28, 36 và 45 giây. Video để người lạ nhìn thấy
+      nên <strong>trong khoảng 12–25 giây</strong>.</p>
+    </div>
+  </div>
+
+  <p class="box tip"><strong>Điều bảng này nói.</strong> Kênh của bạn không yếu ở nội dung. Người xem
+  thích, bình luận, và bạn trả lời họ tử tế — có video 716 lượt xem mà đã có ba cuộc trò chuyện qua lại
+  trong phần bình luận. Chỗ yếu nằm ở <strong>số người được nhìn thấy video</strong> và ở
+  <strong>việc video chưa có gì đáng để giữ lại</strong>.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>5. Lượt xem tăng nhưng người theo dõi thì không</h2>
+    <p class="prose">Việc sửa phần giới thiệu trang là việc duy nhất chưa từng được làm qua cả ba lần tôi
+    xem kênh. Hai tuần này lần đầu tính được nó đang làm mất bao nhiêu.</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <span class="label">Lượt xem thêm được</span>
+      <span class="big" style="color:var(--good)">+77.275</span>
+      <p>Từ 613.963 lên 691.238 lượt — thêm <strong>12,6%</strong> trong 14 ngày.</p>
+    </div>
+    <div class="card">
+      <span class="label">Người theo dõi thêm được</span>
+      <span class="big" style="color:var(--warn)">+91</span>
+      <p>Từ 1.929 lên 2.020 — thêm <strong>4,7%</strong>, tức khoảng 6 người mỗi ngày.
+      Đúng bằng nhịp của hai tuần trước, không nhanh hơn.</p>
+    </div>
+    <div class="card">
+      <span class="label">Cứ 1.000 lượt xem mới thì có bao nhiêu người theo dõi</span>
+      <span class="big" style="color:var(--crit)">1 người</span>
+      <p>Tính từ đầu kênh thì được 3 người. Kênh khoẻ thường được 8–15 người.
+      Nghĩa là tỉ lệ này <strong>đang xấu đi</strong>, không phải đứng yên.</p>
+    </div>
+  </div>
+  <p class="box care">Một phần lượt xem thêm đến từ video cũ được xem tiếp, không chỉ từ 23 video mới,
+  nên con số trên là ước lượng cho cả hai nguồn. Nhưng tính cách nào thì hướng vẫn thế: lượt xem tăng
+  gần gấp ba lần tốc độ tăng người theo dõi. Người ta xem xong rồi đi. Trước khi đẩy thêm lượt xem thì
+  nên có chỗ giữ họ lại — và hai tuần qua đã có 77.000 lượt xem đi qua một trang chưa được chuẩn bị.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>6. Ba lời khuyên cũ của tôi bị sai — xin sửa lại</h2>
+    <p class="prose">Lần trước tôi đã phải bỏ bốn kết luận. Lần này thêm ba, và cả ba sai cùng một kiểu:
+    tôi lấy số bình quân, hoặc lấy một video đặc biệt, để nói về cả kênh.</p>
+  </div>
+
+  <div class="stack">
+    <div class="fix">
+      <h3>Sai 1 — “Gần như không ai bình luận trên kênh”</h3>
+      <p class="was">Tôi đã viết: “50 bình luận trên 251.200 lượt xem, tức 0,02% — kênh gần như không có ai bình luận.”</p>
+      <p class="now"><strong>Sai.</strong> Tôi lấy đúng một video — video 251.200 lượt, tức video
+      <em>ít giống cả kênh nhất</em>, vì gần hết người xem là người lạ tình cờ trôi qua.
+      Trên bảy video bình thường vừa đo, cứ 1.000 người xem thì có <strong>6 đến 15 người bình luận</strong>,
+      cao gấp 30 đến 75 lần con số tôi đưa. <strong>Việc “tăng bình luận” bỏ khỏi danh sách</strong> —
+      bạn đã làm tốt phần này rồi.</p>
+    </div>
+    <div class="fix">
+      <h3>Sai 2 — “Đừng dùng nhạc tự thu, hãy bắt nhạc Việt đang thịnh hành”</h3>
+      <p class="was">Tôi đã viết: “Nhạc thịnh hành mở thêm một đường cho người ta tìm thấy video; nhạc tự thu thì không có đường nào.”</p>
+      <p class="now"><strong>Không đúng với kênh bạn.</strong> Tôi đo lại trên cả 183 video:
+      video dùng <strong>nhạc tự thu của chính bạn</strong> có mức xem thường thấy là <strong>1.016</strong>;
+      video dùng nhạc có tên là <strong>842</strong>; video dùng nhạc tự thu của người khác là <strong>783</strong>.
+      Loại tôi khuyên bỏ lại đang là loại cao nhất. Có thể vì video có giọng bạn nói thường là video có
+      chuyện để kể. Dù lý do là gì thì số liệu cũng không đỡ cho lời khuyên đó. Phần còn đúng là
+      <strong>độ dài video</strong>, không phải loại nhạc.</p>
+    </div>
+    <div class="fix">
+      <h3>Sai 3 — “Chạy bộ hơn cầu lông gần ba lần”</h3>
+      <p class="was">Tôi đã viết: “Chạy bộ trung bình 8.353 lượt, cầu lông trung bình 2.930 lượt — đăng nhiều cầu lông là đăng vào chỗ không có kết quả.”</p>
+      <p class="now"><strong>Hạ xuống còn hơn 1,3 lần.</strong> Hai số đó là số <em>bình quân</em>,
+      mà chính tôi đã dặn đừng dùng bình quân vì một video bùng nổ sẽ kéo lệch cả bảng.
+      Nếu lấy mức xem ở giữa: chạy bộ <strong>1.085</strong> (64 video), cầu lông <strong>833</strong>
+      (96 video). Chạy bộ vẫn nên làm nội dung chính, nhưng vì <strong>nó có cơ hội bật lên cao hơn</strong>,
+      chứ không phải vì mỗi video đều hơn. Và video mạnh nhất hai tuần vừa rồi lại là một video
+      <strong>cầu lông</strong> (5.410 lượt), <strong>không mang thẻ #caulongvietnam</strong> —
+      nên luật “cầu lông chỉ đi bằng thẻ đó” cũng bỏ luôn.</p>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption>Đo lại trên toàn bộ 183 video · lấy mức xem ở giữa, không lấy bình quân</caption>
+      <thead><tr><th>Nhóm</th><th class="n">Số video</th><th class="n">Mức xem ở giữa</th><th class="n">Bình quân</th><th class="n">Cao nhất</th></tr></thead>
+      <tbody>
+        <tr><td>Chạy bộ và chạy trail</td><td class="n">64</td><td class="n">1.085</td><td class="n">5.767</td><td class="n">251.200</td></tr>
+        <tr><td>Ngoài trời — leo núi, đu dây, lặn biển</td><td class="n">10</td><td class="n">1.052</td><td class="n">6.548</td><td class="n">26.500</td></tr>
+        <tr><td>Cầu lông</td><td class="n">96</td><td class="n">833</td><td class="n">2.426</td><td class="n">99.800</td></tr>
+        <tr><td>Nhạc tự thu của chính bạn</td><td class="n">56</td><td class="n">1.016</td><td class="n">6.770</td><td class="n">251.200</td></tr>
+        <tr><td>Nhạc có tên</td><td class="n">88</td><td class="n">842</td><td class="n">2.998</td><td class="n">99.800</td></tr>
+        <tr><td>Nhạc tự thu của người khác</td><td class="n">39</td><td class="n">783</td><td class="n">1.239</td><td class="n">12.800</td></tr>
+        <tr><td>Bài đăng ảnh</td><td class="n">28</td><td class="n">964</td><td class="n">2.568</td><td class="n">26.000</td></tr>
+        <tr><td>Bài đăng video</td><td class="n">155</td><td class="n">857</td><td class="n">3.996</td><td class="n">251.200</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small" style="color:var(--muted);max-width:66ch">Chú ý dòng cuối: bài đăng <strong>ảnh</strong>
+  lại có mức xem cao hơn bài đăng video (964 so với 857) mà làm nhanh hơn nhiều. Đổi lại, ảnh khó bật lên
+  cao. Đây là cách làm nội dung đỡ tốn sức nhất mà bạn đang có.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>7. Bây giờ nên làm gì</h2>
+    <p class="prose">Danh sách bảy việc lần trước thu lại còn ba. Hai trong ba việc không cần quay
+    thêm video nào.</p>
+  </div>
+
+  <ol class="todo">
+    <li>
+      <h3>Sửa lại trang cá nhân — một buổi tối, không cần quay gì</h3>
+      <p>Viết lại phần giới thiệu theo hướng <strong>người xem được gì</strong> thay vì bạn là ai.
+      Ví dụ: thay dòng liệt kê ba bộ môn bằng một câu kiểu “Mình chạy bộ và đánh cầu lông —
+      chia sẻ lịch tập, giải đã chạy, và đồ nào đáng mua.” Thêm một đường dẫn.
+      Đổi ô ghim thứ ba (đang là một video 1.040 lượt xem) sang video nói về đồ nghề 5.410 lượt.
+      Tạo hai danh sách phát: một cho chạy bộ, một cho cầu lông.</p>
+      <p><em>Cách biết là xong:</em> nhờ một người chưa từng xem kênh mở trang, nếu trong 5 giây họ nói
+      được kênh này dành cho ai thì xong. Đừng tự chấm.</p>
+    </li>
+    <li>
+      <h3>Làm lại video bắt trend — hai video mỗi tuần, bộ môn nào cũng được</h3>
+      <p>Đây là cách duy nhất từng làm kênh bạn bật lên cao, và nó đã ngừng 68 ngày.
+      Bắt trend còn đỡ tốn sức hơn quay một buổi tập: không cần đi đâu, không cần giải nào.
+      Ba loại video kéo người mới còn lại đều đã có bằng chứng ngay trên kênh bạn:
+      <strong>làm việc gì lạ</strong> (đu dây 26.500 · lặn biển 19.900 · đua gokart 13.700),
+      <strong>chạy vì một mục đích</strong> (mỗi kilômét đổi thành tiền quyên góp: 15.500 và 4.240),
+      và <strong>nói về đồ nghề</strong> (6.271 và 5.410). Video tập luyện thường ngày vẫn giữ —
+      nó giúp giữ người đã theo dõi, nhưng nó không kéo được người mới.</p>
+    </li>
+    <li>
+      <h3>Làm video đáng để lưu lại</h3>
+      <p>Phần bình luận đã tốt rồi, không cần làm gì thêm. Chỗ cần sửa là <strong>người lưu video</strong>:
+      hiện gần như bằng không. Người ta lưu thứ <em>dùng được về sau</em> — đồ nghề kèm giá và kèm cả
+      nhược điểm, hướng dẫn một cung đường cụ thể, một lịch tập bốn tuần, hoặc “nếu chỉ mua một món thì
+      mua món này”. Bằng chứng có sẵn: video nói về đồ nghề được 33 bình luận và 6 người lưu — cả hai đều
+      cao nhất hai tuần — dù nó thuộc bộ môn “yếu”, không mang thẻ “đúng”, và dài tới 36 giây.</p>
+    </li>
+  </ol>
+
+  <div class="split">
+    <div>
+      <span class="label">Bỏ khỏi danh sách</span>
+      <h4>Luật phải dùng nhạc thịnh hành</h4>
+      <p>Số liệu không đỡ. Nhạc tự thu của bạn đang cho mức xem cao nhất.</p>
+    </div>
+    <div>
+      <span class="label">Bỏ khỏi danh sách</span>
+      <h4>Luật cầu lông chỉ dùng thẻ #caulongvietnam</h4>
+      <p>Video cầu lông mạnh nhất hai tuần không mang thẻ đó.</p>
+    </div>
+    <div>
+      <span class="label">Bỏ khỏi danh sách</span>
+      <h4>Việc tăng bình luận</h4>
+      <p>Đã vượt mục tiêu từ trước khi bắt đầu. Không còn gì để làm ở đây.</p>
+    </div>
+    <div>
+      <span class="label">Vẫn giữ</span>
+      <h4>Video 12–25 giây</h4>
+      <p>Hiện đang 28–45 giây. Đây là phần duy nhất còn đúng trong lời khuyên về âm thanh và độ dài.</p>
+    </div>
+    <div>
+      <span class="label">Vẫn giữ</span>
+      <h4>Mở phần thống kê dành cho người sáng tạo</h4>
+      <p>Ba số quan trọng nhất chỉ có ở đó: người xem trung bình bao nhiêu giây, bao nhiêu người xem hết,
+      và người xem đến từ đâu.</p>
+    </div>
+    <div>
+      <span class="label">Vẫn giữ</span>
+      <h4>Hai điều kiện trước khi nghĩ tới kiếm tiền</h4>
+      <p>Mức xem thường thấy trên 3.000 và cứ 1.000 lượt xem có trên 8 người theo dõi.
+      Hiện là 997 và 3.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Năm trang trước của bộ này</h2>
+    <p class="prose">Đọc kèm mục 6 ở trên để biết kết luận nào trong các trang đó đã bị bỏ.</p>
+  </div>
+
+  <div class="stack">
+    <div class="xrow">
+      <span class="t">Bản đánh giá kênh</span>
+      <span class="d">Bản đầu tiên, đo trên 160 video và 613.963 lượt xem.</span>
+      <a href="./">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Kho câu mở đầu — 50 mẫu</span>
+      <span class="d">Câu mở cụ thể, hình mở đầu, và câu kết phần mô tả.</span>
+      <a href="cau-mo-dau.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Chiến lược nội dung — 17 trang</span>
+      <span class="d">Đa bộ môn có hiệu quả không, và xen nội dung nhanh thì được gì mất gì.</span>
+      <a href="chien-luoc.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Kịch bản dựng sẵn — 6 kịch bản</span>
+      <span class="d">Chia theo từng giây: quay gì, nói gì, chữ nào hiện trên hình.</span>
+      <a href="kich-ban.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Đo lại sau bốn ngày — 25.08</span>
+      <span class="d">Bốn kết luận đầu tiên bị bỏ, và bảy điểm đọc lại theo thị hiếu người xem Việt.</span>
+      <a href="do-lai.html">Mở trang →</a>
+    </div>
+  </div>
+
+  <p class="anon"><strong>Về bản công khai này.</strong> Đây là bản đã ẩn danh của một bản đánh giá thật.
+  Tên kênh, đường dẫn, tên riêng, tên thương hiệu, tên giải đấu và tên địa danh đã được lược bỏ hoặc
+  diễn đạt lại. Toàn bộ số liệu giữ nguyên. Kênh: nữ, Việt Nam, nội dung thể thao — cầu lông, chạy bộ và
+  vài môn ngoài trời — 2.020 người theo dõi tại thời điểm đo.</p>
+</section>
+
+<footer>
+  <p><strong>Số liệu lấy từ đâu.</strong> Trang công khai của kênh, đo ngày 3 tháng 9 năm 2026:
+  toàn bộ 183 bài đăng (155 video và 28 bài ảnh) cùng lượt xem của từng bài, thêm số người thích,
+  bình luận, lưu và độ dài của 7 video mở được. So sánh với số liệu ngày 20 và 25 tháng 8.</p>
+  <p><strong>Chỗ còn phải đoán.</strong> Ngày đăng ở đây suy ra từ mã số của video, mà mã đó ghi lúc
+  video được tải lên chứ không phải lúc bấm đăng. Hôm nay có bằng chứng: một video mã ghi ngày 31.08
+  nhưng TikTok hiện “1 ngày trước”, tức đăng ngày 02.09. Vậy các ngày trong bài này có thể lệch một đến
+  hai ngày, và ranh giới “18 video mới” có thể lệch một hai video. Ba video đo được độ dài trùng khớp với
+  video liền kề nên tôi bỏ ra khỏi bảng thay vì ghi vào.</p>
+  <p><strong>Ba số vẫn chưa có.</strong> Người xem trung bình bao nhiêu giây, bao nhiêu phần trăm xem hết,
+  và người xem đến từ đâu — ba số này chỉ có trong phần thống kê dành cho người sáng tạo. Chưa có chúng
+  thì vẫn chưa biết người xem bỏ đi ở giây thứ mấy. Nghĩa là cả bài này đang đo <em>kết quả</em>,
+  chưa đo được <em>nguyên nhân</em>.</p>
+  <p><strong>Về cách tôi làm.</strong> Bốn kết luận bị bỏ lần trước đều do tôi đoán giờ đăng.
+  Ba kết luận bị bỏ lần này đều do tôi lấy số bình quân, hoặc lấy một video đặc biệt, để nói về cả kênh.
+  Bài học: mọi con số dùng để quyết định phải là <strong>mức ở giữa của một nhóm video đã đăng đủ lâu
+  và so được với nhau</strong>.</p>
+</footer>
+
+</div>
+
+</body>
+</html>

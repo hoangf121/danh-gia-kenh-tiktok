@@ -45,3 +45,41 @@ hai video cầu lông (323 / 237) nằm dưới — không có ngoại lệ.
 
 Lộ trình đã dựng lại thành **sáu bậc xếp theo thứ tự phụ thuộc**, mỗi bậc có điều kiện vào và cổng ra:
 https://hoangf121.github.io/danh-gia-kenh-tiktok/do-lai.html
+
+## Cập nhật 03.09.2026 — trang 6: đo lại sau 18 video
+
+**Trang 6 — 18 video sau lời khuyên** (viết bằng lời thường, bỏ hết từ chuyên ngành):
+https://hoangf121.github.io/danh-gia-kenh-tiktok/18-video.html
+
+Đo trên **toàn bộ 183 bài đăng** (155 video + 28 bài ảnh) và **691.238 lượt xem**. Lần này lấy được cả
+số bình luận, lượt lưu và độ dài — ba số mà trang 5 không lấy nổi.
+
+**Việc đã làm:** đổi nội dung chính sang chạy bộ (11 trong 18 bài), giảm cầu lông còn 5 bài,
+ghim 3 video, viết phần mô tả gần gũi hơn, bớt nhạc tự thu từ 80% xuống 39%.
+**Việc chưa làm:** phần giới thiệu trang, đường dẫn, danh sách phát, độ dài video.
+
+**Hai kết quả:**
+- Mức xem ở giữa của 20 bài mới nhất là **997** — cao thứ ba trong 9 nhóm nhưng vẫn nằm trong
+  khoảng 705–1.271 của cả 5 tháng.
+- Video cao nhất trong 14 ngày rơi từ **15.500 xuống 5.410**. Nguyên nhân: 11 trong 15 video mạnh nhất
+  kênh là video kéo người mới (bắt trend · việc lạ · chạy gây quỹ · nói về đồ nghề), mà video bắt trend
+  gần nhất đăng **26.06** — cách thời điểm đo 68 ngày.
+- Lượt xem +12,6% nhưng người theo dõi chỉ +4,7%: cứ 1.000 lượt xem mới chỉ đổi được **1 người theo dõi**,
+  so với 3 người tính từ đầu kênh. Phễu đang xấu đi vì chưa làm phần giới thiệu trang.
+
+**Ba kết luận nữa bị bỏ** (cả ba sai cùng một kiểu — lấy số bình quân hoặc lấy một video viral để nói
+về cả kênh):
+- ~~"Tỉ lệ bình luận 0,02%"~~ — tính từ đúng một video viral. Trên 7 video bình thường: cứ 1.000 người
+  xem có **6–15 người bình luận**, gấp 30–75 lần. Bỏ luôn việc "tăng bình luận".
+- ~~"Âm thanh gốc là tự tắt một kênh phân phối"~~ — đo trên 183 bài: nhạc tự thu của chính chủ kênh cho
+  mức xem ở giữa **1.016**, nhạc có tên **842**, nhạc tự thu của người khác **783**. Loại bị khuyên bỏ
+  lại đang cao nhất.
+- ~~"Chạy bộ hơn cầu lông ×2,9"~~ — hạ xuống **×1,3**. Đó là hai số bình quân; trên mức ở giữa là
+  1.085 so với 833. Video mạnh nhất 2 tuần lại là video **cầu lông** và **không mang #caulongvietnam**,
+  nên luật thẻ đó cũng bỏ.
+
+**Số yếu mới thay thế:** lượt lưu **0–0,29%**. Có video 716 lượt xem, 100 người thích, 11 bình luận
+mà 0 người lưu.
+
+**Bảy việc thu lại còn ba:** sửa trang cá nhân · làm lại video bắt trend 2 bài/tuần · làm nội dung
+đáng lưu lại.
