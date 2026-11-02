@@ -83,3 +83,27 @@ mà 0 người lưu.
 
 **Bảy việc thu lại còn ba:** sửa trang cá nhân · làm lại video bắt trend 2 bài/tuần · làm nội dung
 đáng lưu lại.
+
+## Cập nhật 02.11.2026 — trang 7: Hai tháng mùa giải
+
+**Trang 7:** https://hoangf121.github.io/danh-gia-kenh-tiktok/mua-giai.html
+
+Đo trên **228 bài đăng** (193 video + 35 bài ảnh) và **825.887 lượt xem**; 49 bài mới từ 04.09,
+mở được 37 trong 38 bài đã chín để đọc thích / bình luận / lưu / độ dài.
+
+- Mức xem ở giữa của 38 bài mới đã chín là **1.133** — nửa trên, nhưng vẫn trong khoảng 793–1.286 của 7 tháng.
+- Video bật cao quay lại: **7 bài trên 3.000**, cao nhất **9.500** (lần trước 1 bài, cao nhất 5.410) —
+  gần như không có bài bắt trend nào. Bài về giải chạy trên núi: mức ở giữa **2.009** (13 bài).
+- Lượt lưu vẫn yếu nhất (**1,2 / 1.000**) nhưng dồn vào bài có cung đường / nơi chốn (11–22 lượt lưu);
+  nhật ký tập chạy chỉ 0–4.
+- +134.649 lượt xem, +173 người theo dõi → **1,3 / 1.000**, không đổi. Ba video ghim đã bị gỡ,
+  vẫn chưa có đường dẫn và danh sách phát.
+
+**Bỏ thêm hai, hạ một:**
+- ~~"Bắt trend là cách duy nhất làm kênh bật lên cao"~~ — 7 bài trên 3.000 mà chỉ có 1 bài trend (902).
+  Kéo theo câu "video tập luyện thường ngày không kéo được người mới" (hai bài nhật ký 5.421 và 3.132).
+- ~~"Video tiếp cận người mới nên dài 12–25 giây"~~ — ≤20s: 1.111 · 21–35s: 1.155 · >35s: 1.611.
+- "Bình luận 6–15 / 1.000" hạ xuống **~5 / 1.000** — con số cũ đo trên bài còn non.
+
+**Ba việc:** làm xong trang cá nhân (ghim lại, giới thiệu, danh sách phát) · biến mỗi giải thành một bài
+hướng dẫn cung đường đáng lưu · tìm "chuyện đang xảy ra" cho những tuần không có giải.
