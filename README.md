@@ -107,3 +107,13 @@ mở được 37 trong 38 bài đã chín để đọc thích / bình luận / l
 
 **Ba việc:** làm xong trang cá nhân (ghim lại, giới thiệu, danh sách phát) · biến mỗi giải thành một bài
 hướng dẫn cung đường đáng lưu · tìm "chuyện đang xảy ra" cho những tuần không có giải.
+
+## Cập nhật 10.11.2026 — Tám ngày đếm ngược
+
+Trang mới: [dem-nguoc.html](dem-nguoc.html). Đo ngắn, cách lần trước 8 ngày: 235 bài, 842.828 lượt xem, 2.216 người theo dõi.
+
+- Đã làm: ghim lại 3 bài, chuỗi đếm ngược tới giải marathon (4 bài). Chưa làm: bài hướng dẫn cung đường, giới thiệu, danh sách phát.
+- 38 bài đã chín chỉ tăng ~1,5% mỗi bài trong 8 ngày → luật "chỉ đọc bài đủ 14 ngày" được xác nhận.
+- 6 bài 21–27.10 vừa chín: mức ở giữa 655, thấp nhất từ trước (đáy cũ 793). Mới 6 bài, chỉ theo dõi.
+- Người theo dõi: +23, 1,4 trên 1.000 lượt xem mới, không đổi.
+- Không bỏ kết luận nào lần này.

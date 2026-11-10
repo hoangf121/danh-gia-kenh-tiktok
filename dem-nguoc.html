@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%89%3C/text%3E%3C/svg%3E">
+<title>Tám ngày đếm ngược</title>
+<meta name="description" content="Đo lại kênh sau tám ngày: ba bài ghim đã quay lại, chuỗi đếm ngược đã chạy, bài đã đủ hai tuần gần như không tăng nữa, và một tuần xem thấp nhất cần theo dõi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+
+<style>
+:root{
+  --ground:#F5F7F5;
+  --surface:#FFFFFF;
+  --surface-2:#EBF1ED;
+  --ink:#0F1714;
+  --ink-2:#2E3B35;
+  --muted:#586661;
+  --line:#DCE5DF;
+  --line-strong:#C2CFC8;
+  --accent:#0B6A52;
+  --accent-wash:#DEECE6;
+  --good:#1F6B44;
+  --good-wash:#E0EFE6;
+  --warn:#96560A;
+  --warn-wash:#F6EBDC;
+  --crit:#A33327;
+  --crit-wash:#F8E7E4;
+  --s1:#0A8A5F;
+  --s2:#6B4FA8;
+  --grid:#DCE5DF;
+  --shadow:0 1px 2px rgba(15,23,20,.05), 0 10px 28px -18px rgba(15,23,20,.2);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1210;
+    --surface:#141C19;
+    --surface-2:#1B2521;
+    --ink:#EDF3EF;
+    --ink-2:#C9D5CE;
+    --muted:#93A49C;
+    --line:#26312C;
+    --line-strong:#35433C;
+    --accent:#5FD9B1;
+    --accent-wash:#123025;
+    --good:#6BD094;
+    --good-wash:#13291D;
+    --warn:#E5AB55;
+    --warn-wash:#2C2417;
+    --crit:#EC8A7D;
+    --crit-wash:#2E1D1B;
+    --s1:#22A583;
+    --s2:#9077E0;
+    --grid:#26312C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -20px rgba(0,0,0,.85);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1210;
+  --surface:#141C19;
+  --surface-2:#1B2521;
+  --ink:#EDF3EF;
+  --ink-2:#C9D5CE;
+  --muted:#93A49C;
+  --line:#26312C;
+  --line-strong:#35433C;
+  --accent:#5FD9B1;
+  --accent-wash:#123025;
+  --good:#6BD094;
+  --good-wash:#13291D;
+  --warn:#E5AB55;
+  --warn-wash:#2C2417;
+  --crit:#EC8A7D;
+  --crit-wash:#2E1D1B;
+  --s1:#22A583;
+  --s2:#9077E0;
+  --grid:#26312C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -20px rgba(0,0,0,.85);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;
+  font-weight:400;font-size:17.5px;line-height:1.74;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px 100px}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-family:inherit}
+h1{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.14}
+h2{font-size:clamp(1.35rem,3vw,1.75rem);font-weight:700;letter-spacing:-.015em;line-height:1.28}
+h3{font-size:1.13rem;font-weight:700;line-height:1.4}
+h4{font-size:1rem;font-weight:600;line-height:1.45}
+p{margin:0}
+strong{font-weight:600;color:var(--ink)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.lede{font-size:1.15rem;line-height:1.7;color:var(--ink-2);max-width:60ch}
+.prose{max-width:64ch;color:var(--ink-2)}
+.small{font-size:.95rem;line-height:1.68}
+.label{
+  font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+}
+.num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+.hdr{max-width:880px;margin:0 auto;padding:52px 24px 40px;display:flex;flex-direction:column;gap:20px}
+.stamp{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.stamp .label{letter-spacing:.08em}
+.pill{
+  font-size:.82rem;font-weight:600;color:var(--accent);background:var(--accent-wash);
+  padding:4px 12px;border-radius:100px;
+}
+
+.summary{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;
+  padding:26px 28px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow);
+}
+.summary>h2{font-size:1.28rem}
+ol.sum{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;counter-reset:k}
+ol.sum>li{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start}
+ol.sum>li::before{
+  counter-increment:k;content:counter(k);
+  font-weight:700;font-size:.95rem;color:var(--accent);background:var(--accent-wash);
+  width:30px;height:30px;border-radius:100px;display:grid;place-items:center;margin-top:3px;
+}
+ol.sum p{font-size:1.02rem;line-height:1.66;color:var(--ink-2)}
+
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.fig{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:3px}
+.fig b{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.15}
+.fig span{font-size:.85rem;line-height:1.45;color:var(--muted)}
+.fig .up{color:var(--good);font-weight:600}
+.fig .down{color:var(--crit);font-weight:600}
+
+section{margin-top:60px;display:flex;flex-direction:column;gap:22px}
+.sec-head{display:flex;flex-direction:column;gap:10px;padding-bottom:16px;border-bottom:2px solid var(--line)}
+
+.box{border-radius:8px;padding:18px 22px;font-size:1rem;line-height:1.68;max-width:66ch}
+.box.tip{background:var(--accent-wash);color:var(--ink-2);border-left:4px solid var(--accent)}
+.box.care{background:var(--warn-wash);color:var(--ink-2);border-left:4px solid var(--warn)}
+
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.97rem;min-width:540px}
+caption{
+  text-align:left;padding:14px 16px 10px;font-size:.85rem;font-weight:600;color:var(--muted);
+}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+thead th{font-size:.85rem;font-weight:600;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.q{color:var(--ink-2)}
+
+.tag{font-size:.82rem;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;display:inline-block}
+.tag.ok{color:var(--good);background:var(--good-wash)}
+.tag.no{color:var(--crit);background:var(--crit-wash)}
+.tag.half{color:var(--warn);background:var(--warn-wash)}
+
+figure{margin:0;display:flex;flex-direction:column;gap:12px}
+.figbox{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px 18px 16px;overflow-x:auto;display:flex;flex-direction:column;gap:14px}
+svg{display:block;width:100%;height:auto;min-width:560px}
+figcaption{font-size:.95rem;color:var(--muted);max-width:66ch;line-height:1.65}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;font-size:.92rem;color:var(--ink-2)}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:-1px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.card .big{font-size:1.72rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.1}
+.card p{font-size:.95rem;color:var(--ink-2);line-height:1.6}
+
+.fix{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.fix .was{font-size:.98rem;color:var(--muted);background:var(--surface-2);border-radius:6px;padding:12px 15px}
+.fix .now{font-size:1rem;color:var(--ink-2);line-height:1.68}
+.stack{display:flex;flex-direction:column;gap:16px}
+
+ol.todo{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;counter-reset:t}
+ol.todo>li{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:9px;
+}
+ol.todo>li h3::before{
+  counter-increment:t;content:"Việc " counter(t) " · ";color:var(--accent);font-weight:700;
+}
+ol.todo p{font-size:1rem;color:var(--ink-2);line-height:1.68}
+ul.check{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+ul.check li{display:grid;grid-template-columns:20px 1fr;gap:11px;font-size:1rem;color:var(--ink-2);line-height:1.6}
+ul.check li b{font-weight:700}
+ul.check .m{font-weight:700;text-align:center;line-height:1.55}
+ul.check .yes{color:var(--good)}
+ul.check .nope{color:var(--crit)}
+
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.split>div{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.split p{font-size:.94rem;color:var(--muted);line-height:1.6}
+
+footer{margin-top:70px;padding-top:28px;border-top:2px solid var(--line);display:flex;flex-direction:column;gap:16px}
+footer p{font-size:.95rem;color:var(--muted);max-width:68ch;line-height:1.7}
+@media (max-width:600px){
+  body{font-size:17px}
+  .wrap{padding:0 18px 80px}
+  .hdr{padding:40px 18px 32px}
+}
+</style>
+<style>
+html{color-scheme:light dark}
+img{max-width:100%}
+[hidden]{display:none!important}
+.xrow{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 20px;
+  display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;
+}
+.xrow .t{font-weight:600;font-size:1rem}
+.xrow .d{font-size:.93rem;color:var(--muted);line-height:1.55;flex:1 1 22ch}
+.xrow a{font-weight:600;font-size:.95rem;white-space:nowrap}
+.anon{
+  background:var(--surface-2);border-radius:8px;padding:18px 22px;
+  font-size:.95rem;color:var(--muted);line-height:1.7;max-width:66ch;
+}
+ul.check .half{color:var(--warn)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="stamp">
+      <span class="label">Xem lại kênh · ngày 10 tháng 11, 2026</span>
+      <span class="pill">235 bài đăng · 7 bài mới</span>
+    </div>
+    <h1>Tám ngày đếm ngược</h1>
+    <p class="lede">Lần đo ngắn, chỉ cách lần trước tám ngày. Không đủ để kết luận cái mới, nhưng đủ để xem ba việc đã khuyên có được làm không, và kiểm lại một luật đọc số của chính bộ này.</p>
+
+    <div class="summary">
+      <h2>Năm ý chính</h2>
+      <ol class="sum">
+        <li><p><strong>Hai trong ba việc đã được làm.</strong> Ba bài ghim đã quay lại, và chuỗi đếm ngược tới giải marathon đầu tháng 12 đã có 4 bài. Bài hướng dẫn cung đường thì chưa có. Phần giới thiệu và danh sách phát vẫn như cũ.</p></li>
+        <li><p><strong>Bài đã đủ hai tuần gần như không tăng nữa.</strong> 38 bài đã chín ở lần trước chỉ thêm 2.575 lượt xem trong tám ngày, mỗi bài thường tăng khoảng 1,5%. Luật “chỉ đọc bài đã đủ 14 ngày” được xác nhận.</p></li>
+        <li><p><strong>Một tuần xem thấp nhất từ trước tới giờ, nhưng mới có 6 bài.</strong> Sáu bài đăng từ 21 đến 27.10 vừa đủ hai tuần, mức ở giữa chỉ <strong>655</strong>. Mức thấp nhất trước đây là 793. Năm bài đăng ngay sau đó, dù chưa đủ hai tuần, đã ở mức 1.165, nên chưa coi đây là xu hướng.</p></li>
+        <li><p><strong>Ghim bài lại chưa làm người theo dõi tăng nhanh hơn.</strong> Tám ngày thêm 23 người, vẫn khoảng 3 người mỗi ngày và 1,4 người trên 1.000 lượt xem mới, gần bằng lần trước. Tám ngày là quá ngắn để đánh giá việc ghim.</p></li>
+        <li><p><strong>Chuỗi đếm ngược khởi đầu ổn, nhưng chưa bài nào đủ tuổi để chấm.</strong> Bốn bài đếm ngược đang có 739, 957, 1.570 và 427 lượt xem, đăng được 5 đến 12 ngày. Lần đo tới, sau ngày 19.11, mới đọc được.</p></li>
+      </ol>
+    </div>
+
+    <div class="figures">
+      <div class="fig"><b>2.216</b><span>Người theo dõi<br><span class="up">+23</span> trong 8 ngày</span></div>
+      <div class="fig"><b>235</b><span>Bài đã đăng<br>+7 bài mới, không bài nào bị xoá</span></div>
+      <div class="fig"><b>1.071</b><span>Mức xem ở giữa<br>44 bài mới đã chín</span></div>
+      <div class="fig"><b>+1,5%</b><span>Bài đã chín tăng thêm<br>trong 8 ngày</span></div>
+      <div class="fig"><b>655</b><span>6 bài vừa chín<br><span class="down">thấp nhất từ trước tới giờ</span></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <div class="sec-head">
+    <h2>1. Ba việc lần trước đã làm tới đâu</h2>
+  </div>
+
+  <ul class="check">
+    <li><span class="m yes">✓</span><span><b>Ghim lại 3 bài.</b> Đã ghim: bài ảnh leo núi 9.581 lượt (đúng bài được lưu nhiều nhất lần trước), một bài tháng 8 được 6.311 và bài bắt trend 30.800 lượt từ tháng 7.</span></li>
+    <li><span class="m half">~</span><span><b>Làm xong trang cá nhân — mới phần ghim.</b> Phần giới thiệu vẫn y như ngày 2.11: tên, email, ba bộ môn bằng tiếng Anh, một câu cảm hứng. Vẫn chưa có đường dẫn, chưa có danh sách phát.</span></li>
+    <li><span class="m yes">✓</span><span><b>Chuỗi đếm ngược tới giải marathon.</b> Đã có 4 bài, đếm còn 38, 37, 32 và 30 ngày. Xen giữa là một giải 10 km trên đường cuối tháng 10, được 3 bài: nhận bộ đồ đua, ngày đua, về đích.</span></li>
+    <li><span class="m nope">✗</span><span><b>Bài hướng dẫn cung đường sau giải.</b> Chưa có. Có một bài chạy dài trên núi (831 lượt sau 3 ngày) nhưng là nhật ký, không có đường đi, độ khó hay cần mang gì.</span></li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>2. Bài đã chín có còn tăng không?</h2>
+    <p class="prose">Bộ này đã phải bỏ nhiều kết luận vì đọc số trên bài còn non. Từ đó có luật: chỉ so bài đã đăng đủ 14 ngày. Lần này lần đầu có cách kiểm chính luật đó, vì 38 bài đã chín ở lần trước được đo lại sau tám ngày.</p>
+  </div>
+
+  <div class="split">
+    <div>
+      <span class="label">Tổng lượt xem 38 bài</span>
+      <h4 class="num">78.387 → 80.962</h4>
+      <p>Thêm 2.575 lượt trong tám ngày, tức 3,3% cho cả nhóm.</p>
+    </div>
+    <div>
+      <span class="label">Mỗi bài thường tăng</span>
+      <h4 class="num">1,5%</h4>
+      <p>Mức ở giữa của tỉ lệ tăng từng bài. Mức xem ở giữa của nhóm đi từ 1.133 lên 1.141.</p>
+    </div>
+    <div>
+      <span class="label">Bài vượt mốc 3.000</span>
+      <h4 class="num">1 bài</h4>
+      <p>Một bài giải trên núi từ 2.714 lên 3.167. Nhóm trên 3.000 giờ là 8 trên 38 bài, không phải 7.</p>
+    </div>
+  </div>
+
+  <p class="prose">Bài đăng 1–2 tuần có thể còn tăng gấp 1,4 đến 2,3 lần. Qua hai tuần thì gần như đứng. Vậy 14 ngày là đủ, không cần chờ lâu hơn, và số đọc trên bài đã chín ở các trang trước vẫn dùng được.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>3. Sáu bài vừa chín: tuần thấp nhất</h2>
+    <p class="prose">Lần trước có 11 bài chưa đủ tuổi. Sáu bài trong số đó, đăng 21–27.10, nay đã đủ hai tuần.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption>Sáu bài đăng 21–27.10 · đo ngày 10.11</caption>
+      <thead><tr><th>Ngày</th><th>Bài</th><th class="n">Lượt xem</th><th class="n">Người lưu</th></tr></thead>
+      <tbody>
+        <tr><td>21.10</td><td>Nhật ký tập chạy, ngày 16</td><td class="n">759</td><td class="n">0</td></tr>
+        <tr><td>21.10</td><td>Bài ảnh, chạy sáng ở một thành phố khác</td><td class="n">556</td><td class="n">0</td></tr>
+        <tr><td>23.10</td><td>Video tập luyện, lời động viên</td><td class="n">481</td><td class="n">0</td></tr>
+        <tr><td>25.10</td><td>Video ghép cảnh tập</td><td class="n">1.761</td><td class="n">1</td></tr>
+        <tr><td>25.10</td><td>Tạo dáng bên cột biển báo</td><td class="n">754</td><td class="n">0</td></tr>
+        <tr><td>27.10</td><td>Bài ảnh, chạy bộ có gì vui</td><td class="n">482</td><td class="n">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p>Mức ở giữa <strong>655</strong>, dưới đáy cũ 793 của bảy tháng. Năm trong sáu bài không có ai lưu. Cả sáu là nhật ký và ảnh tập: không có giải, không có núi, không có chuyện gì đang diễn ra. Điều đó khớp với điều trang trước đã thấy: tuần nào không có “chuyện” thì tuần đó xuống.</p>
+    <p style="margin-top:14px">Nhưng 6 bài là quá ít để gọi là xu hướng, và bộ này đã bỏ nhiều kết luận vì đọc một nhóm nhỏ. Năm bài đăng ngay sau (29.10–01.11, có giải 10 km và hai bài đếm ngược) đã ở mức 1.165 dù mới 9–12 ngày. Ghi lại để lần sau đối chiếu, chưa đổi lời khuyên.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>4. Người theo dõi sau khi ghim lại</h2>
+  </div>
+
+  <div class="split">
+    <div>
+      <span class="label">Lượt xem thêm</span>
+      <h4 class="num">+16.941</h4>
+      <p>Từ 825.887 lên 842.828. Bảy bài mới góp 7.719, 38 bài đã chín góp 2.575, phần còn lại từ bài non và bài cũ hơn.</p>
+    </div>
+    <div>
+      <span class="label">Người theo dõi thêm</span>
+      <h4 class="num">+23</h4>
+      <p>Từ 2.193 lên 2.216, khoảng 3 người mỗi ngày, bằng lần trước.</p>
+    </div>
+    <div>
+      <span class="label">Cứ 1.000 lượt xem mới</span>
+      <h4 class="num">1,4 người theo dõi</h4>
+      <p>Lần trước 1,3. Chưa có thay đổi đáng kể.</p>
+    </div>
+  </div>
+
+  <p class="prose">Ghim bài mới là một nửa việc. Người lạ bấm vào trang giờ thấy ba bài tốt, nhưng phần giới thiệu vẫn chưa nói theo dõi thì được gì, và không có danh sách phát để xem tiếp. Chưa thể nói ghim bài không có tác dụng, vì tám ngày quá ngắn và nửa còn lại chưa làm.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>5. Tín hiệu sớm, chưa dùng để kết luận</h2>
+    <p class="prose">Mười hai bài đăng từ 29.10 tới nay đều chưa đủ hai tuần. Ghi lại để lần sau so.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption>Bài chưa chín · lượt xem và người lưu tại ngày 10.11</caption>
+      <thead><tr><th>Ngày</th><th>Bài</th><th class="n">Lượt xem</th><th class="n">Người lưu</th></tr></thead>
+      <tbody>
+        <tr><td>29.10</td><td>Đếm ngược còn 38 ngày</td><td class="n">739</td><td class="n">0</td></tr>
+        <tr><td>30.10</td><td>Đếm ngược còn 37 ngày</td><td class="n">957</td><td class="n">2</td></tr>
+        <tr><td>31.10</td><td>Nhận bộ đồ đua giải 10 km (dài 117 giây)</td><td class="n">1.178</td><td class="n">0</td></tr>
+        <tr><td>01.11</td><td>Ngày đua 10 km</td><td class="n">1.165</td><td class="n">2</td></tr>
+        <tr><td>01.11</td><td>Về đích: “khi nào mới tới đích”</td><td class="n">2.761</td><td class="n">6</td></tr>
+        <tr><td>03.11</td><td>Đi chơi xa cùng bạn, rủ người xem đi cùng</td><td class="n">3.980</td><td class="n">7</td></tr>
+        <tr><td>03.11</td><td>Đếm ngược còn 32 ngày, hẹn đầu tiên với 42 km</td><td class="n">1.570</td><td class="n">5</td></tr>
+        <tr><td>04.11</td><td>Cầu lông hay chạy bộ</td><td class="n">550</td><td class="n">0</td></tr>
+        <tr><td>05.11</td><td>Đếm ngược còn 30 ngày</td><td class="n">427</td><td class="n">0</td></tr>
+        <tr><td>07.11</td><td>Chạy dài trên núi</td><td class="n">831</td><td class="n">0</td></tr>
+        <tr><td>08.11</td><td>Cuối tuần đi chơi cùng bạn</td><td class="n">265</td><td class="n">0</td></tr>
+        <tr><td>09.11</td><td>Bài ảnh, không chú thích</td><td class="n">96</td><td class="n">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p>Có hai điều đáng để ý. Một: bài về ngày đua và bài có bạn bè đi cùng đang dẫn đầu, khớp với nhóm “có chuyện đang xảy ra” của trang trước. Hai: người lưu dồn vào chính những bài đó, 5 đến 7 người mỗi bài. Bảy bài từ 29.10 đến 03.11 đang được 1,8 người lưu trên 1.000 lượt xem, cao hơn mức 1,2 của kênh. Nhưng đây là bài non, lần đo sau mới biết có giữ được không.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>6. Kết luận nào đổi lần này</h2>
+    <p class="prose">Không bỏ kết luận nào. Một luật đọc số được xác nhận, một điểm đưa vào diện theo dõi.</p>
+  </div>
+
+  <div class="split">
+    <div>
+      <span class="label">Đã xác nhận</span>
+      <h4>Chỉ đọc số trên bài đủ 14 ngày</h4>
+      <p>Bài đã chín chỉ tăng khoảng 1,5% trong tám ngày sau đó.</p>
+    </div>
+    <div>
+      <span class="label">Vẫn đứng</span>
+      <h4>Mức xem ở giữa chưa thoát vùng cũ</h4>
+      <p>1.071 trên 44 bài mới đã chín. Sáu bài thấp vừa chín kéo con số xuống từ 1.133.</p>
+    </div>
+    <div>
+      <span class="label">Vẫn đứng</span>
+      <h4>Phễu người theo dõi hỏng</h4>
+      <p>1,4 người trên 1.000 lượt xem mới.</p>
+    </div>
+    <div>
+      <span class="label">Theo dõi</span>
+      <h4>Tuần không có “chuyện” thì xuống</h4>
+      <p>Tuần 21–27.10 ở mức 655. Mới 6 bài, cần thêm một tuần trống giải để xem có lặp lại không.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>7. Bây giờ nên làm gì</h2>
+    <p class="prose">Giữ ba việc cũ. Không thêm việc mới, vì tám ngày chưa đủ để biết việc nào có tác dụng.</p>
+  </div>
+
+  <ol class="todo">
+    <li>
+      <h3>Làm nốt nửa còn lại của trang cá nhân</h3>
+      <p>Ghim đã xong. Còn viết lại dòng giới thiệu theo hướng người xem được gì, và tạo hai danh sách phát, ví dụ “Đếm ngược 42 km” và “Giải đã chạy”. Lúc này danh sách “Đếm ngược” có lợi nhất: người mới xem một bài đếm ngược sẽ có chỗ xem cả chuỗi.</p>
+    </li>
+    <li>
+      <h3>Một bài hướng dẫn cung đường</h3>
+      <p>Bài chạy dài trên núi ngày 7.11 là nguyên liệu tốt: thêm đường đi, độ khó, mất bao lâu, cần mang gì. Đo số người lưu trên 1.000 lượt xem, so với mức 1,2 của kênh.</p>
+    </li>
+    <li>
+      <h3>Giữ chuỗi đếm ngược tới ngày đua</h3>
+      <p>Đều đặn, đánh số theo ngày như đang làm. Sau giải, chọn trước một đích mới để những tuần trống giải không rơi về mức 655 như cuối tháng 10.</p>
+    </li>
+  </ol>
+
+  <p class="prose"><strong>Lần đo tới:</strong> sau ngày 19.11, khi bốn bài đếm ngược đầu tiên và giải 10 km đủ hai tuần. Lần đo lớn nên làm sau giải marathon, khoảng giữa tháng 12.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Bảy trang trước của bộ này</h2>
+    <p class="prose">Bộ này đến nay đã bỏ chín kết luận và hạ một; xem mục 6 của trang “Hai tháng mùa giải”.</p>
+  </div>
+
+  <div class="stack">
+    <div class="xrow">
+      <span class="t">Bản đánh giá kênh</span>
+      <span class="d">Bản đầu tiên, đo trên 160 video và 613.963 lượt xem.</span>
+      <a href="./">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Kho câu mở đầu — 50 mẫu</span>
+      <span class="d">Câu mở cụ thể, hình mở đầu, và câu kết phần mô tả.</span>
+      <a href="cau-mo-dau.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Chiến lược nội dung — 17 trang</span>
+      <span class="d">Đa bộ môn có hiệu quả không, và xen nội dung nhanh thì được gì mất gì.</span>
+      <a href="chien-luoc.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Kịch bản dựng sẵn — 6 kịch bản</span>
+      <span class="d">Chia theo từng giây: quay gì, nói gì, chữ nào hiện trên hình.</span>
+      <a href="kich-ban.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Đo lại sau bốn ngày — 25.08</span>
+      <span class="d">Bốn kết luận đầu tiên bị bỏ, và bảy điểm đọc lại theo thị hiếu người xem Việt.</span>
+      <a href="do-lai.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">18 video sau lời khuyên — 03.09</span>
+      <span class="d">Mức xem nhích lên nhưng không còn video nào bật lên cao, và ba kết luận nữa phải bỏ.</span>
+      <a href="18-video.html">Mở trang →</a>
+    </div>
+    <div class="xrow">
+      <span class="t">Hai tháng mùa giải — 02.11</span>
+      <span class="d">Video bật lên cao quay lại mà không cần bắt trend, người ta lưu bài có cung đường, và thêm hai kết luận phải bỏ.</span>
+      <a href="mua-giai.html">Mở trang →</a>
+    </div>
+  </div>
+
+  <p class="anon"><strong>Về bản công khai này.</strong> Đây là bản đã ẩn danh của một bản đánh giá thật.
+  Tên kênh, đường dẫn, tên riêng, tên thương hiệu, tên giải đấu và tên địa danh đã được lược bỏ hoặc
+  diễn đạt lại. Toàn bộ số liệu giữ nguyên. Kênh: nữ, Việt Nam, nội dung thể thao — chạy bộ, chạy trên núi,
+  leo núi và cầu lông — 2.216 người theo dõi tại thời điểm đo.</p>
+</section>
+
+<footer>
+  <p><strong>Số liệu lấy từ đâu.</strong> Trang công khai của kênh, đo ngày 10 tháng 11 năm 2026: toàn bộ
+  235 bài đăng (199 video và 36 bài ảnh) cùng lượt xem từng bài, thêm số người thích, bình luận, lưu và độ dài
+  của 18 bài mới nhất. So với số liệu ngày 2 tháng 11.</p>
+  <p><strong>Chỗ còn phải đoán.</strong> Ngày đăng suy ra từ mã số của bài, có thể lệch một đến hai ngày.
+  Lần này có thêm 7 bài và tổng số bài tăng đúng 7, nên không có bài nào bị xoá. “Bài đã chín” là bài đăng
+  đến hết ngày 27.10, tức đủ 14 ngày tính tới hôm đo.</p>
+  <p><strong>Chỗ còn mỏng.</strong> Tám ngày là khoảng đo ngắn nhất của bộ này. Nhóm sáu bài ở mục 3 và mười hai
+  bài ở mục 5 đều quá nhỏ hoặc quá non để rút kết luận; chúng được ghi lại để lần đo sau đối chiếu.
+  Số liệu trong phần dành cho người sáng tạo (xem trung bình bao lâu, người xem đến từ đâu) vẫn chưa có.</p>
+</footer>
+
+</div>
+
+</body>
+</html>
